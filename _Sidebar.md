@@ -1,4 +1,4 @@
-## Common Holochain Links 
+## Holochain Resources 
 
 [Installation](../#installation)
 
