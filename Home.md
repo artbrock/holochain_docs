@@ -1,9 +1,19 @@
 # Holochain Documentation Wiki
 
+<div style="font-size:150%;">
+
+| Holochain Links: | Installation | FAQ | White Paper | GoDocs |
+
+</div>
+
 <table style="font-size:150%;"><tr>
 <td><b>Holochain Info:</b>
 <td><a href="https://github.com/metacurrency/holochain#installation">Installation</a></td>
-<td>[FAQ](FAQ)</td>
+<td>
+
+[FAQ](FAQ)
+
+</td>
 <td><a href="http://holochain.org/whitepaper">White Paper</a></td>
 <td><a href="https://godoc.org/github.com/metacurrency/holochain">GoDocs</a></td></tr></table>
 
