@@ -1,10 +1,8 @@
 # Holochain Documentation Wiki
 
-<div style="font-size:150%;">
 
 | Holochain Links: | Installation | FAQ | White Paper | GoDocs |
 
-</div>
 
 <table style="font-size:150%;"><tr>
 <td><b>Holochain Info:</b>
