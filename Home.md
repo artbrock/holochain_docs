@@ -26,13 +26,14 @@ So you're looking for more info about holochains?
 ## End User Guidance
 Be patient, grasshopper. Soon there will be applications built to make it easy to use holochains as your distributed database for all your daily needs. Hopefully, these applications will be as easy to find, install, and use as any other software you can think of. However, at the moment, these apps don't exist and holochain is largely for devlopers trying to build these things for you. Check back in Q2 of 2017 for some cool applications.
 
-For now, please [enjoy our FAQ](https://github.com/metacurrency/holochain/blob/master/docs/FAQ.md). :)
+For now, please [enjoy our FAQ](FAQ). :)
 
 ## Philosophical Underpinnings
 Holochain is a part of a much larger vision for distributed computing to enable quantum leaps in our collective intelligence and abilities for groups to organize themselves on all scales. You can find out more about [Ceptr here](http://ceptr.org).
 
 ## Technical Architecture
-White paper link
+[White paper link](http://ceptr.org/projects/whitepaper)
+
 ### Architecture Overview
 #### 1. The local signed chain:
 #### 2. The shared DHT:
