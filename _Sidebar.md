@@ -1,5 +1,5 @@
 ### Holochain Resources 
-
+---
 #### Installation
 [Installation](../#installation)
 
@@ -7,3 +7,4 @@
 [FAQ](FAQ)
 
 #### App Development
+
