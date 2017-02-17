@@ -3,6 +3,7 @@
 <div style="font-size:125%;">
 
 | Holochain Links: | [Installation](./#installation) | [FAQ](FAQ) | [White Paper](http://ceptr.org/projects/holochain) | [GoDocs](https://godoc.org/github.com/metacurrency/holochain) |
+
 |------------------|--------------|-----|-------------|--------|
 
 </div>
