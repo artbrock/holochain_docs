@@ -2,6 +2,7 @@
 
 
 | Holochain Links: | Installation | FAQ | White Paper | GoDocs |
+------
 
 
 <table style="font-size:150%;"><tr>
