@@ -1,10 +1,6 @@
 # Holochain Documentation Wiki
 
-
-| Holochain Links: | [Installation](../#installation) | [FAQ](FAQ) | [White Paper](http://ceptr.org/projects/holochain) | [GoDocs](https://godoc.org/github.com/metacurrency/holochain) |
-|------------------|--------------|-----|-------------|--------|
-
-So you're looking for more info about holochains?
+Seeking for more info about holochains?
 
 <!-- TOC START min:2 max:4 link:true update:true -->
   - [End User Guidance](#end-user-guidance)
