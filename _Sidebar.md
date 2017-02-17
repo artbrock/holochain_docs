@@ -1,5 +1,3 @@
-### Holochain Resources 
----
 #### Installation
 [Installation](../#installation)
 
