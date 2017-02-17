@@ -2,14 +2,18 @@
 [Why Holochain?](Why Holochain)
 
 #### Installation
-[Holochain System](Holochain System)
-[Installation](../#installation)
+[Holochain Software](../#installation)
+[Add an Existing Holochain](Joining-a-Holochain)
 
-#### Frequent
+#### Frequently Used
 [FAQ](FAQ)
+[Go API](http://godocs.org/github.com/metacurrency/holochain)
 
-#### App Development
-[App Development](App Development)
+#### Application Development
+[Nucleus: App Core](App-Development)
+[Building in Lisp](Building-in-Lisp)
+[Building in JavaScript](Building-in-JavaScript)
+[Building in P3](Building-in-P3)
 
 #### Command Line
-[]()
+[hc](hc)
