@@ -14,8 +14,8 @@ bin
 
  Subdirectory for each holochain named with the chain name with these contents:
 
- | Name | Description |
- |------|-------------|
+ Name | Description
+ -----|-----------
 
  | chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. This is a key-value store powered by ((Bolt/Bundt)) |
 | dna.conf | The DNA configuration file which specifies the application code (zome files) and holochain name and identifiers |
