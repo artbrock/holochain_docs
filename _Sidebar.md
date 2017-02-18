@@ -23,4 +23,5 @@
  - [Understanding Shared Data (DHT)](DHT-Operations)
 
 #### Command Line
- - [hc](hc)
+ - [hc](hc-Command)
+ - [File Locations](File-System)
