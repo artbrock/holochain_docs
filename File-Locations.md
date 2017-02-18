@@ -16,11 +16,10 @@ bin
 
  Name | Description
  -----|-----------
-
- | chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. This is a key-value store powered by ((Bolt/Bundt)) |
-| dna.conf | The DNA configuration file which specifies the application code (zome files) and holochain name and identifiers |
-| zome_\<name> | These are the application files. They will end in .zy if they're zygomys/Lisp files, .js if they're JavaScript, etc. |
-| ui  | This is the directory where you'll find user interface files (HTML, CSS, JavaScript, etc.) You can install additional UX/UI systems or components by dropping them into subdirectories here. |
+ chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. This is a key-value store powered by ((Bolt/Bundt)) 
+dna.conf | The DNA configuration file which specifies the application code (zome files) and holochain name and identifiers 
+zome_\<name> | These are the application files. They will end in .zy if they're zygomys/Lisp files, .js if they're JavaScript, etc. 
+ui  | This is the directory where you'll find user interface files (HTML, CSS, JavaScript, etc.) You can install additional UX/UI systems or components by dropping them into subdirectories here. 
 
 ### Mac
 Don't know -- Probably same as Linux...
