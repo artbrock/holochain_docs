@@ -1,5 +1,6 @@
 #### Intro
-- [Why Holochain?](Why Holochain)
+ - [Technical Overview](http://github.com/metacurrency/holochain/wiki)
+ - [Glossary & Key Terms](Glossary)
 
 #### Installation
  - [Holochain Software](../#installation)
@@ -8,6 +9,7 @@
 #### Frequently Used
  - [FAQ](FAQ)
  - [Go API](http://godocs.org/github.com/metacurrency/holochain)
+ - [Functions Exposed to Nucleus]()
 
 #### Application Development
  - [Nucleus: App Core](App-Development)

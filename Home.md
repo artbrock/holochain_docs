@@ -3,46 +3,36 @@
 Seeking for more info about holochains?
 
 <!-- TOC START min:2 max:4 link:true update:true -->
-  - [End User Guidance](#end-user-guidance)
-  - [Philosophical Underpinnings](#philosophical-underpinnings)
-  - [Technical Architecture](#technical-architecture)
-    - [Architecture Overview](#architecture-overview)
-      - [1. The local signed chain:](#1-the-local-signed-chain)
-      - [2. The shared DHT:](#2-the-shared-dht)
-      - [3. End-User Applications:](#3-end-user-applications)
-  - [Developer Resources](#developer-resources)
-    - [Data schemas](#data-schemas)
-    - [Validation Rules](#validation-rules)
-    - [Sockets for Web UI](#sockets-for-web-ui)
+  - [Beyond Blockchain Bottlenecks](#beyond-blockchain-bottlenecks)
+  - [When to Use Holochain](#when-to-use-holochain)
+  - [When NOT to Use Holochain](#when-not-to-use-holochain)
+  - [Architecture Overview](#architecture-overview)
+  - [Why Ceptr? Where does this come from?](#why-ceptr-where-does-this-come-from)
+  - [A Note to End Users](#a-note-to-end-users)
 
 <!-- TOC END -->
 
 
+## Beyond Blockchain Bottlenecks
+A fully distributed P2P blockchain alternative
+not just "decentralized" but fully distributed because each person has their own chain, and share from their signed chain to shared data space (DHT)
 
-## End User Guidance
-Be patient, grasshopper. Soon there will be applications built to make it easy to use holochains as your distributed database for all your daily needs. Hopefully, these applications will be as easy to find, install, and use as any other software you can think of. However, at the moment, these apps don't exist and holochain is largely for devlopers trying to build these things for you. Check back in Q2 of 2017 for some cool applications.
+## When to Use Holochain
+For group stuff, ...
 
-For now, please [enjoy our FAQ](FAQ). :)
+## When NOT to Use Holochain
+Not for individual. Not for data positivist oriented stuff
 
-## Philosophical Underpinnings
+## Architecture Overview
+Three Sub-Systems / Two Modes
+
+
+More details see [Architecture page](Architecture)
+
+## Why Ceptr? Where does this come from?
 Holochain is a part of a much larger vision for distributed computing to enable quantum leaps in our collective intelligence and abilities for groups to organize themselves on all scales. You can find out more about [Ceptr here](http://ceptr.org).
 
-## Technical Architecture
-[White paper link](http://ceptr.org/projects/whitepaper)
+## A Note to End Users
+Be patient, grasshopper. Soon there will be applications built to make it easy to use holochains as your distributed database for all your daily needs. Hopefully, these applications will be as easy to find, install, and use as any other software you can think of. However, at the moment, these apps don't exist and holochain is largely for developers trying to build these things for you. Check back in Q2 of 2017 for some cool applications.
 
-### Architecture Overview
-#### 1. The local signed chain:
-#### 2. The shared DHT:
-#### 3. End-User Applications:
-
-## Developer Resources
-How the heck do you start building an app to run on holochains?
-
-### Data schemas
-Hmmm...
-
-### Validation Rules
-Scripted in [Zygomys](https://github.com/glycerine/zygomys)
-
-### Sockets for Web UI
-For now we expect to run these via a web browser UI.
+For now, please [enjoy our FAQ](FAQ). :)
