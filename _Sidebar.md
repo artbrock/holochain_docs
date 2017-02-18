@@ -18,5 +18,9 @@
  - [Building in JavaScript](Building-in-JavaScript)
  - [Building in P3](Building-in-P3)
 
+#### System Components
+ - [Understanding Source Chains](Chain-Operations)
+ - [Understanding Shared Data (DHT)](DHT-Operations)
+
 #### Command Line
  - [hc](hc)
