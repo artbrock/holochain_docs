@@ -13,6 +13,7 @@ bin
 **Holochain:** In your user directory a new (invisible) directory should have been created called ```.holochain```. You can go to it by typing ```cd ~/.holochain```
 
  Subdirectory for each holochain named with the chain name with these contents:
+
  | Name | Description |
  |------|-------------|
  | chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. This is a key-value store powered by ((Bolt/Bundt)) |
