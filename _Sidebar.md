@@ -1,5 +1,6 @@
 #### Intro
  - [Technical Overview](http://github.com/metacurrency/holochain/wiki)
+ - [Architecture Details](Architecture)
  - [Glossary & Key Terms](Glossary)
 
 #### Installation
