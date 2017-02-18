@@ -24,4 +24,4 @@
 
 #### Command Line
  - [hc](hc-Command)
- - [File Locations](File-System)
+ - [File Locations](File-Locations)
