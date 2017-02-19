@@ -12,6 +12,9 @@ Hopefully, that previous sentence will be made obsolete soon, but until then, pl
 For example: Once launched the code that runs applications in a Holochain is immutable without forking the chain. This code is the **DNA** specific to that holochain. Therefore the code is hashed into the first entry of each participant's chain
 
 ### Architecture Overview
+Three Subsystems -- Two Modes
+![Holochain Sub-Systems](http://ceptr.org/images/Holochain_Subsystems.png)
+
 #### 1. The local signed chain:
 #### 2. The shared DHT:
 #### 3. End-User Applications:
