@@ -2,7 +2,7 @@
 So what junk does holochain put on your computer and where does it put it?
 
 ## Linux
-**Go:** When we have an automated installer, this manual go installay should disappear, but until then, you will need to [install the Go Language](http://golang.org/doc/install.html), and [set your $GOPATH]().
+**Go:** When we have an automated holochain installer, this manual go installation process should disappear, but until then, you will need to [install the Go Language](http://golang.org/doc/install.html), including setting your $GOPATH, and then add $GOPATH/bin to your $PATH.
 
 This should set up a directory for go programs at ```~/go``` and when you install the holochain program by typing ```go get github.com/metacurrency/holochain``` it will automatically install in subdirectories of the same name. It will also automatically grab other dependencies and install them in their respective paths under ```~/go```.
 
@@ -26,6 +26,6 @@ Don't know -- Probably same as Linux...
 
 ### Windows
 We haven't set up a Windows installation yet and tried it yet... I think we'll need an installer which will probably throw stuff into the installing user's Virtual Store at:
-```%USERPROFILE%\AppData\Local\VirtualStore\MetaCurrency\Holochain\```
+``` \%USERPROFILE%\AppData\Local\VirtualStore\MetaCurrency\Holochain\ ```
 
 Meanwhile you'll need to [install Go manually](http://golang.org/doc/install.html) and things will end up wherever Go puts programs.
