@@ -9,7 +9,7 @@
 
 #### Frequently Used
  - [FAQ](FAQ)
- - [Go API](https://godocs.org/github.com/metacurrency/holochain)
+ - [Go API](https://godoc.org/github.com/metacurrency/holochain)
  - [Functions Exposed to Nucleus]()
 
 #### Application Development
