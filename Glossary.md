@@ -121,7 +121,7 @@
  : The address of a node in the DHT
 
 **Nucleus**
- : Application Container implemented for a specific language
+ : Application Container implemented for a specific programming language
 
 **P2P**
  : Peer-to-Peer: An approach to distributed system development where every peer is an equal to other peers and they coordinate in that manner.
