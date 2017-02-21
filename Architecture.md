@@ -1,5 +1,5 @@
 # Technical Architecture
-[White paper link](http://ceptr.org/projects/whitepaper)
+[White paper link](http://ceptr.org/projects/whitepapers/)
 Okay, maybe everybody thinks their software is a special and unique snowflake and you've never seen anything like it before. This time, it's for real.
 
 Hopefully, that previous sentence will be made obsolete soon, but until then, please consider that Holochain doesn't work like anything you've used before, and you cannot think about it like a blockchain. It is necessary to get your bearings on:
