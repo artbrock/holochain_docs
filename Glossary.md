@@ -67,7 +67,7 @@
  : A term in distributed computing which refers to the fact that data may be temporarily out of sync in parts of the network, but will eventually become consistent.
 
 **Flagged**
- : Data that has been shared to the DHT, but faills to validate according the shared rules gets flagged as invalid. Nodes who keep producing invalid data may also get flagged, and then blacklisted.
+ : Data that has been shared to the DHT, but faills to validate according to the shared rules gets flagged as invalid. Nodes who keep producing invalid data may also get flagged, and then blacklisted.
 
 **Full Peer**
  : A full holochain peer is a machine which is running both as a Source Chain for creating new data and a DHT Node for synchronizing shared data
