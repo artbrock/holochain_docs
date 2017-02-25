@@ -14,6 +14,7 @@
 
 #### Application Development
  - [Nucleus: App Core](App-Development)
+ - [Nucleus: API](App-Development API)
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
  - [Building in P3](Building-in-P3)
