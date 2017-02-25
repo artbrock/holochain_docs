@@ -21,3 +21,9 @@ Declares to the Nucleus that it should expose your function `<name>` to the outs
 ### `put <hash>`
 
 Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously committed entry.
+
+## Functions you must write that the Nuclei will call
+
+### `validate <entry-type> <entry-data>`
+
+This is the function that will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.
