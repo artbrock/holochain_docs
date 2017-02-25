@@ -1,0 +1,23 @@
+All Nuclei types provide access to the same Holochain API, which consists in a set of functions that allow you as a Holochain app developer to commit entries to your chain, as well as inspect chain entries and properties.  Additionally there are a few functions, like `validate` that you *must* implement as the Nuclei will call them.
+
+## Functions you can call
+
+### `version` 
+
+Returns Holochain version
+
+### `commit <entry-type> <entry-data>`
+
+Attempts to commit an entry to the chain.  Will cause your `validate` function to be called.  Returns either an error or the hash of the commited entry
+
+### `property <name>`
+
+Returns the named property.
+
+### `expose <name> <as>`
+
+Declares to the Nucleus that it should expose your function `<name>` to the outside world for calling.  `<as>` declares the calling and return parameter types.  Currently this can be either `"JSON"` or `"STRING"`
+
+### `put <hash>`
+
+Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously committed entry.
