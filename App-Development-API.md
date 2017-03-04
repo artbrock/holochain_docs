@@ -15,6 +15,7 @@ Attempts to commit an entry to the chain.  Will cause your `validate` function t
 Returns the named property.  Most of these properties are defined by the app developer, but there are a few that are system defined:  
 
 - "_id" returns the hash of the holochain, which is it's id.
+- "_agent_id" returns the indentifier string you used when initiating your chain
 
 ### `expose <name> <as>`
 
