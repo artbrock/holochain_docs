@@ -22,6 +22,11 @@ Declares to the Nucleus that it should expose your function `<name>` to the outs
 
 Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously committed entry.
 
+### `get <hash>`
+
+Retrieves `<hash>` from the DHT. 
+
+
 ## Functions you must write that the Nuclei will call
 
 ### `validate <entry-type> <entry-data>`
