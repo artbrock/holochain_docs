@@ -33,4 +33,8 @@ Retrieves `<hash>` from the DHT.
 
 ### `validate <entry-type> <entry-data>`
 
-This is the function that will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.
+This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.
+
+### `init`
+
+This function will be called just after the initial genesis entries (the dna and the identity) are added.  It allows you take any chain initialization actions, for example using put putmeta to add data to the DHT. 
