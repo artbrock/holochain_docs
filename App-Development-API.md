@@ -18,7 +18,7 @@ Returns the named property.  Most of these properties are defined by the app dev
 
 ### `expose <name> <as>`
 
-Declares to the Nucleus that it should expose your function `<name>` to the outside world for calling.  `<as>` declares the calling and return parameter types.  Currently this can be either `"JSON"` or `"STRING"`
+Declares to the Nucleus that it should expose your function `<name>` to the outside world for calling.  `<as>` declares the calling and return parameter types.  Currently this can be either `"JSON"` or `"STRING"`  In the Javascript nucleus these are defined on a global `MC` object, i.e. you would use `MC.JSON` or `MC.STRING`
 
 ### `put <hash>`
 
