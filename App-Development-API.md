@@ -12,7 +12,9 @@ Attempts to commit an entry to the chain.  Will cause your `validate` function t
 
 ### `property <name>`
 
-Returns the named property.
+Returns the named property.  Most of these properties are defined by the app developer, but there are a few that are system defined:  
+
+- "_id" returns the hash of the holochain, which is it's id.
 
 ### `expose <name> <as>`
 
