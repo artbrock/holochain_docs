@@ -15,7 +15,8 @@ Attempts to commit an entry to the chain.  Will cause your `validate` function t
 Returns the named property.  Most of these properties are defined by the app developer, but there are a few that are system defined:  
 
 - "_id" returns the hash of the holochain, which is it's id.
-- "_agent_id" returns the indentifier string you used when initiating your chain
+- "_agent_id" returns your unique node id
+- "_agent_name" returns the indentifier string you used when initiating your chain
 
 ### `expose <name> <as>`
 
@@ -39,9 +40,11 @@ Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the D
 
 ## Functions you must write that the Nuclei will call
 
-### `validate <entry-type> <entry-data> <meta-tag>`
+### `validate <entry-type> <entry-data> <props>`
 
-This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.  The `<meta-tag>` value indicates validation in the context of putMeta, and will otherwise be an empty string.
+This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.  The `<props>` argument will be an argument with various properties useful for validation:
+- `<MetaTag>` if not an empty string, this value indicates validation in the context of putMeta, and will be the value of the tag being putmetaed
+- `<Sources>` an array of the sources that created this entry
 
 ### `init`
 
