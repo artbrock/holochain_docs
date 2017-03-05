@@ -29,6 +29,13 @@ Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously commit
 
 Retrieves `<hash>` from the DHT. 
 
+### `putMeta <hash> <meta-hash> <meta-tag>`
+
+Associates `<meta-hash>` with `<hash>` as `<meta-tag>` on the DHT.  `<hash>` and `<meta-hash>` must be the hash of a previously committed entries.  
+
+### `getMeta <hash> <meta-tag>`
+
+Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the DHT. 
 
 ## Functions you must write that the Nuclei will call
 
