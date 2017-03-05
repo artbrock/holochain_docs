@@ -46,6 +46,6 @@ This function will be called when an entry is about to be committed, or when a D
 - `<MetaTag>` if not an empty string, this value indicates validation in the context of putMeta, and will be the value of the tag being putmetaed
 - `<Sources>` an array of the sources that created this entry
 
-### `init`
+### `genesis`
 
-This function will be called just after the initial genesis entries (the dna and the identity) are added.  It allows you take any chain initialization actions, for example using put putmeta to add data to the DHT. 
+This function will be called just after the initial genesis entries (the dna and the identity) are added.  It allows you take any chain initialization actions, for example using put and putmeta to add data to the DHT. 
