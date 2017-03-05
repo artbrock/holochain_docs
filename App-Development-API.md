@@ -32,9 +32,9 @@ Retrieves `<hash>` from the DHT.
 
 ## Functions you must write that the Nuclei will call
 
-### `validate <entry-type> <entry-data>`
+### `validate <entry-type> <entry-data> <meta-tag>`
 
-This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.
+This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.  The `<meta-tag>` value indicates validation in the context of putMeta, and will otherwise be an empty string.
 
 ### `init`
 
