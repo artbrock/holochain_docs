@@ -16,52 +16,80 @@ VERSION:
    0.0.1
 
 COMMANDS:
-     gen, g     
+     clone, c   clone a holochain instance from a source
+     gen, g     generate genesis entries or keys for a cloned holochain
      init, i    boostrap the holochain service
+     join, j    join an existing holochain
      dump, d    display a text dump of a chain
      test, t    run validation against test data for a chain in development
-     serve, w   serve a web interface to access a chain
      status, s  display information about installed chains
      call, c    call an exposed function
+     bs, b      send bootstrap tickler to the chain bootstrap server
+     serve, w   serve a chain to the web
      help, h    Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --verbose      verbose output
+   --debug        debugging output
+   --path value   path to holochain directory (default: ~/.holochain)
    --help, -h     show help
    --version, -v  print the version
+
 ```
+You can also get help on any of the sub-commands by calling hc help structured like this: ```hc <command> help```
 
-## hc init
-This command initializes the system with an identity and generates public/private keys for that identity in interacting with other peers on a holochain. You pass a single argument into init with the identifying information you'd like to attach to your public key record.
+## hc init <id_string>
+This command initializes the system with a default identity and generates default public/private keys for interacting with other networked peers. You provide a single string of identifying information which will be visible as your ```_agent_name```. This is often an email address.
 
-It takes the form: ``` hc init `"Fred Flintstone" fred@flintstone.com"' ```
+Usage: ``` hc init `fred@flintstone.com' ```
 
-## hc gen
-If you have the DNA for an existing holochain you'd like to join. Copy the files to...  
-Then type: ```hc gen from <source-file> <target-name>```
+## hc join <Source_Holochain>
+This is how you join with an existing holochain that has already been created. You can specify a source by its unique DNA hash identifier (A string of characters that looks something like this: ```QmeHrPW2Y2xGeTLWv7vTYHNr9ViV1LYE3cFKgY2kskUf7G```) to retrieve it from the holochain of holochains (assuming it has been shared there by its original author). You can also point to a local file you've gotten from someone you trust.
 
+## hc clone <Source_location> <New_Holochain_Name>
+As a developer who is building or modifying a holochain application, you can clone a pre-existing holochain application configuration by specifying existing application files.
 
-```hc gen dev <name>``` Developer mode
+You can source from files anywhere such as from a git repo you've cloned, from a live chain you're already running in your .holochain directory, or one of the examples included in the holochain repository.
 
-```hc gen chain <name>``` creates genesis entries
+    hc clone <SOURCE_PATH> <NAME_FOR_NEW_HOLOCHAIN>```
 
+For example: ```hc clone ./examples/sample sample```
+
+Before you launch your chain, this is the chance for you to customize the application settings like the Application NAME, for example.
+
+If you are developing a holochain application and need to destroy your running version of that holochain to test your new code, you can force it to overwrite with ```hc clone --force /programming/source/directory target-name```
+
+## hc gen chain
+Builds your genesis entries for starting your new local chain. It can also be used to generate new keys.
+
+```hc gen chain <name>``` Creates genesis entries launching your new local chain
+```hc gen keys <name>``` Creates new keys on this holochain
 
 ## hc status
 To see what holochains are installed on your system, just type ```hc status```. You'll get a result showing each chain name and the the ID/hash of the DNA of the chain.
 
-For example:
+For example, results should look something like this:
 ```
 installed holochains:
      escrow <not-started>  
-     flack 9yPX4cX3hA9DNkx6kNjdKRmPLdDZeJrPcWChpLv6X7PG
+     flack Qm9yPX4cX3hA9DNkx6kNjdKRmPLdDZeJrPcWChpLv6X7PG
 ```
+## hc test <HOLOCHAIN_NAME>
+This command runs the test harness for the specified holochain
 
-## hc test
+``` hc test <HOLOCHAIN_NAME> ```
 
-``` hc test chat ```
+## hc serve <HOLOCHAIN NAME>
+Launch UI services via web socket to exposed application functions. By default, the browser services are only available via localhost.
 
-## hc dump
+## hc call <fn_name>
+Call an exposed function from the hc command line instead of a web socket / browser UI.
 
-``` hc dump chat ```
+## hc bs
+Contact a bootstrap server specified in the chain's DNA to notify of your existence and search for peers to communicate with.
 
-## hc call
+## hc dump <chain_name>
+Display all the contents of the specified personal chain
+
+## hc dev
+Secret undocumented developer feature which generates a skeletal holochain app to start developing with.
