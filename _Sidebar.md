@@ -9,12 +9,12 @@
 
 #### Frequently Used
  - [FAQ](FAQ)
- - [Go API](https://godoc.org/github.com/metacurrency/holochain)
- - [Functions Exposed to Nucleus]()
+ - [Go Docs API](https://godoc.org/github.com/metacurrency/holochain)
+ - [Functions Exposed to Nucleus](App-Development-API)
 
 #### Application Development
  - [Nucleus: App Core](App-Development)
- - [Nucleus: API](App-Development API)
+ - [Nucleus: API](App-Development-API)
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
  - [Building in P3](Building-in-P3)
