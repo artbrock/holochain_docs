@@ -40,6 +40,10 @@ Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the D
 
 ## Functions you must write that the Nuclei will call
 
+### `requires`
+
+This function lets you tell the system about requirements your app needs, currently just a version number of holochain itself, i.e. to prevent an app from running on an older version of the system.  The return value is an object (JS) or hash (zygo) with a key "version" who's value is the version number desired.
+
 ### `validate <entry-type> <entry-data> <props>`
 
 This function will be called when an entry is about to be committed, or when a DHT node is confirming that the entry is valid before publishing it.  In this function you should add all your application logic about what constitutes valid nodes.  The `<props>` argument will be an argument with various properties useful for validation:
