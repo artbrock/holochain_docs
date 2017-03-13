@@ -64,7 +64,7 @@ First we will take you through the development process using an example Holochai
     > this means:
     * `scale` how many instances of some service do you want to spin up
     * `hc` is the holochain service. Each one of these runs an instance of your holochain app
-    * `scale hc=2` means: make it so there are 2 hc containers running. The number 2 can be replaced with however many instances you would like to have. Remember that to access them from the outside world, there must be a spare port on the host machine to conntect to.
+    * `scale hc=2` means: make it so there are 2 hc containers running. The number 2 can be replaced with however many instances you would like to have. Remember that to access them from the outside world, there must be a spare port on the host machine to connect to.
 
 8. docker compose makes it easy to take down your containers, and rebuild the images:
 
