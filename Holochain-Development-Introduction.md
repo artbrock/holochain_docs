@@ -54,13 +54,17 @@ First we will take you through the development process using an example Holochai
 6. TODO: If you have implemented tests for your holochain, you will see the output each time you call `docker run...`
     `hc test clutter` needs to be added to the script
 
-7. Distributed apps need to be, well, distributed. Docker makes it very easy for you to test many instances of your app and how they interact with each other. To set up a cluster of nodes of your holochain, we have already created a `docker-compose` script for you, which is in the root of the skeleton. Once you have run `docker-compose up`, you can run `docker-compose clutter scale=<numberOfNodes>` to spin up as many clones as you like.
+7. Distributed apps need to be, well, distributed. Docker makes it very easy for you to test many instances of your app and how they interact with each other. To set up a cluster of nodes, use `docker-compose up` and then `docker-compose scale`
 
     ```bash
     $ docker-compose up
     $ docker-compose scale hc=2
     $ docker ps --last=2
     ```
+    > this means:
+    * `scale` how many instances of some service do you want to spin up
+    * `hc` is the holochain service. Each one of these runs an instance of your holochain app
+    * `scale hc=2` means: make it so there are 2 hc containers running. The number 2 can be replaced with however many instances you would like to have. Remember that to access them from the outside world, there must be a spare port on the host machine to conntect to.
 
 8. docker compose makes it easy to take down your containers, and rebuild the images:
 
