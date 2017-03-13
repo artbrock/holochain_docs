@@ -2,7 +2,7 @@
 
 First we will take you through the development process using an example Holochain App DNA from our own repository, and then we will show you how to use a skeleton to start your own project.
 
-##Installing the toolchain
+##A Simple Working Example with `examples/clutter`
 
 1. Install the ***latest*** version of Docker Compose directly from [the docker website](https://docs.docker.com/compose/install/) - ( You may have to install Docker too)
 2. Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
