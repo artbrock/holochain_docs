@@ -75,3 +75,6 @@ First we will take you through the development process using an example Holochai
     ```
 
 9. TODO check out if docker-compose updates running containers if images are changed????
+
+#The Bootstrap Server
+hc instances use our holochain of holochains to self locate onto the network. The (admitedly rather simple!) output of this can be seen at http://bootstrap.holochain.net:10000
