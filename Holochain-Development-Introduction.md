@@ -29,9 +29,17 @@ First we will take you through the development process using an example Holochai
 
     ```bash
     $ docker ps --latest
-    ````
+    ```
 
-All you need to do is to code your holochain DNA, and run `docker-compose up`.
+    ```bash
+    dbb55a7828b7        clutter             "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
+    ```
+4. This output will also show you the `hash` and the `container_name` of your new container. You can use either of these values as a key to destroy the container when you have finished testing it.
+
+
+4. docker works very well in a development cycle. Each time you have editted code, and you want to test the new version, run `docker build...`, 
+
+5. All you need to do is to code your holochain DNA, and run `docker-compose up`.
 
     ```bash
     $ cd examples/clutter
