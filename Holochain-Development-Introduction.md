@@ -34,14 +34,40 @@ First we will take you through the development process using an example Holochai
     ```bash
     dbb55a7828b7        clutter             "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
     ```
-4. This output will also show you the `hash` and the `container_name` of your new container. You can use either of these values as a key to destroy the container when you have finished testing it.
 
+    * This shows that our new container has our holochain app accessible through port `32934` on our host machine (e.g. `http://localhost:32934`)
+    * we can also see that the container is called `agitated_brahmagupta` (docker names are good chat)
+    * and that the first bunch of characters of the hash of the container are `dbb55a7828b7`
 
-4. docker works very well in a development cycle. Each time you have editted code, and you want to test the new version, run `docker build...`, 
-
-5. All you need to do is to code your holochain DNA, and run `docker-compose up`.
+4. We can destroy this container instance using either the name or the hash of the container
 
     ```bash
-    $ cd examples/clutter
+    $ docker kill agitated_brahmagupta
+    or
+    $ docker kill dbb
+    or
+    $ docker kill agi
+    ```
+
+5. docker works very well in a development cycle. Each time you have editted code, and you want to test the new version, run `docker build...`, `docker run...`
+
+6. TODO: If you have implemented tests for your holochain, you will see the output each time you call `docker run...`
+    `hc test clutter` needs to be added to the script
+
+7. Distributed apps need to be, well, distributed. Docker makes it very easy for you to test many instances of your app and how they interact with each other. To set up a cluster of nodes of your holochain, we have already created a `docker-compose` script for you, which is in the root of the skeleton. Once you have run `docker-compose up`, you can run `docker-compose clutter scale=<numberOfNodes>` to spin up as many clones as you like.
+
+    ```bash
     $ docker-compose up
-    ````
+    $ docker-compose scale hc=2
+    $ docker ps --last=2
+    ```
+
+8. docker compose makes it easy to take down your containers, and rebuild the images:
+
+    ```bash
+    $ docker-compose down
+    $ docker-compose build
+    $ docker-compose up
+    ```
+
+9. TODO check out if docker-compose updates running containers if images are changed????
