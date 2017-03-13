@@ -5,7 +5,7 @@ First we will take you through the development process using an example Holochai
 ##Installing the toolchain
 
 1. Install the ***latest*** version of Docker Compose directly from [the docker website](https://docs.docker.com/compose/install/) - ( You may have to install Docker too)
-2. Clone the `metacurrency/holochain` repository [from github](https://github.com/metacurrency/holochain)
+2. Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
 
     ```bash 
     $ #navigate to where you wanna be
