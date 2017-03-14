@@ -5,15 +5,15 @@ All Nuclei types provide access to the same Holochain API, which consists in a s
 These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so App.DNAHash becomes App_DNAHash).
 
 ### System Variables
- - `HC.VERSION` (being implemented) Returns the version of the Holochain software
- - `HC.JSON` Used with `expose` to specify that a function expects to receive data in this format
- - `HC.STRING` Used with `expose` to specify that a function expects to receive data in this format
- - `HC.MERKLE` (to be implemented in Security Pass Milestone)
+ - **`HC.VERSION`** (being implemented) Returns the version of the Holochain software
+ - **`HC.JSON`** Used with `expose` to specify that a function expects to receive data in this format
+ - **`HC.STRING`** Used with `expose` to specify that a function expects to receive data in this format
+ - **`HC.MERKLE`** (to be implemented in Security Pass Milestone)
 
 ### Application Variables
- - `App.DNAHash` Stores the unique identifier of this Holochain's DNA. Nodes must run the same DNA to be on the same holochain.
- - `App.Agent.Hash` Stores your peer's permanent node address on the DHT. This is the hash of the 2nd entry on your chain.
- - `App.Agent.String` Stores the identity string used to initialize the holochain software with `hc init` If you  used JSON to embed multiple properties (such as FirstName, LastName, Email, etc), they can be retrieved here as App.Agent.FirstName, etc.
+ - **`App.DNAHash`** Stores the unique identifier of this Holochain's DNA. Nodes must run the same DNA to be on the same holochain.
+ - **`App.Agent.Hash`** Stores your peer's permanent node address on the DHT. This is the hash of the 2nd entry on your chain.
+ - **`App.Agent.String`** Stores the identity string used to initialize the holochain software with `hc init` If you  used JSON to embed multiple properties (such as FirstName, LastName, Email, etc), they can be retrieved here as App.Agent.FirstName, etc.
 
 ## Required Application Functions 
 
