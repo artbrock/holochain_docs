@@ -1,11 +1,8 @@
 #### Intro
  - [Technical Overview](http://github.com/metacurrency/holochain/wiki)
  - [Architectural Details](Architecture)
+ - [Installation](../#installation)
  - [Glossary & Key Terms](Glossary)
-
-#### Installation
- - [Holochain Software](../#installation)
- - [Add an Existing Holochain](Joining-a-Holochain)
 
 #### Frequently Used
  - [FAQ](FAQ)
@@ -20,18 +17,15 @@
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-One-Host)
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-Multi-Host)
 
-
-#### Development (Core)
+#### App Developer Reference
  - [Nucleus: App Core](App-Development)
  - [Nucleus: API](App-Development-API)
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
- - [Building in P3](Building-in-P3)
-
-#### System Components
- - [Understanding Source Chains](Chain-Operations)
- - [Understanding Shared Data (DHT)](DHT-Operations)
+<!-- - [Building in P3](Building-in-P3) -->
+ - [Source Chain Operations (Personal Data)](Chain-Operations)
+ - [DHT Operations (Shared Data)](DHT-Operations)
 
 #### Command Line
- - [hc](hc-Command)
+ - ['hc' Command line usage](hc-Command)
  - [File Locations](File-Locations)
