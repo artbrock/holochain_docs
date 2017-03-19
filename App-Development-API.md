@@ -41,13 +41,7 @@ In this function you should add all your application logic about what constitute
 
 ### `property <name>`
 
-(Soon to be deprecated) Returns the named property.  Most of these properties are defined by the app developer, but there are a few that are system defined:  
-
-- "_id" returns the hash of the holochain, which is it's id.
-- "_agent_id" returns your unique node id
-- "_agent_name" returns the indentifier string you used when initiating your chain
-
-The new version of the properties function returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
+Returns the named property.  These properties are defined by the app developer. It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
 
 ### `expose <name> <as>`
 
