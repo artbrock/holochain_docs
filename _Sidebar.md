@@ -25,6 +25,8 @@
  - [Testing](Holochain-Development-Testing)
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-One-Host)
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-Multi-Host)
+ ##### Dockerfiles and their rational (please add away)
+   - [dayzee core dev](dayzeecoredev)
 
 #### Command Line
  - ['hc' Command line usage](hc-Command)
