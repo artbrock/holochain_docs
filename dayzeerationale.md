@@ -1,5 +1,6 @@
 # List of Dockerfiles
-> the `./` context is assumed to be the root of a `git clone https://github.com/metacurrency/holochain.git`
+> the `./` context is assumed to be the root of a 
+> git clone https://github.com/metacurrency/holochain.git`
 
 * ./Dockerfile
  * creates an image from the latest master of github.com/metacurrency/holochain
