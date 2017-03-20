@@ -1,7 +1,6 @@
 # List of Dockerfiles
 
-> the `./` context is assumed to be the root of a 
-> git clone https://github.com/metacurrency/holochain.git`
+## Dockerfiles in `git clone https://github.com/metacurrency/holochain.git`
 
 * `./Dockerfile`
   > Its useful to have this here in this list for completeness, and for people who want to guarantee they have the lastest master of holochain in their image, rather than relying on dockerhub having the latest version
@@ -12,8 +11,10 @@
   * copies the current `./ -r` over the top of the base image, and runs `make`, `make bs` and `make test`
   * will fail on build if `make test` fails
 
-
-
+## Dockerfiles in `git clone https://github.com/<MY_PROJECT>/<MY_HOLOCHAIN_DNA>.git`
+  > built from a skeleton which includes Dockerfiles
+* `./Dockerfile`
+  
 # Overall rationale
 
 
