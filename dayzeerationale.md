@@ -40,7 +40,10 @@
 * Dockerfiles are designed to enable builds to be fast and regular. Any update to any source code requires a new docker build. build time for the docker image is the same as the time to compile the code and run the tests.
 * hc uses ~/.holochain on *your local machine*, as normal, as if there was no docker container. Holochain's that somehow store data outside the mechanisms built into hc need to persist stuff inside their own .holochain/<MY_HOLOCHAIN> directory.
 
-
+#### Dockerfile devleopers
+##### Caveats
+* The user and source envs are managed by a script /usr/local/bin/entrypoint.sh.addHostUserToContainer
+  * if you need to add your own entry point, make sure to copy this script into the top of your entry point, or else know what you are doing
 
 
 [dayzee core dev](dayzeecoredev)
