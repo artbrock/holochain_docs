@@ -21,7 +21,7 @@
 * `./Dockerfile.serveInstance` && `./Scripts/chain.joinAndServe`
   > This is used by the docker-compose.yml file to create an instance(s) of `hc server <MY_HOLOCHAIN>`
   * does `hc init <UNIQUE_CONTAINER_ID>`
-  * does `hc join <MY_SEEDED_HOLOCHAIN>
+  * does `hc join <MY_SEEDED_HOLOCHAIN>`
   * exposes the port 3141 for the hc web server
   
 # Overall rationale
