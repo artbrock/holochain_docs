@@ -12,8 +12,8 @@ These are system variables which are available within your application. They are
 
 ### Application Variables
  - **`App.DNAHash`** Stores the unique identifier of this Holochain's DNA. Nodes must run the same DNA to be on the same holochain.
- - **`App.Key.Hash`** Stores your peer's permanent node address on the DHT. This is the hash of the second entry (identity info) on your chain.
- - **`App.Agent.Hash`** Stores the hash of your public key. This is your self-validating address on the DHT which functions as a kind of alias pointing to your permanent key above.
+ - **`App.Key.Hash`** Stores the hash of your public key. This is your self-validating address on the DHT which functions as a kind of alias pointing to your permanent key above.
+ - **`App.Agent.Hash`** Stores your peer's permanent node address on the DHT. This is the hash of the second entry (identity info) on your chain.
  - **`App.Agent.String`** Stores the identity string used to initialize the holochain software with `hc init` If you  used JSON to embed multiple properties (such as FirstName, LastName, Email, etc), they can be retrieved here as App.Agent.FirstName, etc.
 
 ## Required Application Functions
