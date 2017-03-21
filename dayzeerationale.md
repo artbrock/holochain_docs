@@ -2,10 +2,10 @@
 
 #### Dockerfiles in `git clone https://github.com/metacurrency/holochain.git`
 
-* #####`./Dockerfile`
+* `./Dockerfile`
   > Its useful to have this here in this list for completeness, and for people who want to guarantee they have the lastest master of holochain in their image, rather than relying on dockerhub having the latest version
   * creates an image from the latest master of github.com/metacurrency/holochain
-* #####`./Dockerfile.coreDevelopment`
+* `./Dockerfile.coreDevelopment`
   > This is used for people who are developing the core code. Containers built on this image will allow the developer to manually interact with their new hc / bs servers from the command line
   * uses as a base image the result of `./Dockerfile`
   * splices the current `./ -r` over the top of the base image, and runs `make`, `make bs` and `make test`
@@ -13,12 +13,12 @@
 
 #### Dockerfiles in `git clone https://github.com/<MY_PROJECT>/<MY_HOLOCHAIN_DNA>.git`
   > built from a skeleton which includes Dockerfiles
-* #####`./Dockerfile.seedService` && `./Scripts/service.chain.seed`
+* `./Dockerfile.seedService` && `./Scripts/service.chain.seed`
   > This is used by the docker-compose.yml file to create an a seeded holochain from the DNA in the local filesystem
   * splices the current holochain DNA into the docker image
   * runs `hc seed <MY_HOLOCHAIN_DNA>`
   * makes the sedded holochain available on a docker volume to all the `./Dockerfile.serveInstances`
-* #####`./Dockerfile.serveInstance` && `./Scripts/chain.joinAndServe`
+* `./Dockerfile.serveInstance` && `./Scripts/chain.joinAndServe`
   > This is used by the docker-compose.yml file to create an instance(s) of `hc server <MY_HOLOCHAIN>`
   * does `hc init <UNIQUE_CONTAINER_ID>`
   * does `hc join <MY_SEEDED_HOLOCHAIN>
