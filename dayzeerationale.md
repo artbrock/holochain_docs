@@ -14,7 +14,10 @@
 #### Dockerfiles in `git clone https://github.com/<MY_PROJECT>/<MY_HOLOCHAIN_DNA>.git`
   > built from a skeleton which includes Dockerfiles
 * `./Dockerfile.seedService` && `./Scripts/service.chain.seed`
-  > This is used by the docker-compose.yml file to create an `hc seed <MY_HOLOCHAIN>` from the DNA in the local filesystem, which is shared between each `Dockerfile.serveInstance`
+  > This is used by the docker-compose.yml file to create an a seeded holochain from the DNA in the local filesystem
+  * splices the current holochain DNA into the docker image
+  * runs `hc seed <MY_HOLOCHAIN_DNA>`
+  * makes the sedded holochain available on a docker volume to all the `./Dockerfile.serveInstances`
 * `./Dockerfile.serveInstance` && `./Scripts/chain.joinAndServe`
   > This is used by the docker-compose.yml file to create an instance(s) of `hc server <MY_HOLOCHAIN>`
   * does `hc init <UNIQUE_CONTAINER_ID>`
