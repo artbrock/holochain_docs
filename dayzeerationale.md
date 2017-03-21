@@ -22,7 +22,7 @@
   > This is used by the docker-compose.yml file to create an instance(s) of `hc server <MY_HOLOCHAIN>`
   * does `hc init <UNIQUE_CONTAINER_ID>`
   * does `hc join <MY_SEEDED_HOLOCHAIN>`
-  * exposes the port 3141 for the hc web server
+  * exposes the port 3141 for the hc web server to a **random** port(s) on the host machine. docker should be queried to determine the port(s)
   
 # Overall rationale
 
