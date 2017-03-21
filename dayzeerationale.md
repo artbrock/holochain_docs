@@ -16,6 +16,7 @@
 * `./Dockerfile.seedService` && `./Scripts/service.chain.seed`
   > This is used by the docker-compose.yml file to create an a seeded holochain from the DNA in the local filesystem
   * splices the current holochain DNA into the docker image
+  * runs `hc clone` and `hc test` for the DNA
   * runs `hc seed <MY_HOLOCHAIN_DNA>`
   * makes the sedded holochain available on a docker volume to all the `./Dockerfile.serveInstances`
 * `./Dockerfile.serveInstance` && `./Scripts/chain.joinAndServe`
@@ -25,7 +26,8 @@
   * exposes the port 3141 for the hc web server to a **random** port(s) on the host machine. docker should be queried to determine the port(s)
   
 # Overall rationale
-
+* Dockerfiles are designed to enable builds to be fast and regular. Any update to any source code requires a new docker build. build time is no longer than the time to compile and run tests.
+* 
 
 
 [dayzee core dev](dayzeecoredev)
