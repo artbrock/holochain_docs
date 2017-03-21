@@ -32,9 +32,15 @@
   * does `hc join <MY_SEEDED_HOLOCHAIN>`
   * exposes the port 3141 for the hc web server to a **random** port(s) on the host machine. docker should be queried to determine the port(s)
   
+* multi agent testing
+
+  > we need to come up with a protocol for tests that require more than one hc serve instance. Once that is done, we can create a script / service which implements it
+
 # Overall rationale
-* Dockerfiles are designed to enable builds to be fast and regular. Any update to any source code requires a new docker build. build time is no longer than the time to compile and run tests.
-* 
+* Dockerfiles are designed to enable builds to be fast and regular. Any update to any source code requires a new docker build. build time for the docker image is the same as the time to compile the code and run the tests.
+* hc uses ~/.holochain on *your local machine*, as normal, as if there was no docker container. Holochain's that somehow store data outside the mechanisms built into hc need to persist stuff inside their own .holochain/<MY_HOLOCHAIN> directory.
+
+
 
 
 [dayzee core dev](dayzeecoredev)
