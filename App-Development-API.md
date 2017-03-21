@@ -1,6 +1,6 @@
 All Nuclei types provide access to the same Holochain API, which consists in a set of functions that allow you as a Holochain app developer to commit entries to your chain, put or get data from the DHT, and expose calls to a the UI.  
 
-## Pre-Registered Values 
+## Pre-Registered Values
 
 These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so App.DNAHash becomes App_DNAHash).
 
@@ -12,14 +12,15 @@ These are system variables which are available within your application. They are
 
 ### Application Variables
  - **`App.DNAHash`** Stores the unique identifier of this Holochain's DNA. Nodes must run the same DNA to be on the same holochain.
- - **`App.Agent.Hash`** Stores your peer's permanent node address on the DHT. This is the hash of the 2nd entry on your chain.
+ - **`App.Key.Hash`** Stores your peer's permanent node address on the DHT. This is the hash of the second entry (identity info) on your chain.
+ - **`App.Agent.Hash`** Stores the hash of your public key. This is your self-validating address on the DHT which functions as a kind of alias pointing to your permanent key above.
  - **`App.Agent.String`** Stores the identity string used to initialize the holochain software with `hc init` If you  used JSON to embed multiple properties (such as FirstName, LastName, Email, etc), they can be retrieved here as App.Agent.FirstName, etc.
 
-## Required Application Functions 
+## Required Application Functions
 
-There are a few functions that you **must** implement in your app as the Nucleus will call them as a result of other operations.
+There are a few functions that you **must implement** in your app as the Nucleus will call them as a result of other operations.
 
-### `genesis` 
+### `genesis`
 This function is called during system genesis (from ```hc gen chain``` for example). It executes just after the initial genesis entries are committed to your chain (1st - DNA entry, 2nd Identity entry).  It enables you specify any additional operations you want performed when a person joins your holochain, for example, you may want to add some user/address/key information to the DHT to announce the presence of this new node.
 
 ### `validate <entry-type> <entry-data> <props>`
@@ -28,7 +29,7 @@ Note: This function will soon be deprecated and replaced by having validation fu
 
 **The validation functions are the heart of ensuring distributed data integrity. Please consider them thoroughly and carefully as your systems data integrity is built from them.**
 
-Validation functions are called under two distinct conditions. 
+Validation functions are called under two distinct conditions.
 
  1. When you try to commit something to your own source chain, the data will be validated to ensure you aren't breaking shared validation agreements which would fork you out of your shared holochain.
  2. Whenever any node of the DHT receives a request to store or change data in some way, the request and the changes are validated against the source chain of the person making the request These are the validation functions that check permissions and enforce any other kind of data integrity you intend to preserve. For example, in a distributed Twitter, only Bob should be able to attach (putmeta) a "post" to Bob as if it is his, and only Bob should be able to putmeta Bob as a "follower" of Alice. _Please keep in mind that system variables like App.Agent.Hash that return your own address will not return YOUR address when being executed by a remote DHT node. Code your functions as if anyone will be running them, because they will be._
@@ -40,7 +41,6 @@ In this function you should add all your application logic about what constitute
 ## System Functions
 
 ### `property <name>`
-
 Returns the named property.  These properties are defined by the app developer. It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
 
 ### `expose <name> <as>`
@@ -65,7 +65,7 @@ Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously commit
 
 ### `get <hash>`
 
-Retrieves `<hash>` from the DHT. 
+Retrieves `<hash>` from the DHT.
 
 ### `putmeta <hash> <meta-hash> <meta-tag>`
 
@@ -73,23 +73,22 @@ Associates `<meta-hash>` with `<hash>` as `<meta-tag>` on the DHT.  `<hash>` and
 
 ### `getmeta <hash> <meta-tag>`
 
-Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the DHT. 
+Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the DHT.
 
 ## Deprecated Functions
 
 ### `property <name>`
 
-This function still works to return properties named in your DNA file which match your properties schema, but the previous fixed values for the application and holochain have been moved to system variables specified above. 
+This function still works to return properties named in your DNA file which match your properties schema, but the previous fixed values for the application and holochain have been moved to system variables specified above.
 
-- "_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNAHash)
-- "_agent_id" returns your unique node id / DHT Address (Replaced by App.Agent.Hash)
-- "_agent_name" returns the indentifier string you used when initiating your chain (Replaced by App.Agent.String)
+- "\_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNAHash)
+- "\_agent_id" returns your unique node id / DHT Address (Replaced by App.Agent.Hash)
+- "\_agent_name" returns the indentifier string you used when initiating your chain (Replaced by App.Agent.String)
 
-### `version` 
+### `version`
 
 Returns Holochain version (Deprecated - replaced by the HC.VERSION system variable)
 
-### `requires` 
+### `requires`
 
 (Deprecated - Replaced by parsing requirements specified in DNA file) This function lets you tell the system about requirements your app needs, currently just a version number of holochain itself, i.e. to prevent an app from running on an older version of the system.  The return value is an object (JS) or hash (zygo) with a key "version" who's value is the version number desired.
-
