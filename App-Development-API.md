@@ -79,8 +79,9 @@ Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the D
 
 ### `property <name>`
 
-This function still works to return properties named in your DNA file which match your properties schema, but the previous fixed values for the application and holochain have been moved to system variables specified above.
+Currently, this function returns properties described in your DNA file (assuming they match the properties schema).
 
+This function used to also return this fixed values, but these have since been made accessible elsewhere:
 - "\_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNAHash)
 - "\_agent_id" returns your unique node id / DHT Address (Replaced by App.Agent.Hash)
 - "\_agent_name" returns the indentifier string you used when initiating your chain (Replaced by App.Agent.String)
