@@ -49,14 +49,15 @@ The initial [Bitcoin white paper](https://bitcoin.org/bitcoin.pdf) introduced a 
 Now Bitcoin and blockchain have pervaded people's consciousness and many perceive it as a solution for all sorts of decentralized applications. However, when the problems are framed slightly differently, there are much more efficient and elegant solutions (like holochains) which don't have the [processing bottlenecks](https://www.google.com/search?q=blockchain+bottleneck) of global consensus, storage requirements of everyone having a [FULL copy](https://blockchain.info/charts/blocks-size) of all the data, or [wasting so much electricity](https://blog.p2pfoundation.net/essay-of-the-day-bitcoin-mining-and-its-energy-footprint/2015/12/20) on busywork.
 
 ## How is a Holochain different from a DHT (Distributed Hash Table)?
-DHTs enable key/value pair storage and retrieval across many machines. They typically use . They don't have consistent validation rules to confirm authenticity, provenance, or integrity of data sources.
+DHTs enable key/value pair storage and retrieval across many machines. The only validation rules they have is the hash of the data itself to confirm what you're getting is probably what you intended to get. They have no other means to confirm authenticity, provenance, timelines, or integrity of data sources.
 
-In fact, since many DHTs are used for illegal file sharing (Napster, Bittorrent, Sharezaa, etc.), they are designed to protect anonymity of uploaders so they don't get in trouble. File sharing DHTs frequently serve virus infected files, planted by uploaders intending to infect folks grabbing free software, music, or movies. There's no accountability nor assurance that data is what you want it to be.
+In fact, since many DHTs are used for illegal file sharing (Napster, Bittorrent, Sharezaa, etc.), they are designed to protect anonymity of uploaders so they won't get in trouble. File sharing DHTs frequently serve virus infected files, planted by uploaders trying to infect digital pirates. There's no accountability for actions or reliable way to ensure bad data doesn't spread.
 
-By embedding validation rules in the propagation of data we can keep DHT data bound to signed sources. This can provide similar consistency and rule enforcement as blockchain approaches while completely eliminating the consensus bottleneck by enabling direct transaction between parties and their chains.
+By embedding validation rules as a condition for the propagation of data, our DHT keeps its data bound to signed source chains. This can provide similar consistency and rule enforcement as blockchain ledgers asynchronously so bottlenecks of immediate consensus become of the thing of the past.
 
-This allow the DHT to leverage the source chains to ensure tamper-proof immutability of data, as well as cryptographic signatures to verify its origins and provenance.
+The DHT leverages the signed source chains to ensure tamper-proof immutability of data, as well as cryptographic signatures to verify its origins and provenance.
 
+The Holochain DHT also emulates aspects of a graph database by enabling people to connect links to other hashes in the DHT tagged with semantic markers. This helps solve the problem of finding the hashes that you want to retrieve from the DHT. For example, if I have the hash of your user identity, I could query it for links to blogs you've published to a holochain so that I can find them without knowing either the hash or the content. This is part of how we eliminate the need for tracking nodes that many DHTs rely on.
 
 ## What kind of projects is Holochain good for?
 Sharing collaborative data without centralized control. Imagine a completely decentralized Wikipedia, DNS without root servers, or the ability to have fast reliable queries on a fully distributed PKI, etc.
