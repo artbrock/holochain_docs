@@ -1,8 +1,8 @@
-#Holochain Development
+# Holochain Development
 
 First we will take you through the development process using an example Holochain App DNA from our own repository, and then we will show you how to use a skeleton to start your own project.
 
-##A Simple Working Example with `examples/clutter`
+## A Simple Working Example with `examples/clutter`
 
 1. Install the ***latest*** version of Docker Compose directly from [the docker website](https://docs.docker.com/compose/install/) - ( You may have to install Docker too)
 2. Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
@@ -76,5 +76,5 @@ First we will take you through the development process using an example Holochai
 
 9. TODO check out if docker-compose updates running containers if images are changed????
 
-#The Bootstrap Server
+## The Bootstrap Server
 hc instances use our holochain of holochains to self locate onto the network. The (admitedly rather simple!) output of this can be seen at http://bootstrap.holochain.net:10000
