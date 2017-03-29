@@ -24,19 +24,27 @@ There are a few functions that you **must implement** in your app as the Nucleus
 ### `genesis`
 This function is called during system genesis (from ```hc gen chain``` for example). It executes just after the initial genesis entries are committed to your chain (1st - DNA entry, 2nd Identity entry).  It enables you specify any additional operations you want performed when a person joins your holochain, for example, you may want to add some user/address/key information to the DHT to announce the presence of this new node.
 
-### `validate <entry-type> <entry-data> <props>`
+### Validation functions:
 
-Note: This function will soon be deprecated and replaced by having validation functions for each type of DHT operation which requires it (e.g. validatePut, validatePutMeta, validateDel, validateDelMeta, etc.)
+### `validateCommit <entry-type> <entry> <header> <sources>`
+
+This function gets called when an entry is about to be committed to a source chain.  Use this function to describe the agreements about data as it should be added to shared holochain.  This function gets called for all entry types.
+
+### `validatePut <entry-type> <entry> <header> <sources>`
+
+This function gets called when and entry is about to be committed to the DHT on any node.  It is very likely that this validation routine should check the same data integrity as validateCommit, but, as it happens during a different part of the data life-cycle, it may require additonal validation steps.  [add example here]  This function will only get called on entry types with "public" sharing, as they are the only types that get put to the DHT by the system.
+
+### `validateLink <linkEntryType> <baseHash> <linkHash> <tag> <sources>`
+
+This function gets called when ever a link is about to be added to the DHT.  Links are added for every linking element in the special "links" entry type.  Note that this is a DHT level validation routine, in that it gets called when the Link message is received by a DHT node, not when the linking entry is committed.  The regular validateCommit routine gets called as usual when that entry is committed to the source chain.
 
 **The validation functions are the heart of ensuring distributed data integrity. Please consider them thoroughly and carefully as your systems data integrity is built from them.**
 
 Validation functions are called under two distinct conditions.
 
- 1. When you try to commit something to your own source chain, the data will be validated to ensure you aren't breaking shared validation agreements which would fork you out of your shared holochain.
- 2. Whenever any node of the DHT receives a request to store or change data in some way, the request and the changes are validated against the source chain of the person making the request These are the validation functions that check permissions and enforce any other kind of data integrity you intend to preserve. For example, in a distributed Twitter, only Bob should be able to attach (putmeta) a "post" to Bob as if it is his, and only Bob should be able to putmeta Bob as a "follower" of Alice. _Please keep in mind that system variables like App.Agent.Hash that return your own address will not return YOUR address when being executed by a remote DHT node. Code your functions as if anyone will be running them, because they will be._
+ 1. When data is about to be added to the local chain (validateCommit).
+ 2. Whenever any node of the DHT receives a request to store or change data in some way, the request and the changes are validated against the source chain of the person making the request (validatePut,validateLink.) These are the validation functions that check permissions and enforce any other kind of data integrity you intend to preserve. For example, in a distributed Twitter, only Bob should be able to attach (link) a "post" to Bob as if it is his, and only Bob should be able to link Bob as a "follower" of Alice. _Please keep in mind that system variables like App.Agent.Hash that return your own address will not return YOUR address when being executed by a remote DHT node. Code your functions as if anyone will be running them, because they will be._
 
-In this function you should add all your application logic about what constitutes valid nodes.  The `<props>` argument will be an argument with various properties useful for validation such:
-- `<MetaTag>` if not an empty string, this value indicates validation in the context of putMeta, and will be the value of the tag being putmetaed
 - `<Sources>` an array of the sources that created this entry
 
 ## System Functions
@@ -60,32 +68,45 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 
 ## DHT Functions
 
-### `put <hash>`
-
-Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously committed entry. Every DHT node who receives this put request as it is circulated via gossip, will call back to retrieve the source data from the source chain that published it. They will then confirm the signatures, chain integrity, and any other validation rules in written in the app.
-
 ### `get <hash>`
 
 Retrieves `<hash>` from the DHT.
 
-### `putmeta <hash> <meta-hash> <meta-tag>`
-
-Associates `<meta-hash>` with `<hash>` as `<meta-tag>` on the DHT.  `<hash>` and `<meta-hash>` must be the hash of a previously committed entries. You might think of this as creating graph entries, linking one bit of data to other data.
-
-### `getmeta <hash> <meta-tag>`
+### `getlink <hash> <tag>`
 
 Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the DHT.
+
+### `property <name>`
+
+Currently, this function returns properties described in your DNA file.
+
+This function used to also return this fixed values, but these have since been made accessible elsewhere:
+- "\_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNA.Hash)
+- "\_agent_id" returns your unique node id / DHT Address (Replaced by App.Agent.Hash)
+- "\_agent_name" returns the indentifier string you used when initiating your chain (Replaced by App.Agent.String)
 
 ## Deprecated Functions
 
 ### `property <name>`
 
-Currently, this function returns properties described in your DNA file (assuming they match the properties schema).
+Currently, this function returns properties described in your DNA file.
 
 This function used to also return this fixed values, but these have since been made accessible elsewhere:
-- "\_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNAHash)
+- "\_id" returns the hash of the holochain DNA, which is its unique identifier (Replaced by App.DNA.Hash)
 - "\_agent_id" returns your unique node id / DHT Address (Replaced by App.Agent.Hash)
 - "\_agent_name" returns the indentifier string you used when initiating your chain (Replaced by App.Agent.String)
+
+### `put <hash>`
+
+This function used to publish data to the DHT.  Now puts occur as a part of the `commit` function.
+
+Publishes `<hash>` to the DHT.  `<hash>` must be the hash of a previously committed entry. Every DHT node who receives this put request as it is circulated via gossip, will call back to retrieve the source data from the source chain that published it. They will then confirm the signatures, chain integrity, and any other validation rules in written in the app.
+
+### `putmeta <hash> <meta-hash> <meta-tag>`
+
+This function used to publish data to the DHT.  Now puts occur as a part of the `commit` function, when you commit entries of the special "links" type.
+
+Associates `<meta-hash>` with `<hash>` as `<meta-tag>` on the DHT.  `<hash>` and `<meta-hash>` must be the hash of a previously committed entries. You might think of this as creating graph entries, linking one bit of data to other data.
 
 ### `version`
 
