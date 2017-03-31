@@ -20,13 +20,9 @@
 
 #### System Launch and Testing (on Docker)
  - [Introduction](Holochain-Development-Introduction)
- - [Simple Example](Holochain-Development-Simple-Example)
- - [Clutter Example](Holochain-Development-Clutter-Example)
- - [Testing](Holochain-Development-Testing)
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-One-Host)
  - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-Multi-Host)
- ##### Dockerfiles and their rational (please add away)
-   - [dayzee rationale](dayzeerationale)
+ - Dockerfiles: How and Why(dayzeerationale)
 
 #### Command Line
  - ['hc' Command line usage](hc-Command)
