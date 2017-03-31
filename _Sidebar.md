@@ -21,8 +21,6 @@
 #### System Launch and Testing (on Docker)
  - [Introduction](Holochain-Development-Introduction)
  - [[Docker Usage]]
- - [Testing Multi User, One Host](Holochain-Development-Testing-Multi-User-One-Host)
- - [Testing Multi User, Multi Host](Holochain-Development-Testing-Multi-User-Multi-Host)
  - [Dockerfiles: How and Why](dayzeerationale)
 
 #### Command Line
