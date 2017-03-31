@@ -13,25 +13,27 @@ USAGE:
    hc [global options] command [command options] [arguments...]
 
 VERSION:
-   0.0.1
+   0.0.3 (holochain 4)
 
 COMMANDS:
-     clone, c   clone a holochain instance from a source
-     gen, g     generate genesis entries or keys for a cloned holochain
-     init, i    boostrap the holochain service
-     join, j    join an existing holochain
-     dump, d    display a text dump of a chain
-     test, t    run validation against test data for a chain in development
-     status, s  display information about installed chains
-     call, c    call an exposed function
-     bs, b      send bootstrap tickler to the chain bootstrap server
-     serve, w   serve a chain to the web
-     help, h    Shows a list of commands or help for one command
+     init, i           bootstrap the holochain service
+     clone, cl, c      clone a holochain instance from a source
+     test, t           run validation against test data for a chain in development
+     genesis, gen, g   generate genesis entries or keys for a cloned holochain
+     web, serve, w     serve a chain to the web on localhost:<port> (defaults to 3141)
+     call, ca          call an exposed function
+     dump, d           display a text dump of a chain
+     join, c           joins a holochain by copying an instance from a source and generating genesis blocks
+     reset, r          reset a chain. Warning this destroys all chain data!
+     seed              seed calculates DNA hashes and builds DNA file without generating genesis entries.  Useful only for testing and development.
+     status, s         display information about installed chains
+     template, dev, t  generate a configuration file template suitable for editing
+     help, h           Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-   --verbose      verbose output
    --debug        debugging output
    --path value   path to holochain directory (default: ~/.holochain)
+   --verbose, -V  verbose output
    --help, -h     show help
    --version, -v  print the version
 
