@@ -2,7 +2,7 @@ All Nuclei types provide access to the same Holochain API, which consists in a s
 
 ## Pre-Registered Values
 
-These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so App.DNAHash becomes App_DNAHash).
+These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so `App.DNAHash` becomes `App_DNAHash`).
 
 ### System Variables
  - **`HC.VERSION`** Returns the version of the Holochain software
