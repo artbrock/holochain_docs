@@ -72,6 +72,10 @@ Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the D
 
 ## Deprecated Functions
 
+### `expose <name> <as>`
+
+This function used to declares to the Nucleus that it should expose your function `<name>` to the outside world for calling. `<as>` declares the calling and return parameter types. You now must declare these functions in the DNA file itself under the `Functions` section.
+
 ### `property <name>`
 
 Currently, this function returns properties described in your DNA file.
