@@ -5,9 +5,7 @@ All Nuclei types provide access to the same Holochain API, which consists in a s
 These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so App.DNAHash becomes App_DNAHash).
 
 ### System Variables
- - **`HC.VERSION`** (being implemented) Returns the version of the Holochain software
- - **`HC.JSON`** Used with `expose` to specify that a function expects to receive data in this format
- - **`HC.STRING`** Used with `expose` to specify that a function expects to receive data in this format
+ - **`HC.VERSION`** Returns the version of the Holochain software
  - **`HC.MERKLE`** (to be implemented in Security Pass Milestone)
 
 ### Application Variables
@@ -51,10 +49,6 @@ Validation functions are called under two distinct conditions.
 
 ### `property <name>`
 Returns the named property.  These properties are defined by the app developer. It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
-
-### `expose <name> <as>`
-
-Declares to the Nucleus that it should expose your function `<name>` to the outside world for calling.  `<as>` declares the calling and return parameter types.  Currently this can be either `"JSON"` or `"STRING"`  In the JavaScript nucleus these are defined on a global `HC` object, i.e. you would use `HC.JSON` or `HC.STRING`
 
 ## Functions for Chain Operations
 
