@@ -1,16 +1,12 @@
 # Holochain Application Development
 
-
-
-
-
 ## Holochain Documentation Notes
 Show Diagrams and Subsystems
 
 ### Nucleus
 As the nucleus of a cell contains the DNA instructions for that cell, holochains have a few different nucleii which can contain the Application code for a segment of the holochain. 
- - **Zygomys** - Zygo is a Lisp environment which runs inside go. You run the Zygo nucleus if you want to build your application in Lisp. The business rules, data validation components, and UI interfaces for your distributed app would be written in Zygomys Lisp. We found Zygo and it seemed like a fun place to start since we're fans of Lisp. This is currently the default Holochain Nucleeus. (Status: Operational)
- - **Javascript** - (Status: Partially Implemented) We've implemented JavaScript data schemas, and interfaces, but we haven't yet integrated a JavaScript scripting engine. When we do, it will probably be [Otto](https://github.com/robertkrimen/otto)
+ - **Zygomys** - Zygo is a Lisp environment which runs inside go. You run the Zygo nucleus if you want to build your application in Lisp. The business rules, data validation components, and UI interfaces for your distributed app would be written in Zygomys Lisp. We found Zygo and it seemed like a fun place to start since we're fans of Lisp. This is currently the default Holochain Nucleus. (Status: Operational)
+ - **Javascript** - You can also use a JavaScript for developing your code.  The JavaScript Nucleus is implemented using the [Otto](https://github.com/robertkrimen/otto) go engine. (Status: Operational)
  - **P3** - Since holochains are a component of the larger Ceptr project, we will implement our semantic trees and self describing protocols, P3 (Protocol for Pluggable Protocols).
  -  **Other** - (Status: Not Implemented) Do you like to code in Lua? Ruby? Python? Scheme? PHP? You can implement a Nucleus for your favorite language to code your distributed application by following the process we used for the above Nucleii. This page has a great [list Go Scripting Languages and VMs.](https://github.com/golang/go/wiki/Projects#virtual-machines-and-languages)
 
