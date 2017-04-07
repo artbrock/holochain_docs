@@ -10,6 +10,7 @@
  - [Functions Exposed to Nucleus](App-Development-API)
 
 #### App Developer Reference
+ - [App DNA](App-DNA)
  - [Nucleus: App Core](App-Development)
  - [Nucleus: API](App-Development-API)
 <!-- - [Building in P3](Building-in-P3) -->
