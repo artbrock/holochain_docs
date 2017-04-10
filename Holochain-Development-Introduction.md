@@ -1,5 +1,15 @@
 # Holochain Development
 
+## Rationale 
+The holochain skeleton includes a set of scripts that use docker. The guiding principal is that your personal development tools should be untouched. Installation of docker and docker-compose, add your development user to the `docker` group, and you have complete access to the full suite of development and publising tools available from the Holochain commnunity.
+
+## Toolchain
+Please take the time to read this page thoroughly, at least once :), so that it is clear what are the capacities of the toolchain.
+
+### 1. docker for docker's sake
+
+
+
 First we will take you through the development process using an example Holochain App DNA from our own repository, and then we will show you how to use a skeleton to start your own project.
 
 ## A Simple Working Example with `examples/clutter`
