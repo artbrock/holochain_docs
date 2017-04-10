@@ -13,12 +13,12 @@
  - [App DNA](App-DNA)
  - [Nucleus: App Core](App-Development)
  - [Nucleus: API](App-Development-API)
-<!-- - [Building in P3](Building-in-P3) -->
+ - [Test Driven App Development](App-Testing) 
  - [Source Chain Operations (Personal Data)](Chain-Operations)
  - [DHT Operations (Shared Data)](DHT-Operations)
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
- - [Test Driven App Development](App-Testing) 
+<!-- - [Building in P3](Building-in-P3) -->
 
 #### System Launch and Testing (on Docker)
  - [Introduction](Holochain-Development-Introduction)
