@@ -6,7 +6,7 @@ The holochain skeleton includes a set of scripts that use docker. The guiding pr
 ## Toolchain
 Please take the time to read this page thoroughly, at least once :), so that it is clear what are the capacities of the toolchain.
 
-### 1. docker for docker's sake
+### 1. 1
 
 
 
