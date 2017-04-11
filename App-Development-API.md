@@ -66,9 +66,9 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 
 Retrieves `<hash>` from the DHT.
 
-### `getlink <hash> <tag>`
+### `getlink <base> <tag> [<options>]`
 
-Retrieves a list of meta values of tagged as `<meta-tag>` on `<hash>` from the DHT.
+Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the only options is: `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.
 
 ## Deprecated Functions
 
