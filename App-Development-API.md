@@ -68,7 +68,7 @@ Retrieves `<hash>` from the DHT.
 
 ### `getlink <base> <tag> [<options>]`
 
-Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the only options is: `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.
+Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the only options is: `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
 
 ## Deprecated Functions
 
