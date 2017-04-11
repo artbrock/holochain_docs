@@ -14,10 +14,14 @@ There will be a subdirectory for the [command line shell](hc-Command) for intera
 
  Name | Description
  ----:|:----------
- chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. This is a key-value store powered by ((Bolt/Bundt))
-dna.conf | The DNA configuration file which specifies the application code (zome files) and holochain name and identifiers
-zome_\<name> | These are the application files. They will end in .zy if they're zygomys/Lisp files, .js if they're JavaScript, etc.
-ui  | This is the directory where you'll find user interface files (HTML, CSS, JavaScript, etc.) You can install additional UX/UI systems or components by dropping them into subdirectories here.
+dna | This directory contains the DNA that defines your application
+dna/dna.json | The DNA configuration file which specifies the application code (zome files) and holochain name and identifiers
+dna/<zome_name>/ | Directory contains the zome specific application files. They will end in .zy if they're zygomys/Lisp files, .js if they're JavaScript, etc.
+db | This directory contains chain and DHT data
+db/chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. 
+db/dht.db } This is your node's DHT store.  It is a key-value store powered by ((Bundt))
+ui  | This is the directory where you'll find user interface files (HTML, CSS, JavaScript, etc.) You can install additional UX/UI systems or components by dropping them into sub-directories here.
+test | This directory contains your [application tests](App-Testing).
 
 ### Mac
 Probably same as Linux... We'll need to check and update this. Can someone help us out here?  @haizop ? @matthewjosef ?
