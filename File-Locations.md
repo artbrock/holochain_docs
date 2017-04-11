@@ -19,7 +19,7 @@ dna/dna.json | The DNA configuration file which specifies the application code (
 dna/<zome_name>/ | Directory contains the zome specific application files. They will end in .zy if they're zygomys/Lisp files, .js if they're JavaScript, etc.
 db | This directory contains chain and DHT data
 db/chain.db | This is your local hashchain that you sign new entries to as you commit changes to your state in this holochain. 
-db/dht.db } This is your node's DHT store.  It is a key-value store powered by ((Bundt))
+db/dht.db | This is your node's DHT store.  It is a key-value store powered by ((Bundt))
 ui  | This is the directory where you'll find user interface files (HTML, CSS, JavaScript, etc.) You can install additional UX/UI systems or components by dropping them into sub-directories here.
 test | This directory contains your [application tests](App-Testing).
 
