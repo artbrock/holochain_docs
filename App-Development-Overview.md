@@ -1,16 +1,37 @@
-# Holochain Application Development
 
-## Holochain Documentation Notes
-Show Diagrams and Subsystems
+Show Diagram with Subsystems
 
-### Nucleus
+## Holochain Applications 
+Holochain applications have four types of files
+ 1. DNA Config file
+ 2. JSON Data Schemas
+ 3. Zome Scripts 
+ 4. UI Files
+
+### 1. DNA Configuration Files
+brief description
+details here --> link
+
+### 2. JSON Data Schemas
+brief description of entry types as data for chains and DHT
+details here --> link
+
+### 3. Zome Scripts 
+This is where the real application development takes place
+Link to Nucleus API
+
+### 4. UI Files
+in the /UI directory which expose functions to web server or web sockets
+
+
+#### Nucleus & Nucleus Types
 As the nucleus of a cell contains the DNA instructions for that cell, holochains have a few different nucleii which can contain the Application code for a segment of the holochain. 
  - **Zygomys** - Zygo is a Lisp environment which runs inside go. You run the Zygo nucleus if you want to build your application in Lisp. The business rules, data validation components, and UI interfaces for your distributed app would be written in Zygomys Lisp. We found Zygo and it seemed like a fun place to start since we're fans of Lisp. This is currently the default Holochain Nucleus. (Status: Operational)
  - **Javascript** - You can also use a JavaScript for developing your code.  The JavaScript Nucleus is implemented using the [Otto](https://github.com/robertkrimen/otto) go engine. (Status: Operational)
  - **P3** - Since holochains are a component of the larger Ceptr project, we will implement our semantic trees and self describing protocols, [P3 (Protocol for Pluggable Protocols)](http://ceptr.org/projects/pcubed).
  -  **Other** - (Status: Not Implemented) Do you like to code in Lua? Ruby? Python? Scheme? PHP? You can implement a Nucleus for your favorite language to code your distributed application by following the process we used for the above Nucleii. This page has a great [list Go Scripting Languages and VMs.](https://github.com/golang/go/wiki/Projects#virtual-machines-and-languages)
 
-### Distributed Application Development
+#### Distributed Application Development
 **Data Schemas:** You need to provide data schemas to validate data stored in chain entries or passed over the network (between the UI and application, and between application instances on different DHT nodes which need to get, put, find, replicate/gossip & validate data with each other).
 
 **Validation Rules:** Validation rules are at the heart of holochains in that they are the basis for that only data that conforms to shared validation rules, propagates across the DHT (shared data space). They are used to ensuring data provenance, integrity and accountability. 
@@ -22,7 +43,7 @@ When you commit a new entry on your local source chain, the chain will call back
  - **ValidateSig(SourceNodeID,sig,hash):** You supply the address of the source chain (which be yourself to confirm locally, or can be someone else to have them confirm their signature), and the signature, and hash that you want to confirm. The system confirms that this is the signing of that hash based on source keys.
  - **ValidateChain(SourceNodeID,hashID):** Which confirms that a the provided hash is in fact signed to that source chain. It returns either an error (if its not in the chain), or the hash of it's previous chain link.
 
-### Application Logic
+#### Application Logic
 Application logic that needs to be validated. For example, if you're application is a mutual credit currency, you probably need to validate that a person spending currency had an adequate balance from which to spend (or at least an adequate credit limit). This probably involves stepping through that person's whole chain and calculating the running balance.
 
 In other words, if you need to validate someone was in a certain state such that they were allowed to perform an action, you probably have to build to that state from the history in their chain, from the beginning.
