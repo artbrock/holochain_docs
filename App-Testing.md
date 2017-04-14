@@ -17,8 +17,7 @@ A single test consists of a json object of the form:
 }
 ```
 
-Test files (which live in the `test` [directory](File-Locations)) consist of an array of test which get executed in the order they appear in the file, unless the test has a non-zero `Time` value, in which case it is queued for executing at the specified time (in milliseconds as measured from the beginning of the when the test started.)
-
+Test files consist of an array of tests of the above format. They live in the `test` [directory](File-Locations), or in a scenario sub-directory in that directory (see multi-node testing below).  Tests in a test file get executed in the order they appear in the file unless the test has a non-zero `Time` value, in which case it is queued for executing at the specified time (in milliseconds as measured from the beginning of the when the test started.)
 
 ## Single node testing
 1. Code you application (let's assume it lives in the directory: `my_app`)
