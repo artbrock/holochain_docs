@@ -1,2 +1,4 @@
 - Use [the waffle](https://waffle.io/metacurrency/holochain) to coordinate documentation tasks (put tasks under one of the documentation milestones)
+- If you want feedback on some writing or changes, add a waffle ticket, or a comment to an existing ticket.
+- New pages should be incorporated into the [sidebar](https://github.com/metacurrency/holochain/wiki/_Sidebar/_edit)
 - Add the the word TODO (all caps no spaces) directly in places in the wiki where things need to be added. This allows us to [search](https://github.com/metacurrency/holochain/search?q=TODO&type=Wikis&utf8=%E2%9C%93) for them.
