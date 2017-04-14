@@ -70,7 +70,7 @@ Documentation coming out of the Hackathon presently.
 We support JSON Data Schemas
 
 ### Validation Rules
-Scripted in [Zygomys](https://github.com/glycerine/zygomys)
+Scripted in [Javascript](https://github.com/robertkrimen/otto) or [Lisp](https://github.com/glycerine/zygomys)
 
-### Sockets for Web UI
-For now we expect to run these via a web browser UI.
+### UI via light-weight built-in web server
+For now we expect to run these via a web browser UI.  Future development plans include templates for Electron Apps as well mobile platforms.
