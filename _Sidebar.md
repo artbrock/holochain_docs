@@ -28,3 +28,5 @@
 #### Command Line
  - ['hc' Command line usage](hc-Command)
  - [File Locations](File-Locations)
+
+#### [Documentation Protocols](Documentation-Protocols)
