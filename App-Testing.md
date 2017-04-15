@@ -2,7 +2,7 @@
 
 We have provided a testing harness for test-driven holochain application development.
 
-A single test consists of a json object of the form:
+Tests consists of a json objects of the form:
 
     ``` go
     {
@@ -13,13 +13,15 @@ A single test consists of a json object of the form:
 	Output: string      // the expected output to match against (full match)
 	Err:    string      // the expected error to match against
 	Regexp: string      // the expected out to match again (regular expression)
-	Time:   int         // offset in milliseconds from the start of the test at which to run this test.
+	Time:   int         // offset in milliseconds from the start of the test at which to run this test
+                            // if `Time` is null or 0, tests are executed in the order discovered in the test file
     }
     ```
 
-    * each *.json test file contains an array of zero or more such json objects
-    * tests in a test file get executed in the order they appear in the file 
-      * unless the `Time` property is non-zero, in which case that test is queued for executing at the specified time (in milliseconds from the start of the test)
+each *.json test file contains an array of zero or more such json objects
+the `Time`
+tests in a test file get executed in the order they appear in the file 
+  - unless the `Time` property is non-zero, in which case the test is queued to execute at the specified time (in millis from the start of the test)
 
 
 ### application skeleton @ [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
