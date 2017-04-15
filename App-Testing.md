@@ -13,10 +13,11 @@ Each test file consists of an array of json objects of the form:
 	Output: string      // the expected output to match against (full match)
 	Err:    string      // the expected error to match against
 	Regexp: string      // the expected out to match again (regular expression)
-	Time:   int         // offset in milliseconds from the start of the test at which to run this test
-                            // if `Time` is null or 0, tests are executed in the order discovered in the test file
+	Time:   int         // delay in millis before running this test
     }
     ```
+    - if `Time` is null or 0, tests are executed in the order discovered in the test file
+
 
 ### application skeleton @ [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
 #### file skeleton for a holochain app
