@@ -17,7 +17,7 @@ Each test file consists of an array of json objects of the form:
     }
     ```
     
-    - if `Time` is null or 0, tests are executed in the order discovered in the test file
+- if `Time` is null or 0, tests are executed in the order discovered in the test file
 
 
 ### application skeleton @ [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
