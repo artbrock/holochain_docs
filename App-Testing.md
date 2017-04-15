@@ -18,19 +18,19 @@ Each test file consists of an array of json objects of the form:
     
 - if `Time` is null or 0, tests are executed in the order discovered in the test file
   - in general the `Time` parameter is used to allow sufficient space for gossip operations between nodes on the DHT. 
-  - in other words, in a sequence tests of messages sent and received between holochain servers, between 50 to 200 millis is required for message arrival.
-  - the 50 to 200 millis number works well within the test harness. tests covering external networks may require much more time, or some other mechanism
+  - in other words, to test a sequence of messages sent and received between holochain servers, between 50 to 200 millis is required for message arrival.
+    - role1.json >> "send message, Time = 0"
+    - role2.json >> "check for message, Time = 100"
+  - the 50 to 200 millis number works well within the test harness network. tests crossing external networks may require much more time for messages to be delivered.
+
 
 ## integrating tests into your holochain application
-
 the holochain application skeleton can be found at [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
 
 directory structure:
 - repo_root
-  - dna
-    - [dna specification](link-to-dna-specification)
-  - ui
-    - [ui specification](link-to-ui-specification)
+  - [dna](link-to-dna-specification)
+  - [ui](link-to-ui-specification)
   - test
     - singleNodeTest.1.json
     - singleNodeTest.2.json
@@ -42,9 +42,11 @@ directory structure:
     - scenario.myScenario.2
       - etc...
 
-- tests scenarios and roles may have any names, as long as the test files have the .json extension
-- singleNodeTests can be run with 
-    ```hc clone -force my_app my_app  && hc test my_app`
+- test files and directories may may have any names, as long as the test files have the .json extension
+- singleNodeTests can be run with
+    
+    ```
+    hc clone -force my_app my_app  && hc test my_app`
     ```
 
 ## Multi-node testing
