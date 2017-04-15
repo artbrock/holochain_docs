@@ -24,13 +24,13 @@ Each test file consists of an array of json objects of the form:
   - the 50 to 200 millis number works well within the test harness network. tests crossing external networks may require much more time for messages to be delivered.
 
 
-## integrating tests into your holochain application
-the holochain application skeleton can be found at [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
+## Integrating tests into your holochain application
+The holochain application skeleton can be found at [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
 
 directory structure:
 - repo_root
-  - [dna](link-to-dna-specification)
-  - [ui](link-to-ui-specification)
+  - [dna](DNA-Reference)
+  - [ui](UI-Reference)
   - test
     - singleNodeTest.1.json
     - singleNodeTest.2.json
