@@ -42,18 +42,27 @@ directory structure:
     - scenario.myScenario.2
       - etc...
 
-- test files and directories may may have any names, as long as the test files have the .json extension
-- singleNodeTests can be run with
+- test files with a .json extension are automatically discovered
+- to run all the singleNodeTests, repo_root/test/*.json, use this command:
     
-    ```
+    ```bash
     hc clone -force my_app my_app  && hc test my_app`
     ```
+- to synchronously run the complete suite of role's from a particular scenario, use this command:
 
-## Multi-node testing
+    ```bash
+    repo_root/Scripts/testScenario <scenarioName>
+    ```
 
-Each sub-directory should contain test files that will define the actions taken by the different nodes which get run simultaneously by the testing harness in separate docker instances.  You should think of each of these as roles in the scenario.  To run a scenario test simply type: `./Scripts/testScenario <scenario-name>`
+## Multi-node testing, how to construct a scenario
 
-To write mult-node tests, you must take into account timing.  The tests on the different nodes all start at relatively the same time, so you establish back & forth behavior by setting a time (in ms from the start) for the test to execute in the `Time` value.  You can add a _config.json file to the scenario directory of the following format:
+Each test/scenario sub-directory should contain one test file for each role required to model the test. Filenames are automatically discovered.
+
+Tests pass or fail on the basis of the *content* of messages passed between roles/nodes on in the network. In order to test the content of messages passed between roles, it is necessary for tests to account for the *amount of time* it takes for messages to travel between nodes on the network. This is achived with the `Time` parameter of the test object. If roles 1 and 2 are called *back* and *forth* respectively, then when *forth* sends a message, *back* should wait at least 50ms for checking to see if there are messages that contain the expected content. If the message has not yet arrived, then the test will fail.
+
+Note, it might make sense to implment both an automatic backnforth test generator, and also an asynchronous method of testing for the test arrival (e.g. a message id)
+
+You can add a _config.json file to the scenario directory of the following format:
 ``` json
 {
     "GossipInterval":500,
