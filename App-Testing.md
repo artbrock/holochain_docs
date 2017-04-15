@@ -1,7 +1,6 @@
 # Test Driven App Development
 
-We have provided a testing harness for test-driven holochain application development.
-
+## Test file format
 Each test file consists of an array of json objects of the form:
 
     ``` go
@@ -18,30 +17,35 @@ Each test file consists of an array of json objects of the form:
     ```
     
 - if `Time` is null or 0, tests are executed in the order discovered in the test file
+  - in general the `Time` parameter is used to allow sufficient space for gossip operations between nodes on the DHT. 
+  - in other words, in a sequence tests of messages sent and received between holochain servers, between 50 to 200 millis is required for message arrival.
+  - the 50 to 200 millis number works well within the test harness. tests covering external networks may require much more time, or some other mechanism
 
+## integrating tests into your holochain application
 
-### application skeleton @ [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
-#### file skeleton for a holochain app
+the holochain application skeleton can be found at [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
+
+directory structure:
 - repo_root
   - dna
+    - [dna specification](link-to-dna-specification)
   - ui
+    - [ui specification](link-to-ui-specification)
   - test
-    - test1.json [singleNodeTest]
-    - test2.json [singleNodeTest]
-    - scenario.myScenario1
+    - singleNodeTest.1.json
+    - singleNodeTest.2.json
+    - scenario.myScenario.1
       - role1.json
       - role2.json
       - ...
       - roleN.json
-    - scenario.myScenario2
+    - scenario.myScenario.2
       - etc...
 
-Each json test file consists of an array of test objects. They live in the `test` [directory](File-Locations), or in a scenario sub-directory in that directory.  
-
-## Single node testing
-1. Code you application (let's assume it lives in the directory: `my_app`)
-2. Write your tests and place them into the `my_app/test` directory
-3. Clone and run your app tests with `hc clone -force my_app my_app  && hc test my_app`
+- tests scenarios and roles may have any names, as long as the test files have the .json extension
+- singleNodeTests can be run with 
+    ```hc clone -force my_app my_app  && hc test my_app`
+    ```
 
 ## Multi-node testing
 
