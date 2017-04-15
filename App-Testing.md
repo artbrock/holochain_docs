@@ -4,8 +4,8 @@ We have provided a testing harness for test-driven holochain application develop
 
 A single test consists of a json object of the form:
 
-``` go
-{
+    ``` go
+    {
 	Convey: string      // a human readable description of the tests intent
 	Zome:   string      // the zome in which to find the function
 	FnName: string      // the function to call
@@ -14,19 +14,40 @@ A single test consists of a json object of the form:
 	Err:    string      // the expected error to match against
 	Regexp: string      // the expected out to match again (regular expression)
 	Time:   int         // offset in milliseconds from the start of the test at which to run this test.
-}
-```
+    }
+    ```
 
-Test files consist of an array of tests of the above format. They live in the `test` [directory](File-Locations), or in a scenario sub-directory in that directory (see multi-node testing below).  Tests in a test file get executed in the order they appear in the file unless the test has a non-zero `Time` value, in which case it is queued for executing at the specified time (in milliseconds as measured from the beginning of the when the test started.)
+    * each *.json test file contains an array of zero or more such json objects
+    * tests in a test file get executed in the order they appear in the file 
+      * unless the `Time` property is non-zero, in which case that test is queued for executing at the specified time (in milliseconds from the start of the test)
+
+
+### application skeleton @ [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
+#### file skeleton for a holochain app
+- repo_root
+  - dna
+  - ui
+  - test
+    - test1.json [singleNodeTest]
+    - test2.json [singleNodeTest]
+    - scenario.myScenario1
+      - role1.json
+      - role2.json
+      - ...
+      - roleN.json
+    - scenario.myScenario2
+      - etc...
+
+Each json test file consists of an array of test objects. They live in the `test` [directory](File-Locations), or in a scenario sub-directory in that directory.  
 
 ## Single node testing
 1. Code you application (let's assume it lives in the directory: `my_app`)
 2. Write your tests and place them into the `my_app/test` directory
-3. Clone and run your app tests with `hc clone -force my_app my_app  & hc test my_app`
+3. Clone and run your app tests with `hc clone -force my_app my_app  && hc test my_app`
 
 ## Multi-node testing
-We have created a docker cluster based testing-harness for muilt-node application testing. To use this framework for app development first clone the [holoSkel repo](https://github.com/metacurrency/holoSkel).  Consider that repo the root of your application, and replace the `dna`, and `ui` directories with your own application.
-In the `test` directory you can also add your single node tests, but more importantly you need to add scenario sub-directories for a seperate multi-node test.  Each sub-directory should contain test files that will define the actions taken by the different nodes which get run simultaneously by the testing harness in separate docker instances.  You should think of each of these as roles in the scenario.  To run a scenario test simply type: `./Scripts/testScenario <scenario-name>`
+
+Each sub-directory should contain test files that will define the actions taken by the different nodes which get run simultaneously by the testing harness in separate docker instances.  You should think of each of these as roles in the scenario.  To run a scenario test simply type: `./Scripts/testScenario <scenario-name>`
 
 To write mult-node tests, you must take into account timing.  The tests on the different nodes all start at relatively the same time, so you establish back & forth behavior by setting a time (in ms from the start) for the test to execute in the `Time` value.  You can add a _config.json file to the scenario directory of the following format:
 ``` json
