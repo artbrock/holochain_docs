@@ -18,6 +18,8 @@
  - [DHT Operations (Shared Data)](DHT-Operations)
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
+ - [Building User Interface](UI-Reference)
+
 <!-- - [Building in P3](Building-in-P3) -->
 
 #### System Launch and Testing (on Docker)
