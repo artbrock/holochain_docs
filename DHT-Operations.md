@@ -1,5 +1,7 @@
 # Holochain DHT Design Doc
 
+TODO: this page is out of date...
+
 ## App Exposed Functions:
 
 ### Put(hash)
