@@ -9,7 +9,7 @@ These are the fields to be specified in the DNA file are as follows:
 TODO: flesh out the descriptions of the fields.
 
 ## Version
-An integer value describing the version of this DNA file
+An integer value describing the version of this DNA file, or, perhaps document this via a commented json example?
 
 ## Id
 A UUID
