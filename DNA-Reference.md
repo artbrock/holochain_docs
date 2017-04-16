@@ -1,5 +1,12 @@
-# Application DNA file
-Every Holochain app has a DNA file at its core.  These are the fields that are available in the DNA:
+# Application DNA
+
+Application DNA consists of the DNA file at the core in which a number of application properties, plus application code and entry types are specified.
+
+Every Holochain app has a DNA file at its core.
+
+These are the fields to be specified in the DNA file are as follows:
+
+TODO: flesh out the descriptions of the fields.
 
 ## Version
 An integer value describing the version of this DNA file
