@@ -8,26 +8,26 @@ These are the fields to be specified in the DNA file are as follows:
 
 TODO: flesh out the descriptions of the fields.
 
-## Version
-An integer value describing the version of this DNA file, or, perhaps document this via a commented json example?
+**Version**
+ : An integer value describing the version of this DNA file. Perhaps document this via a commented json example?
 
-## Id
-A UUID
+**Id**
+ : A UUID which the system auto-generates when you clone existing code, to make sure your new holochain is unique and doesn't accidentally collide with the holochain whose code you are cloning. For example, you can clone the DNA of a slack team you are a part of, and the fact that we generate a new UUID for you, will keep you from accidentally creating a new slack team in the same data-space/DHT as your old one. NOTE: If you are not trying to create a new clone, use `hc join` instead of `hc clone`.
 
-## Name
-A string value of the name of the application.
+**Name**
+ : A string value of the name of the application. It is best to edit this if you are cloning an existing chain to serve a new purpose. For example, if you want to create a new slack team, what is the new team called?
 
-## RequiresVersion
-An integer value that specifies the minimum usable version of the Holochain library for the app.
+**RequiresVersion**
+ : An integer value that specifies the minimum usable version of the Holochain library for the app for app code compatibility as well as data structure compatibility.
 
-## Properties
-A hashmap of app defined strings that are available to the app via the `property` function.  This is especially useful for applications that will be cloned and customized.
+## Properties**
+ : A hashmap of app defined strings that are available to the app via the `property` function.  This is especially useful for applications that will be cloned and customized.
 
-## HashType
-A string describing the hash type to be used for this application.  Should be from the list of hash types from the [multihash library](http://multiformats.io/multihash/)
+## HashType**
+ : A string describing the hash type to be used for this application.  Should be from the list of hash types from the [multihash library](http://multiformats.io/multihash/)
 
-## Zomes
-A list of Zome entries, where each zome is defined follows:
+## Zomes Entries
+A list of Zome entries, for each zome which may include the following:
 
 ###	Name        string
 ###	Description string
