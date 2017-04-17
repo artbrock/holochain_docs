@@ -22,10 +22,10 @@
  : Consistency as Logical Monotonicity. (see Monotonicity)
 
 **CAP Theorem**
-  : Consistency-Availability-PartitionTolerance. Often depicted as a triangle, where you can only achieve two of three options. Unfortunately in the real-world, you always have to include 'P' because networks are not 100% reliable. So the question often comes down to are you optimzing for data Consistency or data Availablily (making sure new data is not visibility to anyone until its visible to everyone). Holochains are eventually consistent, but our notion of Consistency is not that there is one set of absolutely true data, but rather you know exactly what was asserted by whom and when.
+  : Consistency-Availability-PartitionTolerance. Often depicted as a triangle, where you can only achieve two of three options. Unfortunately in the real-world, you always have to include 'P' because networks are not 100% reliable. So the question often comes down to are you optimzing for data Consistency or data Availablily (making sure new data is not visible to anyone until its visible to everyone). Holochains are eventually consistent, but our notion of Consistency is not that there is one set of absolutely true data, but rather you know exactly what was asserted by whom and when.
 
 **Ceptr**
- : Short for Receptor. The distributed application and communications framework that Holochains are one small part of.
+ : Short for Receptor. The distributed application and communications framework that Holochains are one small part of. See [Ceptr.org](http://ceptr.org) for more information.
 
 **Chain Entry**
  : A new transaction added to your source chain.
@@ -181,13 +181,13 @@
  : A DHT where every node executes consistent validation rules on data before propagating that data.
 
 **Validation**
- : Confirming that data is valid according to the shared rules of a holochain. This should happen before data is committed to your source chain, and must happen as data is propagated across a DHT.
+ : Confirming that data is valid according to the shared rules of a holochain. This should happen before data is committed to your source chain, and must also happen as data is propagated across a DHT.
 
 **Validation Rules**
  : The rules which enforce valid data that can be committed to source chains as well as data that can propagate via the DHT.
 
 **Zero Knowledge Proof**
- : A method in which one agent can prove to another agent that something is true, without having to share any additional information except that it is true.
+ : A method in which one agent can prove to another agent that something is true, without having to expose additional information except that it is true.
 
 **Zome**
  : (as in Chromosome) Each Nucleus can contain multiple Zomes (for example, the JavaScript App Engine can contain multiple applications). All data elements committed to source chain or propagated on the DHT, comply with the data schema and validation rules of a particular Zome.
