@@ -20,28 +20,41 @@ TODO: flesh out the descriptions of the fields.
 **RequiresVersion**
  : An integer value that specifies the minimum usable version of the Holochain library for the app for app code compatibility as well as data structure compatibility.
 
-## Properties**
+**Properties**
  : A hashmap of app defined strings that are available to the app via the `property` function.  This is especially useful for applications that will be cloned and customized.
 
-## HashType**
+**HashType**
  : A string describing the hash type to be used for this application.  Should be from the list of hash types from the [multihash library](http://multiformats.io/multihash/)
 
 ## Zomes Entries
 A list of Zome entries, for each zome which may include the following:
 
-###	Name        string
-###	Description string
-###	Code        string // file name of DNA code
-###	CodeHash    Hash
-###	Entries     []EntryDef
+**Name**
+ : string
+
+**Description
+ : string
+
+**NucleusType
+ : string
+
+**Code**
+ : string // file name of DNA code
+
+**CodeHash**
+ : Hash
+
+###	Entries     [ ]EntryDef
+Inside a Zome section
+
 ####	Name       string
 ####	DataFormat string // "string" "json" or "links"
 ####	Schema     string // file name of schema or language schema directive
 ####	SchemaHash Hash
 ####	Sharing    string // "public" "private" or "shared"
 ####	validator  SchemaValidator
-###	NucleusType string
-###	Functions   []FunctionDef
+
+###	Functions   [ ]FunctionDef
 ####	Name        string
 ####	CallingType string // "string" or "json"
 
