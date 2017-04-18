@@ -30,35 +30,35 @@ TODO: flesh out the descriptions of the fields.
 A list of Zome entries, for each zome which may include the following:
 
 **Name**
- : string
+ : string -- 
 
-**Description
- : string
+**Description**
+ : string -- 
 
-**NucleusType
- : string
+**NucleusType**
+ : string -- 
 
 **Code**
- : string // file name of DNA code
+ : string -- file name of DNA code
 
 **CodeHash**
- : Hash
+ : Hash --
 
 ###	Functions   [ ]FunctionDef
 **Name**
- : string
+ : string -- 
 
 **CallingType**
- : string // "string" or "json"
+ : string ( "string" or "json" ) --
 
 ###	Entries     [ ]EntryDef
 Inside a Zome section
 
 **Name**
- : string
+ : string --
 
 **DataFormat**
- : string // "string" "json" or "links"
+ : string ( "string", "json", or "links" )
 
 **Schema**
  : string // file name of schema or language schema directive
@@ -69,5 +69,5 @@ Inside a Zome section
 **Sharing**
  : string // "public" "private" or "shared"
 
-**validator**
+**Validator**
  : SchemaValidator
