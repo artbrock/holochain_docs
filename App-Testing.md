@@ -57,6 +57,7 @@ directory structure:
 ## Multi-node testing, how to construct a scenario
 
 [Demo Video](https://youtu.be/K1GPYY4imt0)
+<a href="https://youtu.be/K1GPYY4imt0" target="_blank">Demo Video</a>
 
 Each test/scenario sub-directory should contain one test file for each role required to model the test. Filenames are automatically discovered.
 
