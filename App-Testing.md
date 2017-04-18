@@ -56,6 +56,8 @@ directory structure:
 
 ## Multi-node testing, how to construct a scenario
 
+[Demo Video](https://youtu.be/K1GPYY4imt0)
+
 Each test/scenario sub-directory should contain one test file for each role required to model the test. Filenames are automatically discovered.
 
 Tests pass or fail on the basis of the *content* of messages passed between roles/nodes on in the network. In order to test the content of messages passed between roles, it is necessary for tests to account for the *amount of time* it takes for messages to travel between nodes on the network. This is achived with the `Time` parameter of the test object. If roles 1 and 2 are called *back* and *forth* respectively, then when *forth* sends a message, *back* should wait at least 50ms for checking to see if there are messages that contain the expected content. If the message has not yet arrived, then the test will fail.
