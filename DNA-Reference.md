@@ -44,17 +44,30 @@ A list of Zome entries, for each zome which may include the following:
 **CodeHash**
  : Hash
 
+###	Functions   [ ]FunctionDef
+**Name**
+ : string
+
+**CallingType**
+ : string // "string" or "json"
+
 ###	Entries     [ ]EntryDef
 Inside a Zome section
 
-####	Name       string
-####	DataFormat string // "string" "json" or "links"
-####	Schema     string // file name of schema or language schema directive
-####	SchemaHash Hash
-####	Sharing    string // "public" "private" or "shared"
-####	validator  SchemaValidator
+**Name**
+ : string
 
-###	Functions   [ ]FunctionDef
-####	Name        string
-####	CallingType string // "string" or "json"
+**DataFormat**
+ : string // "string" "json" or "links"
 
+**Schema**
+ : string // file name of schema or language schema directive
+
+**SchemaHash**
+: Hash
+
+**Sharing**
+ : string // "public" "private" or "shared"
+
+**validator**
+ : SchemaValidator
