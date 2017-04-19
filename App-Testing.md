@@ -72,7 +72,7 @@ You can add a _config.json file to the scenario directory of the following forma
 ```
 This allows you to set the gossip interval for your test, as well as a minimum duration that all the nodes should be kept running for the test to succeed, i.e. so other nodes that still have test pending can gossip with them.
 
-When you clone the repo, you will see that it comes with our example chat app, and you will find a "backnforth" scenario with two roles defined: person1 & person2.  Check out these examples to see how things work.
+When you clone the [repo](https://github.com/metacurrency/holoSkel), you will see that it comes with our example chat app, and you will find a "backnforth" scenario with two roles defined: person1 & person2.  Check out these examples to see how things work.
 
 > TODO
 > Note, it might make sense to impelment both an automatic backnforth test generator, and also an asynchronous method of testing for the test message arrival (e.g. a message id)
