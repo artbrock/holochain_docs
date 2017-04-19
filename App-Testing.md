@@ -3,8 +3,8 @@
 ## Test file format
 Each test file consists of an array of json objects of the form:
 
-    ```go
-    {
+```go
+{
 	Convey: string      // a human readable description of the tests intent
 	Zome:   string      // the zome in which to find the function
 	FnName: string      // the function to call
@@ -13,8 +13,8 @@ Each test file consists of an array of json objects of the form:
 	Err:    string      // the expected error to match against
 	Regexp: string      // the expected out to match again (regular expression)
 	Time:   int         // delay in millis before running this test
-    }
-    ```
+}
+```
     
 - if `Time` is null or 0, tests are executed in the order discovered in the test file
   - in general the `Time` parameter is used to allow sufficient space for gossip operations between nodes on the DHT. 
