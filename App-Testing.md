@@ -61,9 +61,9 @@ directory structure:
 
 Each test/scenario sub-directory should contain one test file for each role required to model the test. Filenames are automatically discovered.
 
-Tests pass or fail on the basis of the *content* of messages passed between roles/nodes on in the network. In order to test the content of messages passed between roles, it is necessary for tests to account for the *amount of time* it takes for messages to travel between nodes on the network. This is achived with the `Time` parameter of the test object. If roles 1 and 2 are called *back* and *forth* respectively, then when *forth* sends a message, *back* should wait at least 50ms for checking to see if there are messages that contain the expected content. If the message has not yet arrived, then the test will fail.
+Tests pass or fail on the basis of the *content* of messages passed between roles/nodes on the network. In order to test the content of messages passed between roles, it is necessary for tests to account for the *amount of time* it takes for messages to travel between nodes on the network. This is achieved with the `Time` parameter of the test object. If roles 1 and 2 are called *back* and *forth* respectively, then when *forth* sends a message, *back* should wait at least 50ms for checking to see if there are messages that contain the expected content. If the message has not yet arrived, then the test will fail.
 
-Note, it might make sense to implment both an automatic backnforth test generator, and also an asynchronous method of testing for the test arrival (e.g. a message id)
+Note, it might make sense to impelment both an automatic backnforth test generator, and also an asynchronous method of testing for the test message arrival (e.g. a message id)
 
 You can add a _config.json file to the scenario directory of the following format:
 ``` json
