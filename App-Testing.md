@@ -5,14 +5,14 @@ Each test file consists of an array of json objects of the form:
 
 ```go
 {
-	Convey: string      // a human readable description of the tests intent
-	Zome:   string      // the zome in which to find the function
-	FnName: string      // the function to call
-	Input:  string      // the function's input
-	Output: string      // the expected output to match against (full match)
-	Err:    string      // the expected error to match against
-	Regexp: string      // the expected out to match again (regular expression)
-	Time:   int         // delay in millis before running this test
+    Convey: string      // a human readable description of the tests intent
+    Zome:   string      // the zome in which to find the function
+    FnName: string      // the function to call
+    Input:  string      // the function's input
+    Output: string      // the expected output to match against (full match)
+    Err:    string      // the expected error to match against
+    Regexp: string      // the expected out to match again (regular expression)
+    Time:   int         // delay in millis before running this test
 }
 ```
     
