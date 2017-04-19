@@ -3,7 +3,7 @@
 ## Test file format
 Each test file consists of an array of json objects of the form:
 
-    ``` go
+    ```go
     {
 	Convey: string      // a human readable description of the tests intent
 	Zome:   string      // the zome in which to find the function
