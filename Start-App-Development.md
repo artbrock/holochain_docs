@@ -9,7 +9,11 @@ Holochain applications have four types of files
  4. UI Files
 
 ### 1. DNA Configuration Files
-brief description
+The DNA file unifies all the components of an application. 
+ - It defines the application, and includes by reference the data schemas of all types of data which get written to your local source chain and shared to the holochain's DHT. 
+ - It associates 
+ - 
+
 details here --> link
 
 ### 2. JSON Data Schemas
