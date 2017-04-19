@@ -39,6 +39,7 @@ directory structure:
       - role2.json
       - ...
       - roleN.json
+      - _config.json
     - scenario.myScenario.2
       - etc...
 
