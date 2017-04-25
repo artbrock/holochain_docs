@@ -29,7 +29,7 @@ Want to understand holochains?
 In other words, a holochain functions very much **like a blockchain without bottlenecks** when it comes to enforcing validation rules, but is designed to be fully distributed through sharding so each node only needs to hold a portion of the data instead of a full copy of a global ledger. This makes it feasible to run blockchain-like applications on devices as lightweight as mobile phones
 
 ## Shared Data Integrity
-Historically, data integrity has been ensured by restricting access to data. If we wanted to prevent anybody from tampering with data, we locked it behind firewalls, or set strict permissions on databases and file systems. Because with centrally stored data, having the ability to write to data typically means you can change whatever you want.
+Historically, data integrity has been ensured by restricting access to data. If we wanted to prevent anybody from tampering with data, we locked it behind firewalls, or set strict permissions on databases and file systems. When your data is centrally stored, you typically have the ability to change whatever you want.
 
 If we want to build peer-to-peer systems where we collectively hold data among many parties, we need better strategies for shared data integrity. Many are excited about building these kinds of applications on the blockchain, because they provide a strategy to maintain integrity of data that can be held by many peers without a single central authority.
 
