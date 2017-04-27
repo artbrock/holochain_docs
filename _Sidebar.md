@@ -2,7 +2,6 @@
  - [Technical Overview](http://github.com/metacurrency/holochain/wiki)
  - [Architectural Details](Architecture)
  - [Security Overview](Security-Overview)
-
  - [Installation](../#installation)
  - [Glossary & Key Terms](Glossary)
 
