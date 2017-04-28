@@ -23,8 +23,20 @@ TODO: flesh out the descriptions of the fields.
 **Properties**
  : A hashmap of app defined strings that are available to the app via the `property` function.  This is especially useful for applications that will be cloned and customized.
 
+## DHT Settings (not yet implemented)
+Special settings for DHT configuration for this application... Possibly stuff for saturation & verification based on # signatures...
+
 **HashType**
  : A string describing the hash type to be used for this application.  Should be from the list of hash types from the [multihash library](http://multiformats.io/multihash/)
+
+**Sharding**
+ : Identifier for sharding method (none, hashmask, proximity, etc.)
+
+**Redundancy**
+ : integer marking minimum online redundancy targets for data
+
+**Encryption**
+ : settings for point-to-point encryption (what are the options?)
 
 ## Zomes Entries
 A list of Zome entries, for each zome which may include the following:
