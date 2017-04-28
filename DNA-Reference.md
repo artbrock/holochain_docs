@@ -67,7 +67,7 @@ Inside a Zome section
 : Hash
 
 **Sharing**
- : string // "public" "private" or "partial" (for Merkle Trees)
+ : string // **Public** is automatically shared to the DHT after committing to your chain. **Private** is NOT shared to the DHT, and remains only on your source chain. Or **Partial** selected fields are shared to DHT and structured for Merkle Proof of validity of those fields while not exposing hidden ones.
 
 **Validator**
  : SchemaValidator
