@@ -67,7 +67,7 @@ Inside a Zome section
 : Hash
 
 **Sharing**
- : string // "public" "private" or "shared"
+ : string // "public" "private" or "partial" (for Merkle Trees)
 
 **Validator**
  : SchemaValidator
