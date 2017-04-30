@@ -32,4 +32,6 @@
  - ['hc' Command line usage](hc-Command)
  - [File Locations](File-Locations)
 
-#### [Documentation Protocols](Documentation-Protocols)
+#### Practices & Protocols
+ - [Development Protocols](Development-Protocols)
+ - [Documentation Protocols](Documentation-Protocols)
