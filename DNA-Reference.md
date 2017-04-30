@@ -80,8 +80,8 @@ Settings for DHT behaviors and requirements specific to your application. (STATU
 **ShardingMethod**
  : Identifier for sharding method (none, XOR, hashmask, other nearness algorithms?, etc.)
 
-**MaxLinkSets*
- : (integer) Maximum number of results to return on a GetLinks query to keep computation and traffic to a reasonable size
+**MaxLinkSets**
+ : (integer) Maximum number of results to return on a GetLinks query to keep computation and traffic to a reasonable size. You need to break these result sets into multiple "pages" of results retrieve more.
 
 **ValidationTimeout**
  : (integer) Time period in seconds, until data that needs to be validated against a source remains "alive" to keep trying to get validation from that source. If someone commits something and then goes offline, how long do they have to come back online before DHT sync requests consider that data invalid? 
