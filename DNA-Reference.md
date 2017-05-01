@@ -4,13 +4,12 @@ Application DNA consists of the DNA file at the core in which a number of applic
 
 Every Holochain app has a DNA file at its core.
 
-These are the fields to be specified in the DNA file are as follows:
+The fields to be specified in the DNA file are as follows:
 
 **Version**
- : An integer value describing the version of this DNA file. Perhaps document this via a commented json example?
-
+ : An integer value describing the version of this DNA file.
 **Id**
- : A UUID which the system auto-generates when you clone existing code, to make sure your new holochain is unique and doesn't accidentally collide with the holochain whose code you are cloning. For example, you can clone the DNA of a slack team you are a part of, and the fact that we generate a new UUID for you, will keep you from accidentally creating a new slack team in the same data-space/DHT as your old one. NOTE: If you are not trying to create a new clone, use `hc join` instead of `hc clone`.
+ : A UUID, (which the system auto-generates when you clone existing code) to make sure your new holochain is unique and doesn't accidentally collide with the holochain whose code you are cloning. For example, you can clone the DNA of a chat team you are a part of, and the fact that we generate a new UUID for you, will keep you from accidentally creating a new chat team in the same data-space/DHT as your old one. NOTE: If you are not trying to create a new clone, use `hc join` instead of `hc clone`.
 
 **Name**
  : A string value of the name of the application. It is best to edit this if you are cloning an existing chain to serve a new purpose. For example, if you want to create a new slack team, what is the new team called?
@@ -27,19 +26,19 @@ A holochain application may be broken into different functional domains called Z
 Each Zomes section contains some basic info about the Zome (Name, Description, NucleusType, Code (filename), Hash of that file, etc), as well as identifying what entry types (data structures) are used within this Zome, and what functions in this zome are available for calling from UIs or other Zomes.
 
 **Name**
- : string -- Name of the Zome (What functionality is this part of your application managing?) Please don't put spaces in the Zome name, we'll probably remove them, but haven't implemented this yet.
+ : (string) Name of the Zome (What functionality is this part of your application managing?) Please don't put spaces in the Zome name, we'll probably remove them, but haven't implemented this yet.
 
 **Description**
- : string -- Description of the functionality/features being managed within this Zome.
+ : (string) Description of the functionality/features being managed within this Zome.
 
 **NucleusType**
- : string -- Which virtual machine should be used to process the code in this Zome? Valid values are: JavaScript, Lisp, (and as we build them: Ruby, Lua, etc.)
+ : (string) Which virtual machine should be used to process the code in this Zome? Valid values are: JavaScript, Lisp, (and as we build them: Ruby, Lua, etc.)
 
 **Code**
- : string -- file name to find the code for this Zome. By convention, please use <ZomeName>.<LanguageExtension>, like chat.js, sort.zy (for zygomys Lisp). Once we complete ticket [[#100]] we'll look for this filename by default if you leave this out of the DNA.
+ : (string) File name to find the code for this Zome. By convention, please use <ZomeName>.<LanguageExtension>, like chat.js, sort.zy (for zygomys Lisp). Once we complete ticket [[#100]] we'll look for this filename by default if you leave this out of the DNA.
 
 **CodeHash**
- : Hash -- The hash of the code automatically gets generated when you `hc gen chain`. This value looks a little strange in TOML files as it's a comma delimited array of numbers. Having this specified in the DNA is part of what locks in the version of code peers on a holochain are agreeing to run.
+ : (hash) The hash of the code automatically gets generated when you `hc gen chain`. The value of a hash looks a little strange in TOML files as it's a comma delimited array of numbers. Having this specified in the DNA is part of what locks in the version of code peers on a holochain are agreeing to run.
 
 ### Zomes.Functions   [ ]FunctionDef
 The functions that are used inside this Zome that you want to expose to be callable by some other part of the holochain system (such as a web UI, or accessible to another Zome)
