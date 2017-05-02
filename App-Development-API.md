@@ -5,8 +5,9 @@ All Nuclei types provide access to the same Holochain API, which consists in a s
 These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so `App.DNAHash` becomes `App_DNAHash`).
 
 ### System Variables
- - **`HC.VERSION`** Returns the version of the Holochain software
- - **`HC.MERKLE`** (to be implemented in Security Pass Milestone)
+ - **`HC.Version`** Returns the version of the Holochain software
+ - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
+ - **`HC.Merkle`** (to be implemented in Security Pass Milestone)
 
 ### Application Variables
  - **`App.Name`** holds the Name of this Holochain from the DNA.
@@ -62,13 +63,22 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 
 ## DHT Functions
 
-### `get <hash>`
+### `get <hash> [<StatusMask>]`
 
-Retrieves `<hash>` from the DHT.
+Retrieves `<hash>` from the DHT according to the optional <StatusMask>. If unspecified <StatusMask> will be assumed to be `Live`
 
-### `getlink <base> <tag> [<options>]`
+### `del <hash>`
 
-Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the only options is: `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
+Moves <hash> entry to the `Deleted` status.
+
+### `getLink <base> <tag> [<options>]`
+
+Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the options are
+- `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
+- `StatusMask: <int>` which determine which status links to return.  Default is to return only Live links.
+
+### `delLink <base> <link> <tag>`
+Moves a link to the `Deleted` status.
 
 ## Deprecated Functions
 
