@@ -75,7 +75,7 @@ Moves <hash> entry to the `Deleted` status.
 
 Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the options are
 - `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
-- `{StatusMask: <int>}` which determine which status links to return.  Default is to return only Live links.
+- `StatusMask: <int>` which determine which status links to return.  Default is to return only Live links.  You can use defined constants `HC.Status.Live/Deleted/Modified/Rejected` as the <int> value.
 
 ### `delLink <base> <link> <tag>`
 Moves a link to the `Deleted` status.
