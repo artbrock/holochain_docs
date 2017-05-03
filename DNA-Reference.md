@@ -1,13 +1,12 @@
 # Application DNA
 
-Application DNA consists of the DNA file at the core in which a number of application properties, plus application code and entry types are specified.
-
-Every Holochain app has a DNA file at its core.
+Application DNA consists of the DNA file at the core in which a number of application properties, plus application code and entry types are specified. Every Holochain app has a DNA file at its core.
 
 The fields to be specified in the DNA file are as follows:
 
 **Version**
  : An integer value describing the version of this DNA file.
+
 **Id**
  : A UUID, (which the system auto-generates when you clone existing code) to make sure your new holochain is unique and doesn't accidentally collide with the holochain whose code you are cloning. For example, you can clone the DNA of a chat team you are a part of, and the fact that we generate a new UUID for you, will keep you from accidentally creating a new chat team in the same data-space/DHT as your old one. NOTE: If you are not trying to create a new clone, use `hc join` instead of `hc clone`.
 
