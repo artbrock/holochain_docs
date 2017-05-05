@@ -2,11 +2,12 @@ All Nuclei types provide access to the same Holochain API, which consists in a s
 
 ## Pre-Registered Values
 
-These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so `App.DNAHash` becomes `App_DNAHash`).
+These are system variables which are available within your application. They are displayed below in dot notation used in JavaScript. If you want **to access these values in Lisp** replace the dot with an underscore (so `App.DNA.Hash` becomes `App_DNA_Hash`).
 
 ### System Variables
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
+ - **`HC.LinkAction`` Object with link action value constants: `Add`,`Del` for use when committing Links entries.
  - **`HC.Merkle`** (to be implemented in Security Pass Milestone)
 
 ### Application Variables
