@@ -52,7 +52,7 @@ Validation functions are called under two distinct conditions.
 ### `property <name>`
 Returns the named property.  These properties are defined by the app developer. It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
 
-## Functions for Chain Operations
+## Functions for Chain Operations (may have DHT side-effects)
 
 ### `commit <entry-type> <entry-data>`
 
@@ -71,6 +71,8 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 ### `del <hash> <message>`
 
 Commits a DelEntry to the local chain with given delete message, and, if the entry type of <hash> is not private, moves the entry to the `Deleted` status on the DHT.
+
+## Functions for DHT query 
 
 ### `get <hash> [<StatusMask>]`
 
