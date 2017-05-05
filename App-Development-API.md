@@ -7,7 +7,7 @@ These are system variables which are available within your application. They are
 ### System Variables
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
- - **`HC.LinkAction`` Object with link action value constants: `Add`,`Del` for use when committing Links entries.
+ - **`HC.LinkAction`** Object with link action value constants: `Add`,`Del` for use when committing Links entries.
  - **`HC.Merkle`** (to be implemented in Security Pass Milestone)
 
 ### Application Variables
