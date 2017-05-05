@@ -57,28 +57,29 @@ Returns the named property.  These properties are defined by the app developer. 
 
 Attempts to commit an entry to your local, source chain. It will cause callback to your `validate` function.  Returns either an error or the hash of the committed entry upon success.
 
+TODO: document committing links.
+
+### `mod <entry-type> <entry-data> <replaces>`
+
+Attempts to commit an entry to your local, source chain that "replaces" a previous entry.  If <entry-type> is not private, `mod` will mark <replaces> as Modified on the DHT.  Additionally the modification action will be recorded in the entries' header in the local chain, which will be used by validation routes. Returns either an error or the hash of the committed entry upon success.
+
 ### `query` (still being implemented for direct query your local chain)
 
 Keep in mind that you will want to retrieve most data from the DHT (shared data space), so that you are seeing what the rest of the nodes on your holochain are seeing. However, there are times you will want to query private data fields, or package up up data from your source chain for sending. Use this function.
 
-## DHT Functions
+### `del <hash> <message>`
+
+Commits a DelEntry to the local chain with given delete message, and, if the entry type of <hash> is not private, moves the entry to the `Deleted` status on the DHT.
 
 ### `get <hash> [<StatusMask>]`
 
 Retrieves `<hash>` from the DHT according to the optional <StatusMask>. If unspecified <StatusMask> will be assumed to be `Live`
-
-### `del <hash>`
-
-Moves <hash> entry to the `Deleted` status.
 
 ### `getLink <base> <tag> [<options>]`
 
 Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the options are
 - `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
 - `StatusMask: <int>` which determine which status links to return.  Default is to return only Live links.  You can use defined constants `HC.Status.Live/Deleted/Modified/Rejected` as the <int> value.
-
-### `delLink <base> <link> <tag>`
-Moves a link to the `Deleted` status.
 
 ## Deprecated Functions
 
