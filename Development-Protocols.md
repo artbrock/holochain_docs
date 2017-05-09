@@ -6,7 +6,7 @@ We are committed to foster a vibrant thriving community, including growing a cul
 * For task management we use [Waffle](https://waffle.io/metacurrency/holochain) or for the non-kan-ban view [github's issues](https://github.com/metacurrency/holochain/issues)
 * All tickets should be "bite-sized" i.e. no more than a week's worth of coding work. Larger tasks are represented in [Milestones](https://github.com/metacurrency/holochain/milestones?direction=asc&sort=due_date&state=all).
 * Chat with us on [Gitter](https://gitter.im/metacurrency/holochain) or [Slack](http://ceptr.org/slack)
-* We have a weekly [dev-coord hangout](http://ceptr.org/devchat) on Tuesday's 9am PST/ 12pm EST 
+* We have a weekly [dev-coord hangout](http://ceptr.org/devchat) on Tuesday's 9am PST/ 12pm EST
 
 ## Test Driven Development
 We use **test driven development**. When you add a new function or feature, be sure to add the tests that make sure it works.  Pull requests without tests will most-likely not be accepted!
@@ -21,3 +21,48 @@ To make this easier consider using a [git-hook](https://gist.github.com/timotree
 [Eclipse]: https://github.com/GoClipse/goclipse
 
 For Atom, you could try this [package](https://atom.io/packages/save-commands) but it requires some configuration.
+
+## Git Hygiene
+This section describes guidelines for using git and making changes to the repo.
+
+### Quick Version
+* Make your changes on a seperate branch. Make sure the branch is based on master.
+* Use commit messages descriptive of your changes.
+* Push to the upstream of your new branch.
+* Create a pull request on github.
+* When merging a pull request, make sure to use the "Rebase and merge" option.
+
+### The Verbose Version for newbies
+Start out on master. You can check this by using `git status`.  
+Before making your changes use `git pull` so that you are working on the latest version of master.
+```
+$ git pull
+```
+Then use `git branch` to create a new branch for doing your work. Make sure to name it something that describes your changes.
+```
+$ git branch branchName
+```
+Even though you've now created a new branch, you aren't "on" that branch yet.  Switch from Master to your new branch by using `git checkout`
+```
+$ git checkout branchName
+```
+Then make your changes directly by editing the files.
+
+Once you're finished making changes, use `git commit -m ` to confirm them and describe what you changed (in quotes).
+```
+$ git commit fileName -m "description of changes"
+```
+When prompted for the message, write a description of what you did.
+
+Push the changes to origin (github) using `git push --set-upstream`
+
+Do a pull request using the online github interface.
+
+![Select branch](https://raw.githubusercontent.com/wiki/metacurrency/holochain/_Images/branches.png)
+Select the branch that you have been working on by clicking on the branches button.
+
+![Button which says 'New pull request'](https://raw.githubusercontent.com/wiki/metacurrency/holochain/_Images/makepr.png)
+On your branch, click "New Pull Request"
+
+![Add message and confirm pull request'](https://raw.githubusercontent.com/wiki/metacurrency/holochain/_Images/confirmpr.png)
+Add message and click "confirm pull request"
