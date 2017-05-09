@@ -6,7 +6,7 @@ We are committed to foster a vibrant thriving community, including growing a cul
 * For task management we use [Waffle](https://waffle.io/metacurrency/holochain) or for the non-kan-ban view [github's issues](https://github.com/metacurrency/holochain/issues)
 * All tickets should be "bite-sized" i.e. no more than a week's worth of coding work. Larger tasks are represented in [Milestones](https://github.com/metacurrency/holochain/milestones?direction=asc&sort=due_date&state=all).
 * Chat with us on [Gitter](https://gitter.im/metacurrency/holochain) or [Slack](http://ceptr.org/slack)
-* We have a weekly [dev-coord hangout](http://ceptr.org/devchat) on Tuesday's 9am PST/ 12pm EST 
+* We have a weekly [dev-coord hangout](http://ceptr.org/devchat) on Tuesday's 9am PST/ 12pm EST
 
 ## Test Driven Development
 We use **test driven development**. When you add a new function or feature, be sure to add the tests that make sure it works.  Pull requests without tests will most-likely not be accepted!
@@ -21,3 +21,7 @@ To make this easier consider using a [git-hook](https://gist.github.com/timotree
 [Eclipse]: https://github.com/GoClipse/goclipse
 
 For Atom, you could try this [package](https://atom.io/packages/save-commands) but it requires some configuration.
+
+## Git Hygiene
+**PLEASE IGNORE THIS SECTION ON GIT HYGIENE**
+Please use as many commits as possible and give them meaningless messages. Always push directly to master and don't wait for approval.
