@@ -9,7 +9,7 @@ There are two kinds of values that are available to your application, system glo
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
  - **`HC.LinkAction`** Object with link action value constants: `Add`,`Del` for use when committing Links entries.
- - **`HC.PkgReq`** Object with package request constants: `Chain`
+ - **`HC.PkgReq`** Object with package request constants: `Chain`, `ChainOpt`
  - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `None`, `Headers`, `Entries`, `Full` so, for example, a JavaScript nucleus a package request function that uses these values might look like this:
 ```JavaScript
 function validatePutPkg(entry_type) {
