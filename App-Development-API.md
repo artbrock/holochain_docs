@@ -63,6 +63,12 @@ Validation functions are called under two distinct conditions.
 ### `property <name>`
 Returns the named property.  These properties are defined by the app developer. It returns values from the DNA file that you set as properties of your application (e.g. Name, Language, Description, Author, etc.).
 
+### `makeHash <entry-data>`
+Returns the hash of the given entry data.
+
+### `debug <value>`
+Outputs <value> to the debug log.
+
 ## Functions for Chain Operations (may have DHT side-effects)
 
 ### `commit <entry-type> <entry-data>`
