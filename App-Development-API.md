@@ -85,12 +85,14 @@ Commits a DelEntry to the local chain with given delete message, and, if the ent
 
 ## Functions for DHT query 
 
-### `get <hash> [<StatusMask>]`
+### `get <hash> [<options>]`
 
-Retrieves `<hash>` from the DHT according to the optional <StatusMask>. If unspecified <StatusMask> will be assumed to be `Live`
+Retrieves `<hash>` from the DHT.  Options is a hash map of modifiers about how/what to retrieve. Currently the options are:
+
+- `StatusMask: <int>` determines which status entries to return.  You can use defined constants `HC.Status.Default/Live/Deleted/Modified/Rejected` as the <int> value.  If unspecified <StatusMask> will be assumed to be `Default` which is returns only live values entries resolving any modified entries.  
 
 ### `getLink <base> <tag> [<options>]`
 
-Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the options are
+Retrieves a list of links tagged as `<tag>` on `<base>` from the DHT.  Options is hash map of values.  Currently the options are:
 - `Load: <bool>` which if set to true tells the library to resolve get the entry values of the links.  With options as `{Load: false}` returns a list of the form `{Links: [{H:"QmY..."},..]}`  With options as `{Load: true }` returns a list of the form `{Links: [{H:"QmY...",E:"<entry value here>"},..]}`
-- `StatusMask: <int>` which determine which status links to return.  Default is to return only Live links.  You can use defined constants `HC.Status.Live/Deleted/Modified/Rejected` as the <int> value.
+- `StatusMask: <int>` which determine which status links to return.  Default is to return only Live links.  You can use defined constants `HC.Status.Live/Deleted/Rejected` as the <int> value.
