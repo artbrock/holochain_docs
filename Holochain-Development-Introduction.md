@@ -16,7 +16,7 @@ The development lifecycle of a holochain app:
 ## Download docker and the app skeleton
 1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
-2. Pick a name for your new holochain app. Lets call it myHolochainApp
+2. Pick a name for your new holochain app. Lets call it `myHolochainApp`
     ```bash 
     $ #navigate to where you wanna be
     $ mkdir myHolochainApp
