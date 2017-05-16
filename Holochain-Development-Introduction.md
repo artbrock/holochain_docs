@@ -1,10 +1,20 @@
 # Holochain Development
 
-First we will take you through the development process using an example Holochain App DNA from our own repository, and then we will show you how to use a skeleton to start your own project.
+> If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
-## A Simple Working Example with `examples/clutter`
+A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
 
-1. Install the ***latest*** version of Docker Compose directly from [the docker website](https://docs.docker.com/compose/install/) - ( You may have to install Docker too)
+There is a skeleton/example `Holochain App` at https://github.com/metacurrency/holoSkel. 
+The skeleton also contains scripts for testing your app. These scripts require Docker, and if you have Docker installed, you only need to worry about the source code for your `App`. The `Core` is downloaded and managed by Docker.
+
+## Running, Testing and Distributing your app
+Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
+* `Holochain Apps` cannot produce unsecure behaviour on the host machine through "root exploits".
+* Distribution of your `app` will not require reference to installation of the holochain `core`, as the docker build system will take care of this.
+* In situations where users have `apps` which require different versions of the `core`, this will be hidden by the docker tools.
+
+### Running the app
+1. [Install Docker](Docker-Installation-for-Developers)
 2. Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
 
     ```bash 
@@ -13,14 +23,30 @@ First we will take you through the development process using an example Holochai
     $ cd myHolochainApp
     $ git clone https://github.com/metacurrency/holoSkel.git .
     ```
-3. This will create a skeleton holochain app for you in the current directory (`.`), and also downloads a set of example holochain apps in to `./examples`. `examples/clutter` is a simple decentralised messaging app built on Holochain. Our toolchain uses docker containers to remove the need for you to maintain the holochain software. To run an example of the clutter app:
+    These files contain a simple chat `app`, suitable as a starting point for developing your own `app`, and all scripts necessary for running and testing.
+3. Pick a name for your new chat app. Lets call it myHolochainApp, and build the app.
 
     ```bash
-    $ cd examples/clutter
-    $ docker build -t clutter
-    $ docker run -Pdt clutter
+    $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
+    $ docker build -t myHolochainApp .
+    ````
+    > What does my image contain?
+    The docker image created contains:
+    * a small distribution of linux, designed for running the Go programming language, called "Alpine"
+    * the Go programming language
+    * all the Go libraries that the Holochain Core depends on
+    * the Holochain Core
+    * and finally, your myHolochainApp
+
+    This is a developer image of your app. There are two more stages that are needed 
+    In order for the docker image to be built, your app must pass all of its own tests
+    
+
+    $ # spin up a docker container from the image tagged "myHolochainApp"
+    $ docker run -Pdt myHolochainApp
     ```
-    > this means `docker run`:
+
+
     * `-P` map all exposed ports onto random ports on the host
     * `-d` run the container in daemonised mode
     * `-t` the image we built, tagged as `clutter` in the line before
