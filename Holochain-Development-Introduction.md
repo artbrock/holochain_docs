@@ -42,8 +42,14 @@ The development lifecycle of a holochain app:
     > * the Holochain Core
     > * and finally, your myHolochainApp
 
-    This is a developer image of your app. There are two more stages that are needed 
-    In order for the docker image to be built, your app must pass all of its own tests
+    > **What did it do?**
+    > * If you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
+    > * added the latest version of your source files from your host machine (this always happens)
+    > * ran hc test myHolochainApp
+    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
+
+    > **What next?**<br><br>
+    > This is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
 
 These scripts require Docker, and if you have Docker installed, you only ever need to worry about the source code for your app. Throughout the whole development lifecycle of your app, the holochain core will be inside docker containers, and you will never need to touch it.
 
