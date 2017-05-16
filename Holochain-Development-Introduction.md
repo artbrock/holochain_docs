@@ -16,8 +16,7 @@ The development lifecycle of a holochain app:
 ## Download docker and the app skeleton
 1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
-2. The holochain app skeleton can be found at https://github.com/metacurrency/holoSkel
-
+2. Pick a name for your new holochain app. Lets call it myHolochainApp
     ```bash 
     $ #navigate to where you wanna be
     $ mkdir myHolochainApp
@@ -27,6 +26,9 @@ The development lifecycle of a holochain app:
     > **What do I have?**
     > * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
     > * Scripts for running, testing and distributing your holochain app.
+
+    > **What did it do?**
+    > * Downloaded the holochain skeleton app from https://github.com/metacurrency/holoSkel
   
 ## Build developer image
 1. Pick a name for your new chat app. Lets call it myHolochainApp.
