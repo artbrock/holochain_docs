@@ -34,7 +34,7 @@ The development lifecycle of a holochain app:
     $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
     $ docker build -t myHolochainApp .
     ````
-    > **What do I have?**<br>
+    > **What do I have?**<br><br>
     > The docker image created contains:
     > * a small distribution of linux, designed for running the Go programming language, called "Alpine"
     > * the Go programming language
