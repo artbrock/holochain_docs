@@ -41,7 +41,7 @@ The development lifecycle of a holochain app:
     ```
     > **What do I have?**<br><br>
     > The docker image created contains:
-    > * a small distribution of linux, designed for running the Go programming language, called "Alpine"
+    > * a small distribution of linux, called "Alpine"
     > * the Go programming language
     > * all the Go libraries that the Holochain Core depends on
     > * the Holochain Core
