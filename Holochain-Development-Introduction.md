@@ -22,7 +22,7 @@ The development lifecycle of a holochain app:
     $ cd myHolochainApp
     $ git clone https://github.com/metacurrency/holoSkel.git .
     ```
-    > *What do I have?*
+    > **What do I have?**
     > * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
     > * Scripts for running, testing and distributing your holochain app.
   
@@ -34,7 +34,7 @@ The development lifecycle of a holochain app:
     $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
     $ docker build -t myHolochainApp .
     ````
-    > *What do I have?*
+    > **What do I have?**<br>
     > The docker image created contains:
     > * a small distribution of linux, designed for running the Go programming language, called "Alpine"
     > * the Go programming language
