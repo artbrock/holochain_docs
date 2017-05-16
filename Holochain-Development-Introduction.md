@@ -4,7 +4,7 @@ A `Holochain App` is a set of files that the `Holochain Core` uses to produce th
 
 The development lifecycle of a holochain app:
 1. download docker and the app skeleton
-2. build developer image
+2. test code and build developer image
 3. run multi-node tests
 4. alter the source
 5. commit changes to git
