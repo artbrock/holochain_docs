@@ -22,9 +22,9 @@ The development lifecycle of a holochain app:
     $ cd myHolochainApp
     $ git clone https://github.com/metacurrency/holoSkel.git .
     ```
-> What do I have?
-> * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
-> * Scripts for running, testing and distributing your holochain app.
+    > *What do I have?*
+    > * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
+    > * Scripts for running, testing and distributing your holochain app.
   
 ## Build developer image
 1. Pick a name for your new chat app. Lets call it myHolochainApp.
@@ -34,13 +34,13 @@ The development lifecycle of a holochain app:
     $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
     $ docker build -t myHolochainApp .
     ````
-> What do I have?
-> The docker image created contains:
-> * a small distribution of linux, designed for running the Go programming language, called "Alpine"
-> * the Go programming language
-> * all the Go libraries that the Holochain Core depends on
-> * the Holochain Core
-> * and finally, your myHolochainApp
+    > *What do I have?*
+    > The docker image created contains:
+    > * a small distribution of linux, designed for running the Go programming language, called "Alpine"
+    > * the Go programming language
+    > * all the Go libraries that the Holochain Core depends on
+    > * the Holochain Core
+    > * and finally, your myHolochainApp
 
     This is a developer image of your app. There are two more stages that are needed 
     In order for the docker image to be built, your app must pass all of its own tests
