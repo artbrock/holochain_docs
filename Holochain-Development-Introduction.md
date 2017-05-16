@@ -16,11 +16,11 @@ The development lifecycle of a holochain app:
 ## Download docker and the app skeleton
 1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
-2. Pick a name for your new holochain app. Lets call it `myHolochainApp`
+2. Pick an all lowercase name for your holochain app. Lets call it `myholochainapp`
     ```bash 
     $ #navigate to where you wanna be
-    $ mkdir myHolochainApp
-    $ cd myHolochainApp
+    $ mkdir myholochainapp
+    $ cd myholochainapp
     $ git clone https://github.com/metacurrency/holoSkel.git .
     ```
     > **What do I have?**
@@ -35,9 +35,9 @@ The development lifecycle of a holochain app:
 
     ```bash
     $ #build a docker image of the app
-    $ #  give that docker image the tag "myHolochainApp"
+    $ #  give that docker image the tag "myholochainapp"
     $ #  use the current directory '.' as the context
-    $ docker build -t myHolochainApp .
+    $ docker build -t myholochainapp .
     ```
     > **What do I have?**<br><br>
     > The docker image created contains:
@@ -45,12 +45,12 @@ The development lifecycle of a holochain app:
     > * the Go programming language
     > * all the Go libraries that the Holochain Core depends on
     > * the Holochain Core
-    > * and finally, your myHolochainApp
+    > * and finally, your myholochainapp
 
     > **What did it do?**
     > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
     > * added the latest version of your source files from your host machine (this always happens)
-    > * ran hc test myHolochainApp
+    > * ran hc test myholochainapp
     >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
 
     > **What next?**<br><br>
@@ -61,11 +61,11 @@ The development lifecycle of a holochain app:
 1. Use docker to create a runtime instance of your developer image, called a `docker container`
     
     ```bash
-    $ #spin up a container of myHolochainApp
+    $ #spin up a container of myholochainapp
     $ #  -P give your network access to your app
     $ #  -d run the container like a service (daemonised)
-    $ #  -t use the image with the tag myHolochainApp (remember!)
-    $ docker run -Pd -t myHolochainApp
+    $ #  -t use the image with the tag myholochainapp (remember!)
+    $ docker run -Pd -t myholochainapp
     ```
 
     > **What do I have?**
@@ -77,13 +77,18 @@ The development lifecycle of a holochain app:
     > * security vulnerabilities through docker to your host machine
 
     > **What did it do?**
-    > * If you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
-    > * added the latest version of your source files from your host machine (this always happens)
-    > * ran hc test myHolochainApp
-    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
+    > * Some very very very clever things indeed. For now it is important to know that unless you explicitly delete it, the current state (of the hard disk, not of the memory) of every container you ever run, is saved on your host machine. This has two important impacts. One, you can never lose anything stored in a docker container unless you explicitly delete it, and two, eventually you might have to prune the unused containers from your machine. We have scripts to help with this.
 
-    > **What next?**<br><br>
-    > This is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
+2. Determine what port on the host machine connects to your app's UI.
+    ```bash
+    $ docker ps --latest
+    ```
+
+    ```bash
+    dbb55a7828b7        myholochainapp        "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
+    ```
+
+
 
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
@@ -97,8 +102,8 @@ Holochain Apps can be run inside Docker containers in a production environment. 
 3. 
     
 
-    $ # spin up a docker container from the image tagged "myHolochainApp"
-    $ docker run -Pdt myHolochainApp
+    $ # spin up a docker container from the image tagged "myholochainapp"
+    $ docker run -Pdt myholochainapp
     ```
 
 
