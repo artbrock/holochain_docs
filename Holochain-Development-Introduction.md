@@ -58,7 +58,7 @@ The development lifecycle of a holochain app:
 
 ## Play with or test your app
 ### Run the app to play with
-Use docker to create a runtime instance of your developer image, called a.
+1. Use docker to create a runtime instance of your developer image, called a `docker container`
     
     ```bash
     $ #spin up a container of myHolochainApp
