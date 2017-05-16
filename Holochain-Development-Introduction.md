@@ -23,7 +23,7 @@ The development lifecycle of a holochain app:
     $ git clone https://github.com/metacurrency/holoSkel.git .
     ```
 > What do I have?
-> * These files contain the source code files for a simple chat `app`. This is a suitable starting point for developing a new holochain app.
+> * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
 > * Scripts for running, testing and distributing your holochain app.
   
 
