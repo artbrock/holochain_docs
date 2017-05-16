@@ -48,6 +48,33 @@ The development lifecycle of a holochain app:
     > * and finally, your myHolochainApp
 
     > **What did it do?**
+    > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
+    > * added the latest version of your source files from your host machine (this always happens)
+    > * ran hc test myHolochainApp
+    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
+
+    > **What next?**<br><br>
+    > this is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
+
+## Play with or test your app
+### Run the app to play with
+Use docker to create a runtime instance of your developer image, called a `docker container`
+    ```bash
+    $ #spin up a container of myHolochainApp
+    $ #  -P map ports from the host through to your app
+    $ #  -d run the container in the background (daemonised)
+    $ #  -t use the image with the tag myHolochainApp
+    $ docker run -Pdt myHolochainApp
+    ```
+    > **What do I have?**
+    > * currently running on your computer, a tiny type of virtual machine called a container
+    > * the container is running a copy of your app:exclamation:
+    > * the Go programming language
+    > * all the Go libraries that the Holochain Core depends on
+    > * the Holochain Core
+    > * and finally, your myHolochainApp
+
+    > **What did it do?**
     > * If you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
     > * added the latest version of your source files from your host machine (this always happens)
     > * ran hc test myHolochainApp
@@ -55,19 +82,6 @@ The development lifecycle of a holochain app:
 
     > **What next?**<br><br>
     > This is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
-
-## Play with or test your app
-### Run the app to play with
-Use docker to create a runtime instance of the `docker image`, called a `docker container`
-    ```bash
-    $ # spin up a docker container of myHolochainApp
-    $ docker run -Pdt myHolochainApp
-    ```
-
-
-    * `-P` map all exposed ports onto random ports on the host
-    * `-d` run the container in daemonised mode
-    * `-t` the image we built, tagged as `clutter` in the line before
 
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
