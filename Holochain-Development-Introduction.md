@@ -1,11 +1,31 @@
 # Holochain Development
 
-> If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
-
 A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
 
-There is a skeleton/example `Holochain App` at https://github.com/metacurrency/holoSkel. 
-The skeleton also contains scripts for testing your app. These scripts require Docker, and if you have Docker installed, you only need to worry about the source code for your `App`. The `Core` is downloaded and managed by Docker.
+The development lifecycle of a holochain app:
+1. download docker and the app skeleton
+2. built and test
+3. alter the source
+4. commit changes to git
+5. rince and repeat 3.
+6. distribute your app
+
+## 1. Download docker and the app skeleton
+> Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
+
+> Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
+
+    ```bash 
+    $ #navigate to where you wanna be
+    $ mkdir myHolochainApp
+    $ cd myHolochainApp
+    $ git clone https://github.com/metacurrency/holoSkel.git .
+    ```
+    These files contain a simple chat `app`, suitable as a starting point for developing your own `app`, and all scripts necessary for running and testing.
+
+
+There is a skeleton/example Holochain App at https://github.com/metacurrency/holoSkel.
+The skeleton also contains scripts for testing your app. These scripts require Docker, and if you have Docker installed, you only ever need to worry about the source code for your app. Throughout the whole development lifecycle of your app, the holochain core will be inside docker containers, and you will never need to touch it.
 
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
@@ -15,15 +35,7 @@ Holochain Apps can be run inside Docker containers in a production environment. 
 
 ### Running the app
 1. [Install Docker](Docker-Installation-for-Developers)
-2. Clone the `metacurrency/holoSkel` repository [from github](https://github.com/metacurrency/holoSkel
-
-    ```bash 
-    $ #navigate to where you wanna be
-    $ mkdir myHolochainApp
-    $ cd myHolochainApp
-    $ git clone https://github.com/metacurrency/holoSkel.git .
-    ```
-    These files contain a simple chat `app`, suitable as a starting point for developing your own `app`, and all scripts necessary for running and testing.
+2. 
 3. Pick a name for your new chat app. Lets call it myHolochainApp, and build the app.
 
     ```bash
