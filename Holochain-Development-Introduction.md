@@ -30,7 +30,7 @@ The development lifecycle of a holochain app:
   
 ## Build developer image
 1. Pick a name for your new chat app. Lets call it myHolochainApp.
-2. Use docker to create a developer `docker image` of the app
+2. Create a *developer* `docker image` of your app to use for testing.
 
     ```bash
     $ #build a docker image of the app
