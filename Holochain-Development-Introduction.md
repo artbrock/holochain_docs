@@ -67,6 +67,7 @@ Use docker to create a runtime instance of your developer image, called a `docke
     $ #  -t use the image with the tag myHolochainApp (remember!)
     $ docker run -Pdt myHolochainApp
     ```
+
     > **What do I have?**
     > * currently running on your computer, a tiny type of virtual machine called a container
     > * the container is running a copy of your app:exclamation:
