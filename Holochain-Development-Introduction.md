@@ -65,16 +65,16 @@ The development lifecycle of a holochain app:
     $ #  -P give your network access to your app
     $ #  -d run the container like a service (daemonised)
     $ #  -t use the image with the tag myHolochainApp (remember!)
-    $ docker run -Pdt myHolochainApp
+    $ docker run -Pd -t myHolochainApp
     ```
 
     > **What do I have?**
-    > * currently running on your computer, a tiny type of virtual machine called a container
+    > * currently running on your computer, a type of tiny virtual machine called a container
     > * the container is running a copy of your app:exclamation:
-    > * the Go programming language
-    > * all the Go libraries that the Holochain Core depends on
-    > * the Holochain Core
-    > * and finally, your myHolochainApp
+    > * there is a port (a random port, lets call her bertha) on the host machine which is connected to port 3141 inside the container. Your app is there! Opening your browser to point at bertha will show the UI for your app. Cool :cool:
+
+    > **What don't I have?**
+    > * security vulnerabilities through docker to your host machine
 
     > **What did it do?**
     > * If you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
