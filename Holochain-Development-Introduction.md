@@ -6,8 +6,8 @@ The development lifecycle of a holochain app:
 1. download docker and the app skeleton
 2. build developer image
 3. play with or test your app
-  3.1 run the app for manual testing
-  3.2 multi-node tests
+    3.1 run the app for manual testing
+    3.2 multi-node tests
 4. alter the source
 5. commit changes to git
 6. rince and repeat 2.
