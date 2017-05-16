@@ -5,7 +5,9 @@ A `Holochain App` is a set of files that the `Holochain Core` uses to produce th
 The development lifecycle of a holochain app:
 1. download docker and the app skeleton
 2. build developer image
-3. run multi-node tests
+3. play with or test your app
+  3.1 run the app for manual testing
+  3.2 multi-node tests
 4. alter the source
 5. commit changes to git
 6. rince and repeat 2.
@@ -52,7 +54,7 @@ The development lifecycle of a holochain app:
     > **What next?**<br><br>
     > This is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
 
-These scripts require Docker, and if you have Docker installed, you only ever need to worry about the source code for your app. Throughout the whole development lifecycle of your app, the holochain core will be inside docker containers, and you will never need to touch it.
+run the app &/|| multi-node tests
 
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
