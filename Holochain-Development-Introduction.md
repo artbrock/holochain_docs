@@ -31,7 +31,8 @@ The development lifecycle of a holochain app:
 2. Use docker to create a developer image of the app
 
     ```bash
-    $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
+    $ #build a docker image of the app
+    $ #  give that docker image the tag "myHolochainApp"
     $ docker build -t myHolochainApp .
     ````
     > **What do I have?**<br><br>
