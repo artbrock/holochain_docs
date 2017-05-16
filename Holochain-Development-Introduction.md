@@ -26,10 +26,26 @@ The development lifecycle of a holochain app:
 > * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
 > * Scripts for running, testing and distributing your holochain app.
   
+## Build developer image
+1. Pick a name for your new chat app. Lets call it myHolochainApp.
+2. Use docker to create a developer image of the app
 
+    ```bash
+    $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
+    $ docker build -t myHolochainApp .
+    ````
+> What do I have?
+> The docker image created contains:
+> * a small distribution of linux, designed for running the Go programming language, called "Alpine"
+> * the Go programming language
+> * all the Go libraries that the Holochain Core depends on
+> * the Holochain Core
+> * and finally, your myHolochainApp
 
-There is a skeleton/example Holochain App at https://github.com/metacurrency/holoSkel.
-The skeleton also contains scripts for testing your app. These scripts require Docker, and if you have Docker installed, you only ever need to worry about the source code for your app. Throughout the whole development lifecycle of your app, the holochain core will be inside docker containers, and you will never need to touch it.
+    This is a developer image of your app. There are two more stages that are needed 
+    In order for the docker image to be built, your app must pass all of its own tests
+
+These scripts require Docker, and if you have Docker installed, you only ever need to worry about the source code for your app. Throughout the whole development lifecycle of your app, the holochain core will be inside docker containers, and you will never need to touch it.
 
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
@@ -40,22 +56,7 @@ Holochain Apps can be run inside Docker containers in a production environment. 
 ### Running the app
 1. [Install Docker](Docker-Installation-for-Developers)
 2. 
-3. Pick a name for your new chat app. Lets call it myHolochainApp, and build the app.
-
-    ```bash
-    $ # build a docker image of the app, and give that docker image the tag "myHolochainApp"
-    $ docker build -t myHolochainApp .
-    ````
-    > What does my image contain?
-    The docker image created contains:
-    * a small distribution of linux, designed for running the Go programming language, called "Alpine"
-    * the Go programming language
-    * all the Go libraries that the Holochain Core depends on
-    * the Holochain Core
-    * and finally, your myHolochainApp
-
-    This is a developer image of your app. There are two more stages that are needed 
-    In order for the docker image to be built, your app must pass all of its own tests
+3. 
     
 
     $ # spin up a docker container from the image tagged "myHolochainApp"
