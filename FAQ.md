@@ -2,18 +2,22 @@
 
 If you have more questions for our FAQ, please make a suggestion.
 
-<!-- TOC START min:2 max:3 link:true update:true -->
-  - [Why do you call it "Holochain?"](#why-do-you-call-it-holochain)
-    - [A Unified Cryptographic WHOLE](#a-unified-cryptographic-whole)
-    - [Holographic Storage](#holographic-storage)
-    - [Holarchy](#holarchy)
-  - [How is a Holochain different from a blockchain?](#how-is-a-holochain-different-from-a-blockchain)
-  - [How is a Holochain different from a DHT (Distributed Hash Table)?](#how-is-a-holochain-different-from-a-dht-distributed-hash-table)
-  - [What kind of projects is Holochain good for?](#what-kind-of-projects-is-holochain-good-for)
-  - [What kind of projects is it NOT good for?](#what-kind-of-projects-is-it-not-good-for)
-  - [Can you run a cryptocurrency on a Holochain?](#can-you-run-a-cryptocurrency-on-a-holochain)
 
-<!-- TOC END -->
+<!-- toc orderedList:0 depthFrom:2 depthTo:6 -->
+
+* [Why do you call it "Holochain?"](#why-do-you-call-it-holochain)
+  * [A Unified Cryptographic WHOLE](#a-unified-cryptographic-whole)
+  * [Holographic Storage](#holographic-storage)
+  * [Holarchy](#holarchy)
+* [How is a Holochain different from a blockchain?](#how-is-a-holochain-different-from-a-blockchain)
+* [How is a Holochain different from a DHT (Distributed Hash Table)?](#how-is-a-holochain-different-from-a-dht-distributed-hash-table)
+* [What kind of projects is Holochain good for?](#what-kind-of-projects-is-holochain-good-for)
+* [When NOT to Use Holochain](#when-not-to-use-holochain)
+* [What is Holochain's Consensus Algorithm?](#what-is-holochains-consensus-algorithm)
+* [Can you run a cryptocurrency on a Holochain?](#can-you-run-a-cryptocurrency-on-a-holochain)
+
+<!-- tocstop -->
+
 
 ## Why do you call it "Holochain?"
 
@@ -79,9 +83,9 @@ You probably SHOULD NOT use holochain for:
 * **Data positivist-oriented apps:** If you have built all of your application logic around the idea that data exists as an absolute truth, not as an assertion by an agent at a time, then you would need to rethink your whole approach before putting it in a Holochain app. This is why _most existing cryptocurrencies would need significant refactoring_ to move from blockchain to holochain, since they are organized around managing the existence of cryptographic tokens.
 
 ## What is Holochain's Consensus Algorithm?
-In making holochain, our goal is to keep it as simple as possible, but no simpler for providing data integrity for fully distributed applications. As we understand it, information integrity does not require consensus about an absolute order of events. You know how we know? Because it works in the real world --meaning the physically distributed systems outside of computers). Atoms, molecules, cells, bodies each maintain their own state just fine without consensus or a global ledger.  
+In making holochain, our goal is to keep it as simple as possible, but no simpler for providing data integrity for fully distributed applications. As we understand it, information integrity does not require consensus about an absolute order of events. You know how we know? Because the real world works this way -- meaning, the physically distributed systems outside of computers). Atoms, molecules, cells, bodies each maintain the integrity of their individual and collective state just fine without consensus on a global ledger.  
 
-Not only is there no consensus about an absolute order of events, but if you understand the General Theory of Relativity, then you'll understand there is in fact no real sequence of events, only sequence relative to a particular vantage point.
+Not only is there no consensus about an absolute order of events, but if you understand the General Theory of Relativity, then you'll understand there is in fact **no real sequence of events**, only sequences relative to a particular vantage point.
 
 That's how holochains are implemented. Each source chain for each person/agent/participant in a Holochain preserves the immutable data integrity and order of events of that agent's actions from their vantage point. As data is published from a source chain to the validating DHT, then other agents sign their validation, per the shared "physics" encoded into the DNA of that Holochain.
 
@@ -91,12 +95,12 @@ Holochains do sign every change of data and timestamp (without a universal time 
 
 However, if your system is designed around data having one absolute true state, not one which is dynamic and varied based on vantage point, we would suggest you rethink your design. So far, for every problem space where people thought they needed an absolute sequence of events or global consensus, we have been able to map an alternate approach without those requirements. Also, we already know this is how the world outside of computers works, so to design your system to require (or construct) an artificial reality is probably setting yourself up for failure, or at the very least for massive amounts of unnecessary computation, communication, and fragility within your system.
 
-**TL;DR;** Holochains don't manage consensus, at least not about some absolute perspective on data or sequence of events. They manage distributed data integrity. Holochains do rely on consensus about the validation rules (DNA) which define that integrity, but so does every blockchain or blockchain alternative. If you have different validation rules, you're not on the same chain. These validation rules as establish the "data physics," then the applications are built on that.
+**TL;DR;** HOLOCHAINS DON'T MANAGE CONSENSUS, at least not about some absolute perspective on data or sequence of events. They manage distributed data integrity. Holochains do rely on consensus about the validation rules (DNA) which define that integrity, but so does every blockchain or blockchain alternative (e.g. Bitcoin Core). If you have different validation rules, you're not on the same chain. These validation rules establish the "data physics," and then applications are built on that foundation.
 
 ## Can you run a cryptocurrency on a Holochain?
 Theoretically, yes -- but for the moment, we'd discourage it.
 
-If you don't know how to issue currencies through mutual credit, or how to account for them through double entry accounting, then you probably shouldn't build one on holochains. If you do understand those key principles, than it is not too difficult to build a cryptocurrency for which holochain provides ample accounting and data integrity.
+If you don't know how to issue currencies through mutual credit, or how to account for them through double entry accounting, then you probably shouldn't build one on holochains. If you do understand those key principles, than it is not very difficult to build a cryptocurrency for which holochain provides ample accounting and data integrity.
 
 However, you probably shouldn't try to do it in the way everyone is used to building cryptocurrencies on a global ledger of cryptographic tokens. [Determining the status of tokens/coins](https://en.bitcoin.it/wiki/Double-spending) is what create the need for global consensus (about the existence/status/validity of the token or coin). However, there are [other approaches to making currencies](https://medium.com/metacurrency-project/perspectives-on-blockchains-and-cryptocurrencies-7ef391605bd1) which, for example, involve [issuance via mutual credit](https://medium.com/metacurrency-project/beyond-blockchain-simple-scalable-cryptocurrencies-1eb7aebac6ae) instead of issuance by fiat.
 
