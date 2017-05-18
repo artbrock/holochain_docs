@@ -57,7 +57,7 @@ directory structure:
 
 ## Multi-node testing, how to construct a scenario
 
-[Video showing tests being run](https://youtu.be/K1GPYY4imt0) (doesnt open new tab, maybe ctrl-click or w/e)
+[Video showing tests being run](https://youtu.be/K1GPYY4imt0) (doesn't open new tab, maybe ctrl-click or w/e)
 
 Each test/scenario sub-directory should contain one test file for each role required to model the test. The Script requires the name of the scenario directory [repo_root/test/\<scenarioName\>] as a parameter. Test filenames are automatically discovered.
 
