@@ -9,12 +9,15 @@ There are two kinds of values that are available to your application, system glo
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
  - **`HC.LinkAction`** Object with link action value constants: `Add`,`Del` for use when committing Links entries.
- - **`HC.PkgReq`** Object with package request constants: `Chain`, `ChainOpt`
- - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `None`, `Headers`, `Entries`, `Full` so, for example, a JavaScript nucleus a package request function that uses these values might look like this:
+ - **`HC.PkgReq`** Object with package request constants: `Chain`,`SubChain`, `ChainOpt`, `EntryType`
+ - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `Default`, `Headers`, `Entries`, `Full` so, for example, a JavaScript nucleus a package request function that uses these values might look like this:
 ```JavaScript
 function validatePutPkg(entry_type) {
-  req = {};
+  var req = {};
   req[HC.PkgReq.Chain]=HC.PkgReq.ChainOpt.Full;
+// or 
+  req[HC.PkgReq.SubChain]=HC.PkgReq.ChainOpt.Headers;
+  req[HC.PkgReq.EntryType]="someType";
   return req;
 }
 ``` 
@@ -37,17 +40,31 @@ This function is called during system genesis (from ```hc gen chain``` for examp
 
 ### Validation functions:
 
-### `validateCommit <entry-type> <entry> <header> <sources>`
+### `validateCommit <entry-type> <entry> <header> <package> <sources>`
 
 This function gets called when an entry is about to be committed to a source chain.  Use this function to describe the agreements about data as it should be added to shared holochain.  This function gets called for all entry types.
 
-### `validatePut <entry-type> <entry> <header> <sources>`
+### `validatePut <entry-type> <entry> <header> <package> <sources>`
 
 This function gets called when and entry is about to be committed to the DHT on any node.  It is very likely that this validation routine should check the same data integrity as validateCommit, but, as it happens during a different part of the data life-cycle, it may require additonal validation steps.  [add example here]  This function will only get called on entry types with "public" sharing, as they are the only types that get put to the DHT by the system.
+
+### `validateMod <entry-type> <hash> <newHash> <package> <sources>`
+
+This function gets called as a consequence of a `mod` command being issued.
+
+### `validateDel <entry-type> <hash> <package> <sources>`
+
+This function gets called as a consequence of a `del` command being issued.
 
 ### `validateLink <linkEntryType> <baseHash> <linkHash> <tag> <sources>`
 
 This function gets called when ever a link is about to be added to the DHT.  Links are added for every linking element in the special "links" entry type.  Note that this is a DHT level validation routine, in that it gets called when the Link message is received by a DHT node, not when the linking entry is committed.  The regular validateCommit routine gets called as usual when that entry is committed to the source chain.
+
+Each one of the validate commands has a corresponding package building command that will get called on the source node as part of the validation cycle so that the appropriate data can get passed back to the node trying to validate the action.  The function is of the form:
+
+### `validatePutPkg <entry-type>`
+
+This function can return true if there doesn't need to be any special data returned. TODO explain better
 
 **The validation functions are the heart of ensuring distributed data integrity. Please consider them thoroughly and carefully as your systems data integrity is built from them.**
 
@@ -56,7 +73,10 @@ Validation functions are called under two distinct conditions.
  1. When data is about to be added to the local chain (validateCommit).
  2. Whenever any node of the DHT receives a request to store or change data in some way, the request and the changes are validated against the source chain of the person making the request (validatePut,validateLink.) These are the validation functions that check permissions and enforce any other kind of data integrity you intend to preserve. For example, in a distributed Twitter, only Bob should be able to attach (link) a "post" to Bob as if it is his, and only Bob should be able to link Bob as a "follower" of Alice. _Please keep in mind that system variables like App.Agent.Hash that return your own address will not return YOUR address when being executed by a remote DHT node. Code your functions as if anyone will be running them, because they will be._
 
-- `<Sources>` an array of the sources that created this entry
+Common parameters:
+
+- `<package>` the data package created by validateXPkg
+- `<sources>` an array of the sources that created were involved in taking the action
 
 ## System Functions
 
@@ -77,15 +97,15 @@ Attempts to commit an entry to your local, source chain. It will cause callback 
 
 TODO: document committing links.
 
-### `mod <entry-type> <entry-data> <replaces>`
+### `update <entry-type> <entry-data> <replaces>`
 
-Attempts to commit an entry to your local, source chain that "replaces" a previous entry.  If <entry-type> is not private, `mod` will mark <replaces> as Modified on the DHT.  Additionally the modification action will be recorded in the entries' header in the local chain, which will be used by validation routes. Returns either an error or the hash of the committed entry upon success.
+Attempts to commit an entry to your local, source chain that "replaces" a previous entry.  If <entry-type> is not private, `update` will mark <replaces> as Modified on the DHT.  Additionally the modification action will be recorded in the entries' header in the local chain, which will be used by validation routes. Returns either an error or the hash of the committed entry upon success.
 
 ### `query` (still being implemented for direct query your local chain)
 
 Keep in mind that you will want to retrieve most data from the DHT (shared data space), so that you are seeing what the rest of the nodes on your holochain are seeing. However, there are times you will want to query private data fields, or package up up data from your source chain for sending. Use this function.
 
-### `del <hash> <message>`
+### `remove <hash> <message>`
 
 Commits a DelEntry to the local chain with given delete message, and, if the entry type of <hash> is not private, moves the entry to the `Deleted` status on the DHT.
 
