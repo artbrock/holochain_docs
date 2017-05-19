@@ -22,29 +22,28 @@ If you have more questions for our FAQ, please make a suggestion.
 ## Why do you call it "Holochain?"
 
 ### A Unified Cryptographic WHOLE
-**Hashchains + Signing + DHT** --  multiple cryptographic technologies and composed them into a new unity.  
-  1. **Independent Hashchains** provide immutable data integrity and definitive time sequence from the vantage point of each node. Truthfully, we're using hash trees -- blockchains do too, but they're not called blocktrees, so we're not calling these holotrees.
+**Hashchains + Signing + DHT** --  multiple cryptographic technologies composed into a new whole.  
+  1. **Independent Hashchains** provide immutable data integrity and definitive time sequence from the vantage point of each node. Technically, we're using hash trees -- blockchains do too, but they're not called blocktrees, so we're not calling these holotrees.
   2. **Signing** of chains, messages, and validation confirmations maintain authorship, provenance, and accountability. Countersigning of transactions/interactions between multiple parties provide non-repudiation and "locking" of chains.
-  3. **DHT** (Distributed Hash Table) leverages cryptographic hashes for content addressable storage, randomization of interactions to discourage collusion, and performs validation of #1 and #2.
+  3. **DHT** (Distributed Hash Table) leverages cryptographic hashes for content addressable storage, while randomizing of interactions by hashing into neighborhoods to impede collusion, and processing validation #1 and #2 to store data on the DHT.
 
 ### Holographic Storage
 Every node has a resilient sample of the whole. Like cutting a hologram, if you were to cut the network in half (make it so half the nodes were isolated from the other half), you would have two, whole, functioning systems, not two partial, broken systems.
 
 This seems to be the strategy used to create resilience in natural systems. For example, where is your DNA stored? Every cell carries its own copy, with different functions expressed based on the role of that cell.
 
-Where is the English language stored? Every speaker has a different version -- different areas of expertise, or exposure to different slang or specialized vocabularies. Nobody has a complete copy, nor is anyone's version exactly the same as anyone else,  If you disappeared half of the English speakers, it would not degrade the language much.
+Where is the English language stored? Every speaker carries it. People have different areas of expertise, or exposure to different slang or specialized vocabularies. Nobody has a complete copy, nor is anyone's version exactly the same as anyone else,  If you disappeared half of the English speakers, it would not degrade the language much.
 
-If you keep cutting a hologram smaller and smaller eventually the image degrades enough to stop being recognizable, and depending on the resiliency rules for DHT neighborhoods, holochains would likely share a similar fate. Although, if the process of killing off the nodes was not instantaneous, the network might be able to keep reshuffling data to keep it alive.
+If you keep cutting a hologram smaller and smaller eventually the image degrades enough to stop being recognizable, and depending on the resiliency rules for DHT neighborhoods, holochains would likely share a similar fate. Although, if the process of killing off the nodes was not instantaneous, the network may be able to keep reshuffling data per redundancy requirements to keep it alive.
 
 ### Holarchy
 Holochains are composable with each other into new levels of unification. In other words, holochains can build on decentralized capacities provided by other holochains, making new holistic patterns possible. Like bodies build new unity on holographic storage patterns that cells use for DNA, and a society build new unity on the holographic storage patterns of language, and so on.
 
-*Share examples of how we're bootstrapping using a holochain of holochains, DPKI, neighborhood gossip systems, tagging system for locking top hashes, etc.*
-
+*TODO: Share examples of how we're bootstrapping using a holochain of holochains, Decentralized PKI, peered index apps, tagging systems for locking top hashes, etc.*
 
 
 ## How is a Holochain different from a blockchain?
-Long before blockchains were [hash chains](https://en.wikipedia.org/wiki/Hash_chain) and [hash trees](https://en.wikipedia.org/wiki/Merkle_tree). These structures ensure tamper-proof data integrity as progressive versions or additions to data are made. These kinds of hashes are often used as reference points to ensure data hasn't been messed with -- like making sure you're getting the program you meant to download, not some virus in its place.
+Long before blockchains were [hash chains](https://en.wikipedia.org/wiki/Hash_chain) and [hash trees](https://en.wikipedia.org/wiki/Merkle_tree). These structures can be used to ensure tamper-proof data integrity as progressive versions or additions to data are made. These kinds of hashes are often used as reference points to ensure data hasn't been messed with -- like making sure you're getting the program you meant to download, not some virus in its place.
 
 Instead of trying to manage global consensus for every change to a huge blockchain ledger, every participant has [their own signed hash chain](https://medium.com/metacurrency-project/perspectives-on-blockchains-and-cryptocurrencies-7ef391605bd1#.kmous6d7z) ([countersigned for transactions](https://medium.com/metacurrency-project/beyond-blockchain-simple-scalable-cryptocurrencies-1eb7aebac6ae#.u1idviscz) involving others). After data is signed to local chains, it is shared to a [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table) where every node runs the same validation rules (like blockchain nodes all run the [same validation rules](https://bitcoin.org/en/bitcoin-core/features/validation)). If someone breaks those rules, the DHT rejects their data -- their chain has forked away from the holochain.
 
@@ -83,7 +82,7 @@ You probably SHOULD NOT use holochain for:
 * **Data positivist-oriented apps:** If you have built all of your application logic around the idea that data exists as an absolute truth, not as an assertion by an agent at a time, then you would need to rethink your whole approach before putting it in a Holochain app. This is why _most existing cryptocurrencies would need significant refactoring_ to move from blockchain to holochain, since they are organized around managing the existence of cryptographic tokens.
 
 ## What is Holochain's Consensus Algorithm?
-In making holochain, our goal is to keep it as simple as possible, but no simpler for providing data integrity for fully distributed applications. As we understand it, information integrity does not require consensus about an absolute order of events. You know how we know? Because the real world works this way -- meaning, the physically distributed systems outside of computers). Atoms, molecules, cells, bodies each maintain the integrity of their individual and collective state just fine without consensus on a global ledger.  
+In making holochain, our goal is to keep it "as simple as possible, but no simpler" for providing data integrity for fully distributed applications. As we understand it, information integrity does not require consensus about an absolute order of events. You know how we know? Because the real world works this way -- meaning, the physically distributed systems outside of computers. Atoms, molecules, cells, bodies each maintain the integrity of their individual and collective state just fine without consensus on a global ledger.  
 
 Not only is there no consensus about an absolute order of events, but if you understand the General Theory of Relativity, then you'll understand there is in fact **no real sequence of events**, only sequences relative to a particular vantage point.
 
