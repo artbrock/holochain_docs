@@ -9,8 +9,8 @@ There are two kinds of values that are available to your application, system glo
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
  - **`HC.LinkAction`** Object with link action value constants: `Add`,`Del` for use when committing Links entries.
- - **`HC.PkgReq`** Object with package request constants: `Chain`,`SubChain`, `ChainOpt`, `EntryType`
- - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `Default`, `Headers`, `Entries`, `Full` (see validation for example uses of these package request constants)
+ - **`HC.PkgReq`** Object with package request constants: `Chain`,`SubChain`, `ChainOpt`, `EntryTypes`
+ - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `None`, `Headers`, `Entries`, `Full` (see validation for example uses of these package request constants)
  - **`HC.Merkle`** (to be implemented in Security Pass Milestone)
 
 
@@ -106,9 +106,9 @@ Each one of the validate commands has a corresponding package building command t
 
 Note that a `commit` action will trigger a call to validatePutPkg locally when committing happens as validateCommit must have the same data available to it as does validatePut. 
 
-All these functions should simply return nil if the data required by their corresponding validation function is just the minimum default of the Entry and Header of the action. Otherwise these functions must return a "Package Request" object, which specifies what data to be send to the validating node.
+All these functions should simply return nil if the data required by their corresponding validation function is just the minimum default of the Entry and Header of the action. Otherwise these functions must return a "Package Request" object, which specifies what data to be sent to the validating node.
 
-So, for example, a JavaScript nucleus a package request function that indicates that the entire chain should be send in the validation package, would look like this:
+So, for example, a JavaScript nucleus a package request function that indicates that the entire chain should be sent in the validation package, would look like this:
 ```JavaScript
 function validatePutPkg(entry_type) {
   var req = {};
@@ -117,12 +117,12 @@ function validatePutPkg(entry_type) {
 }
 ``` 
 
-Or, if all that's needed is the headers of an entry type "foo" the funtion would look like this:
+Or, if all that's needed is the headers of an entry types "foo" and "bar" the function would look like this:
 ```JavaScript
 function validatePutPkg(entry_type) {
   var req = {};
   req[HC.PkgReq.Chain]=HC.PkgReq.ChainOpt.Headers;
-  req[HC.PkgReq.EntryType]="someType";
+  req[HC.PkgReq.EntryTypes]=["foo","bar"];
   return req;
 }
 ```
