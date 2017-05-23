@@ -67,10 +67,14 @@ Inside a Zome section A list of Zome entries, for each zome which may include th
  : (string) **Public** entries are automatically shared to the DHT after being committed to your chain. **Private** entries are NOT shared to the DHT, and remain only on your source chain. **Partial** entries mean selected fields are shared to DHT and structured for Merkle Proof of validation of those fields while not exposing hidden ones.
 
 ## DHT 
-Settings for DHT behaviors and requirements specific to your application. (STATUS: NOT IMPLEMENTED -- will be complete with ticket [#151](https://github.com/metacurrency/holochain/issues/151)) Future features may possibly include parameters for saturation & multi-sig verification thresholds
+Settings for DHT behaviors and requirements specific to your application. (STATUS: Not Completely Implemented -- will be complete with ticket [#151](https://github.com/metacurrency/holochain/issues/151)) Future features may possibly include parameters for saturation & multi-sig verification thresholds
+
+### Implemented:
 
 **HashType**
  : (string) Identifies hash type to be used for this application.  Should be from the list of hash types from the [multihash library](http://multiformats.io/multihash/)
+
+### Not Implemented:
 
 **NeighborhoodSize**
  : (integer) Establishes minimum online redundancy targets for data, and size of peer sets for sync gossip. A neighborhood size of ZERO means no sharding (every node syncs all data with every other node). ONE means you are running this as a centralized application and gossip is turned OFF. For most applications we recommend neighborhoods no smaller than 8 for nearness or 32 for hashmask sharding. 
