@@ -92,3 +92,6 @@ Settings for DHT behaviors and requirements specific to your application. (STATU
 
 **DataEncryption**
  : What are the options for encrypting data at rest in the dht.db that don't break db functionality? Is there really a point to trying to do this?
+
+**MaxEntrySize**
+  : Sets the maximum allowable size of entries for this holochain
