@@ -66,7 +66,7 @@ Inside a Zome section A list of Zome entries, for each zome which may include th
 **Sharing**
  : (string) **Public** entries are automatically shared to the DHT after being committed to your chain. **Private** entries are NOT shared to the DHT, and remain only on your source chain. **Partial** entries mean selected fields are shared to DHT and structured for Merkle Proof of validation of those fields while not exposing hidden ones.
 
-## DHT 
+## DHTConfig
 Settings for DHT behaviors and requirements specific to your application. (STATUS: Not Completely Implemented -- will be complete with ticket [#151](https://github.com/metacurrency/holochain/issues/151)) Future features may possibly include parameters for saturation & multi-sig verification thresholds
 
 ### Implemented:
