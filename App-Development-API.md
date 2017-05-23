@@ -30,10 +30,10 @@ Returns the named property.  These properties are defined by the app developer. 
 Returns the hash of the given entry data.
 
 ### `call <zome-name> <function-name> <arguments>`
-Calls an exposed function from another zome. `<arguments>` is a string or an object/hash depending on the CallingType that was specified in the function's defintion.
+Calls an exposed function from another zome. `<arguments>` is a string or an object/hash depending on the CallingType that was specified in the function's definition.
 
 ### `debug <value>`
-Outputs <value> to the debug log.
+Outputs `<value>` to the debug log.  `<value>` can be any type, and will get converted to a string.
 
 ## Functions for Chain Actions (may have DHT side-effects)
 
@@ -45,7 +45,7 @@ TODO: document committing links.
 
 ### `update <entry-type> <entry-data> <replaces>`
 
-Attempts to commit an entry to your local, source chain that "replaces" a previous entry.  If <entry-type> is not private, `update` will mark <replaces> as Modified on the DHT.  Additionally the modification action will be recorded in the entries' header in the local chain, which will be used by validation routes. Returns either an error or the hash of the committed entry upon success.
+Attempts to commit an entry to your local, source chain that "replaces" a previous entry.  If `<entry-type>` is not private, `update` will mark `<replaces>` as Modified on the DHT.  Additionally the modification action will be recorded in the entries' header in the local chain, which will be used by validation routes. Returns either an error or the hash of the committed entry upon success.
 
 ### `query` (still being implemented for direct query your local chain)
 
@@ -53,7 +53,7 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 
 ### `remove <hash> <message>`
 
-Commits a DelEntry to the local chain with given delete message, and, if the entry type of <hash> is not private, moves the entry to the `Deleted` status on the DHT.
+Commits a DelEntry to the local chain with given delete message, and, if the entry type of `<hash>` is not private, moves the entry to the `Deleted` status on the DHT.
 
 ## Functions for DHT query 
 
@@ -61,7 +61,7 @@ Commits a DelEntry to the local chain with given delete message, and, if the ent
 
 Retrieves `<hash>` from the DHT.  Options is a hash map of modifiers about how/what to retrieve. Currently the options are:
 
-- `StatusMask: <int>` determines which status entries to return.  You can use defined constants `HC.Status.Default/Live/Deleted/Modified/Rejected` as the <int> value.  If unspecified <StatusMask> will be assumed to be `Default` which is returns only live values entries resolving any modified entries.  
+- `StatusMask: <int>` determines which status entries to return.  You can use defined constants `HC.Status.Default/Live/Deleted/Modified/Rejected` as the `<int>` value.  If unspecified `<StatusMask>` will be assumed to be `Default` which is returns only live values entries resolving any modified entries.  
 
 ### `getLink <base> <tag> [<options>]`
 
