@@ -30,7 +30,7 @@ Returns the named property.  These properties are defined by the app developer. 
 Returns the hash of the given entry data.
 
 ### `call <zome-name> <function-name> <arguments>`
-Calls an exposed function from another zome. `<arguments>` is a string or an object/hash depending on the CallingType that was specified in the function defintion.
+Calls an exposed function from another zome. `<arguments>` is a string or an object/hash depending on the CallingType that was specified in the function's defintion.
 
 ### `debug <value>`
 Outputs <value> to the debug log.
