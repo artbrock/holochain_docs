@@ -21,7 +21,7 @@ Each test file consists of an array of json objects of the form:
   - in other words, to test a sequence of messages sent and received between holochain servers, between 50 to 200 millis is required for message arrival.
     - role1.json >> "send message, Time = 0"
     - role2.json >> "check for message, Time = 100"
-  - the 50 to 200 millis number works well within the test harness network. tests crossing external networks may require much more time for messages to be delivered.
+  - the 50 to 200 millis number works well within the test harness network. Tests crossing external networks may require much more time for messages to be delivered.
 
 
 ## Integrating tests into your holochain application
