@@ -27,6 +27,7 @@
  - [Introduction](Holochain-Development-Introduction)
  - [[Docker Usage]]
  - [Dockerfiles: How and Why](dayzeerationale)
+ - [Docker "Runtime" for an app](docker-app-runtime)
 
 #### Command Line
  - ['hc' Command line usage](hc-Command)
