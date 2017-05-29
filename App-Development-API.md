@@ -86,9 +86,20 @@ This function gets called when an entry is about to be committed to a source cha
 
 This function gets called when and entry is about to be committed to the DHT on any node.  It is very likely that this validation routine should check the same data integrity as validateCommit, but, as it happens during a different part of the data life-cycle, it may require additional validation steps.  [add example here]  This function will only get called on entry types with "public" sharing, as they are the only types that get put to the DHT by the system.
 
-### `validateMod <entry-type> <hash> <newHash> <package> <sources>`
+### `validateMod <entry-type> <entry> <header> <replaces> <package> <sources>`
+This function gets called as a consequence of a `mod` command being issued. `<replaces>` is the hash of the entry being replaced. Often you may be validating that only agent who committed the entry can modify it.  Such a validation routine might look like this:
 
-This function gets called as a consequence of a `mod` command being issued.
+``` javascript
+function validateMod(entry_type,entry,header,replaces,pkg,sources) {
+    var valid = false;
+    if (entry_type=="your_type") {
+        var orig_sources = get(replaces,{GetMask:HC.GetMask.Sources});
+        //Note: error checking on this get removed for simplicity
+        valid = (orig_sources.length == 1 && orig_sources[0] == sources[0]);
+    }
+    return valid;
+}
+```
 
 ### `validateDel <entry-type> <hash> <package> <sources>`
 
