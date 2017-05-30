@@ -39,3 +39,5 @@
 
 #### Meta Rationales / Design documentation 
  - [use cases for dockerfiles](Dockerfile-Design-by-Use-Case)
+
+#### [Installing Holochain on *nix](Install-Holochain-on-nix)
