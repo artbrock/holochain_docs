@@ -1,4 +1,4 @@
-> requires [dockerinstallation](https://github.com/metacurrency/holochain/wiki/Docker-Installation-for-Developers)
+> requires [docker installation](https://github.com/metacurrency/holochain/wiki/Docker-Installation-for-Developers)
 
 ### Install holochain binaries into your user
 ```bash
