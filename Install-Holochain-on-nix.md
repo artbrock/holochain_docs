@@ -10,6 +10,7 @@ source ~/.bashrc
 ### Work with Holochain App repository
 * from the root of the App repository
 ```bash
+#basically creates .hc directory and contents
 holochain.app.init
 git add -A
 git commit -m "added holochain repo files to git repo"
