@@ -14,7 +14,7 @@ git commit -m "added holochain repo files to git repo"
 ```
 
 ### Run integration testing on Holochain App
-* from anywhere inside the app repository
+* from anywhere inside the App repository
 ```bash
 holochain.app.testScenario [tab tab]
 ```
