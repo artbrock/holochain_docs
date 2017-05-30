@@ -1,3 +1,5 @@
+> requires docker
+
 ### Install holochain binaries into your user
 ```bash
 git clone https://github.com/metacurrency/holochain.git holochain
