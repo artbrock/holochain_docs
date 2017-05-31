@@ -8,12 +8,12 @@
 #### Frequently Used
  - [FAQ](FAQ)
  - [Go Docs API](https://godoc.org/github.com/metacurrency/holochain)
- - [Functions Exposed to Nucleus](App-Development-API)
+ - [App Development API](App-Development-API)
 
 #### App Developer Reference
  - [Getting Started](Start-App-Development)
  - [DNA Reference](DNA-Reference)
- - [Nucleus Reference](App-Development-API)
+ - [App Development API](App-Development-API)
  - [Test Driven App Development](App-Testing) 
  - [Source Chain Operations (Personal Data)](Chain-Operations)
  - [DHT Operations (Shared Data)](DHT-Operations)
