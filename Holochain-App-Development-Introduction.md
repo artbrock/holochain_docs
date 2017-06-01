@@ -1,36 +1,44 @@
-# Holochain Development
+# Holochain App Development
 
 A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
 
-The development lifecycle of a holochain app:
-1. download the app skeleton and name your app
-2. build developer image
-3. play with or test your app<br>
+The development life-cycle of a holochain app:
+1. create a new directory for your app, cd into it and run `holochain.app.init`
+2. start your app (using a sample from [examples](https://github.com/metacurrency/holochain/tree/master/examples) or via the [Scaffold Engine])
+3. make [tests as you build](/metacurrency/holochain/wiki/App-Testing)!
+4. play with or test your app<br>
   3.1. run the app to play with<br>
   3.2. run multi-node tests
 4. alter the source
-5. commit changes to git
-6. rince and repeat 2.
-7. distribute your app
+5. rinse and repeat 2.
+6. distribute your app
 
 ## Download the app skeleton and name your app
-1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
+1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers), as well as [holochain](https://github.com/metacurrency/holochain/#installation)
 
-2. Pick a name for your holochain app. Lets call it `myholochainapp`
+2. Let's assume you are building a better version of the our example chat app
     ```bash 
     $ #navigate to where you wanna be
-    $ mkdir myholochainapp
-    $ cd myholochainapp
-    $ git clone https://github.com/metacurrency/holoSkel.git .
+    $ cp -r $GOPATH/src/github.com/metacurrency/holochain/examples/chat myholochat
+    $ cd myholochat
+    $ holochain.app.init
     ```
     > **What do I have?**
-    > * These files contain the source code files for a simple chat app. This is a suitable starting point for developing a new holochain app.
-    > * Scripts for running, testing and distributing your holochain app.
+    > * A new directory with files that contain the necessary configuration for a simple chat app. This is a suitable starting point for developing a new holochain app.
 
     > **What did it do?**
-    > * Downloaded the holochain skeleton app from https://github.com/metacurrency/holoSkel
-  
-## Build developer image
+    > * initialized the directory with a .hc directory
+
+## Build developer images
+    ```bash
+    $ cd $GOPATH/src/github.com/metacurrency/holochain
+    $ docker/build
+    $ holochain.system.buildImageForAppTests
+    ```
+
+TODO: update all the stuff below here...
+
+
 1. Create a developer image of your app to use for testing.
 
     ```bash
@@ -121,7 +129,7 @@ Holochain Apps can be run inside Docker containers in a production environment. 
     dbb55a7828b7        clutter             "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
     ```
 
-    * This shows that our new container has our holochain app accessible through port `32934` on our host machine (e.g. `http://localhost:32934`)
+    * This shows that our new container has our holochain app accessible through port `32934` on our host machine (e.g. `http://localhost:32934`)p -r
     * we can also see that the container is called `agitated_brahmagupta` (docker names are good chat)
     * and that the first bunch of characters of the hash of the container are `dbb55a7828b7`
 
