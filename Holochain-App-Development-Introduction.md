@@ -31,11 +31,12 @@ The development life-cycle of a holochain app:
     > * initialized the directory with a .hc directory
 
 ## Build developer images
-    ```bash
-    $ cd $GOPATH/src/github.com/metacurrency/holochain
-    $ docker/build
-    $ holochain.system.buildImageForAppTests
-    ```
+
+```bash
+$ cd $GOPATH/src/github.com/metacurrency/holochain
+$ docker/build
+$ holochain.system.buildImageForAppTests
+```
 
 TODO: update all the stuff below here...
 
