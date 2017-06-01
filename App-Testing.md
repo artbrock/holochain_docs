@@ -25,10 +25,10 @@ Each test file consists of an array of json objects of the form:
 
 
 ## Integrating tests into your holochain application
-The holochain application skeleton can be found at [https://github.com/metacurrency/holoSkel](https://github.com/metacurrency/holoSkel)
+A holochain application directory (with the directory expanded) should look like this:
 
 directory structure:
-- repo_root
+- my_app
   - [dna](DNA-Reference)
   - [ui](UI-Reference)
   - test
@@ -44,22 +44,22 @@ directory structure:
       - etc...
 
 - test files with a .json extension are automatically discovered
-- to run all the singleNodeTests, repo_root/test/*.json, use this command:
+- to run all the singleNodeTests (my_app/test/*.json), use this command:
     
     ```bash
     hc clone -force my_app my_app  && hc test my_app`
     ```
-- to synchronously run the complete suite of role's from a particular scenario, use this command:
+- to run the complete suite of role's from a particular scenario, use this command:
 
     ```bash
-    repo_root/Scripts/testScenario <scenarioName>
+    holochain.app.testScenario <your-scenario-directory-name-here>
     ```
 
 ## Multi-node testing, how to construct a scenario
 
 [Video showing tests being run](https://youtu.be/K1GPYY4imt0) (doesn't open new tab, maybe ctrl-click or w/e)
 
-Each test/scenario sub-directory should contain one test file for each role required to model the test. The Script requires the name of the scenario directory [repo_root/test/\<scenarioName\>] as a parameter. Test filenames are automatically discovered.
+Each test/scenario sub-directory should contain one test file for each role required to model the test. The Script requires the name of the scenario directory [my_app/test/\<scenarioName\>] as a parameter. Test filenames are automatically discovered.
 
 Tests pass or fail on the basis of the *content* of messages passed between roles/nodes on the network. In order to test the content of messages passed between roles, it is necessary for tests to account for the *amount of time* it takes for messages to travel between nodes on the network. This is achieved with the `Time` parameter of the test object. If roles 1 and 2 are called *back* and *forth* respectively, then when *forth* sends a message, *back* should wait at least 50ms for checking to see if there are messages that contain the expected content. If the message has not yet arrived, then the test will fail.
 
@@ -72,7 +72,7 @@ You can add a _config.json file to the scenario directory of the following forma
 ```
 This allows you to set the gossip interval for your test, as well as a minimum duration that all the nodes should be kept running for the test to succeed, i.e. so other nodes that still have test pending can gossip with them.
 
-When you clone the [repo](https://github.com/metacurrency/holoSkel), you will see that it comes with our example chat app, and you will find a "backnforth" scenario with two roles defined: person1 & person2.  Check out these examples to see how things work.
+In the chat application in the `examples` directory and you will find a [backnforth](https://github.com/metacurrency/holochain/tree/master/examples/chat/test/backnforth) scenario with two roles defined: person1 & person2.  Check out these examples to see how things work.
 
 > TODO
-> Note, it might make sense to impelment both an automatic backnforth test generator, and also an asynchronous method of testing for the test message arrival (e.g. a message id)
+> Note, it might make sense to implement both an automatic backnforth test generator, and also an asynchronous method of testing for the test message arrival (e.g. a message id)
