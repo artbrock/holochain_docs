@@ -17,6 +17,7 @@ The development life-cycle of a holochain app:
 1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers), as well as [holochain](https://github.com/metacurrency/holochain/#installation)
 
 2. Let's assume you are building a better version of the our example chat app
+
     ```bash 
     $ #navigate to where you wanna be
     $ cp -r $GOPATH/src/github.com/metacurrency/holochain/examples/chat myholochat
