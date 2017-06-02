@@ -11,8 +11,8 @@
  - [App Development API](App-Development-API)
 
 #### App Developer Reference
- - [Introduction](Holochain-App-Development-Introduction)
  - [Getting Started](Start-App-Development)
+ - [Introduction](Holochain-App-Development-Introduction)
  - [DNA Reference](DNA-Reference)
  - [Nucleus Reference](App-Development-API)
  - [Test Driven App Development](App-Testing) 
