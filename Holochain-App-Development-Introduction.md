@@ -30,9 +30,9 @@ The development life-cycle of a holochain app:
     $ mkdir myHolochainApp
     $ cd myHolochainApp
     $ holochain.app.init
-    
-    #### example output from *5*
+    #### init will ask some questions
 
+    #### example output after answering questions
     HC: All information entered. Check details: 
     
     HC:  copy from example: "chat"
