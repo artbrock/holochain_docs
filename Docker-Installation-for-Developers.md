@@ -9,5 +9,3 @@
 $ docker info
 ```
 3. Install docker-compose using the instructions here: https://docs.docker.com/compose/install/
-```bash
-curl -L https://github.com/docker/compose/releases/download/1.13.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
