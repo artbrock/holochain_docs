@@ -15,7 +15,9 @@ The development life-cycle of a holochain app:
 7. distribute your app
 
 ## Download the app skeleton and name your app
-1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers), as well as [holochain system tools](Install-Holochain-on-nix)
+1. If you have not already:
+  1. Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
+  2. Install [holochain system tools](Install-Holochain-on-nix)
 
 2. Let's assume you are building a better version of the our example chat app
 
