@@ -8,4 +8,4 @@
 ```bash
 $ docker info
 ```
-3. Install docker-compose using the instructions here: https://docs.docker.com/compose/install/
+3. Install docker-compose `VERSION 1.13` using the instructions here: https://docs.docker.com/compose/install/
