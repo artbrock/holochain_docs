@@ -6,15 +6,20 @@ A `Holochain App` is a set of files that the `Holochain Core` uses to produce th
 
 The development life-cycle of a holochain app:
 1. Install the [holochain system tools](Install-Holochain-on-nix)
-1. create a new directory for your app, cd into it and run `holochain.app.init`
-2. start your app (using a sample from [examples](https://github.com/metacurrency/holochain/tree/master/examples) or via the [Scaffold Engine])
+2. Create some empty directory for your app, e.g. myHolochainApp
+2. holochain.app.init will initialise your directory as a Holochain App<br>
+  EITHER using<br>
+  2.1 holochain.app.init <example directory name> will copy the files from that example as a base for your app<br>
+  OR using<br>
+  2.2  via the [Scaffold Engine](App-from-scaffold-engine)<br>
+  > Scaffold Engine is a Work in Progress. Expected completion data:, please check out __ to contribute
 3. make [tests as you build](/metacurrency/holochain/wiki/App-Testing)!
 4. play with or test your app<br>
   3.1. run the app to play with<br>
   3.2. run multi-node tests
-4. alter the source
-5. rinse and repeat 2.
-6. distribute your app
+5. alter the source
+6. rinse and repeat 2.
+7. distribute your app
 
 ## Download the app skeleton and name your app
 1. If you have not already, install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers), as well as [holochain](https://github.com/metacurrency/holochain/#installation)
