@@ -17,9 +17,9 @@ The development life-cycle of a holochain app:
 ## Install the holochain developer tools
 1. If you have not already:
     1. If you are on bash (nix / (maybe sygwin??)<br>
-      Install [holochain system tools](Install-Holochain-on-nix)
-    2. To do multinode testing, both *nix and bash (at the moment)<br>
-      Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
+       Install [holochain system tools](Install-Holochain-on-nix)
+    2. To do multinode testing, requires 1. above and:
+       Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
 ## Chose a name and initialise a new Holochain App
 1. Let's choose `myHolochainApp` as the app name.
