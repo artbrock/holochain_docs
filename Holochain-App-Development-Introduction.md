@@ -64,6 +64,7 @@ The development life-cycle of a holochain app:
     > * ran all your unit tests (*.json inside `/test` directory of App)
     > * started a local bootstrap server for your roles to discover each other
     > * each role defined in <scenarioName> gets its own `hc serve` instance
+    > * syncronised the start of each `hc serve` instance within 100ms
     > * each `hc serve` behaves as defined in its .json file
     > * logs are in myHolochainApp/logs.holochain
 
