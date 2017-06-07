@@ -7,12 +7,10 @@ A `Holochain App` is a set of files that the `Holochain Core` uses to produce th
 The development life-cycle of a holochain app:
 1. Install the holochain developer tools
 2. Chose a name and initialise a new Holochain App
-3. play with or test your app<br>
-  3.1. run the app to play with<br>
-  3.2. run multi-node tests
-5. alter the source
-6. rinse and repeat 3.
-7. distribute your app
+3. Run unit tests and multi-node integration tests
+4. Alter the source
+5. rinse and repeat 3.
+6. distribute your app
 
 ## Install the holochain developer tools
 1. If you have not already:
@@ -51,12 +49,25 @@ The development life-cycle of a holochain app:
     > * initialized your app directory with a `.hc` directory containing configuration details
     > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
+## Run unit tests and multi-node integration tests
+1. To run all tests and multi-node integration tests
+    ```bash
+    # from anywhere inside your App directory structure
+    #   <scenarioName> has tab-completion for each directory in myHolochainApp/test/*
+    $ holochain.app.testScenario <scenarioName>
+    
+    > **What do I have?**
+    > * logs are in myHolochainApp/logs.holochain
+
+    > **What did it do?**
+    > * built your App from scratch, against the pinned version of the Holochain Core source code
+    > * ran all your unit tests (*.json inside `/test` directory of App)
+    > * started a local bootstrap server for your roles to discover each other
+    > * each role defined in <scenarioName> gets its own `hc serve` instance
+    > * each `hc serve` behaves as defined in its .json file
+    > * logs are in myHolochainApp/logs.holochain
 
     ```
-### Run the multi node integration tests on your app
-1. Multi node Integration requires Docker Installation
-
-
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
 * `Holochain Apps` cannot produce unsecure behaviour on the host machine through "root exploits".
