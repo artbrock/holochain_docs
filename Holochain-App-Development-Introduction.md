@@ -51,64 +51,7 @@ The development life-cycle of a holochain app:
     > * initialized your app directory with a `.hc` directory containing configuration details
     > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
-## Play with or test your app
-### Run the app to play with
-1. Use docker to create a test image of your App and the Core together
-## Build developer images
 
-1. Create a developer image of your app to use for testing.
-
-    ```bash
-    $ #build a docker image of the app
-    $ #  give that docker image the tag "myholochainapp"
-    $ #  use the current directory '.' as the context
-    $ docker build -t myholochainapp .
-    ```
-    > **What do I have?**<br><br>
-    > The docker image created contains:
-    > * a small distribution of linux, called "Alpine"
-    > * the Go programming language
-    > * all the Go libraries that the Holochain Core depends on
-    > * the Holochain Core
-    > * and finally, your myholochainapp
-
-    > **What did it do?**
-    > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
-    > * added the latest version of your source files from your host machine (this always happens)
-    > * ran hc test myholochainapp
-    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
-
-    > **What next?**<br><br>
-    > this is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
-
-2. Use docker to create a runtime instance of your developer image, called a `docker container`
-    
-    ```bash
-    $ #spin up a container of myholochainapp
-    $ #  -P give your network access to your app
-    $ #  -d run the container like a service (daemonised)
-    $ #  -t use the image with the tag myholochainapp (remember!)
-    $ docker run -Pd -t myholochainapp
-    ```
-
-    > **What do I have?**
-    > * currently running on your computer, a type of tiny virtual machine called a container
-    > * the container is running a copy of your app:exclamation:
-    > * there is a port (a random port, which we can discover in point 2. below) on the host machine which is connected to port 3141 inside the container. Your app is there! Opening your browser to point at bertha will show the UI for your app. Cool :cool:
-
-    > **What don't I have?**
-    > * security vulnerabilities through docker to your host machine
-
-    > **What did it do?**
-    > * Some very very very clever things indeed. For now it is important to know that unless you explicitly delete it, the current state (of the hard disk, not of the memory) of every container you ever run, is saved on your host machine. This has two important impacts. One, you can never lose anything stored in a docker container unless you explicitly delete it, and two, eventually you might have to prune the unused containers from your machine. We have scripts to help with this.
-
-2. Determine what port on the host machine connects to your app's UI.
-    ```bash
-    $ docker ps --latest
-    ```
-
-    ```bash
-    dbb55a7828b7        myholochainapp        "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
     ```
 ### Run the multi node integration tests on your app
 1. Multi node Integration requires Docker Installation
@@ -189,3 +132,63 @@ Holochain Apps can be run inside Docker containers in a production environment. 
 ## The Bootstrap Server
 hc instances use our holochain of holochains to self locate onto the network. The (admitedly rather simple!) output of this can be seen at http://bootstrap.holochain.net:10000
 
+
+
+## Play with or test your app
+### Run the app to play with
+1. Use docker to create a test image of your App and the Core together
+## Build developer images
+
+2. Create a developer image of your app to use for testing.
+
+    ```bash
+    $ #build a docker image of the app
+    $ #  give that docker image the tag "myholochainapp"
+    $ #  use the current directory '.' as the context
+    $ docker build -t myholochainapp .
+    ```
+    > **What do I have?**<br><br>
+    > The docker image created contains:
+    > * a small distribution of linux, called "Alpine"
+    > * the Go programming language
+    > * all the Go libraries that the Holochain Core depends on
+    > * the Holochain Core
+    > * and finally, your myholochainapp
+
+    > **What did it do?**
+    > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
+    > * added the latest version of your source files from your host machine (this always happens)
+    > * ran hc test myholochainapp
+    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
+
+    > **What next?**<br><br>
+    > this is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
+
+3. Use docker to create a runtime instance of your developer image, called a `docker container`
+    
+    ```bash
+    $ #spin up a container of myholochainapp
+    $ #  -P give your network access to your app
+    $ #  -d run the container like a service (daemonised)
+    $ #  -t use the image with the tag myholochainapp (remember!)
+    $ docker run -Pd -t myholochainapp
+    ```
+
+    > **What do I have?**
+    > * currently running on your computer, a type of tiny virtual machine called a container
+    > * the container is running a copy of your app:exclamation:
+    > * there is a port (a random port, which we can discover in point 2. below) on the host machine which is connected to port 3141 inside the container. Your app is there! Opening your browser to point at bertha will show the UI for your app. Cool :cool:
+
+    > **What don't I have?**
+    > * security vulnerabilities through docker to your host machine
+
+    > **What did it do?**
+    > * Some very very very clever things indeed. For now it is important to know that unless you explicitly delete it, the current state (of the hard disk, not of the memory) of every container you ever run, is saved on your host machine. This has two important impacts. One, you can never lose anything stored in a docker container unless you explicitly delete it, and two, eventually you might have to prune the unused containers from your machine. We have scripts to help with this.
+
+2. Determine what port on the host machine connects to your app's UI.
+    ```bash
+    $ docker ps --latest
+    ```
+
+    ```bash
+    dbb55a7828b7        myholochainapp        "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
