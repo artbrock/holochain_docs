@@ -2,11 +2,11 @@
 
 A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
 
-> currently the `holochain tools` are set up for development on a *nix environment.
+> currently the `holochain tools` are set up for development on a *nix / bash environment.
 
 The development life-cycle of a holochain app:
 1. Install the holochain developer tools
-2. Initialise an empty / skeleton Holochain App directory
+2. Initialise a Holochain App
 3. play with or test your app<br>
   3.1. run the app to play with<br>
   3.2. run multi-node tests
@@ -14,12 +14,12 @@ The development life-cycle of a holochain app:
 6. rinse and repeat 3.
 7. distribute your app
 
-## Download the app skeleton and name your app
+## Install the holochain developer tools
 1. If you have not already:
     1. Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
     2. Install [holochain system tools](Install-Holochain-on-nix)
 
-2. Let's assume you are building a better version of the our example chat app
+## Initialise the Holochain App
 
     ```bash 
     $ #navigate to where you wanna be
