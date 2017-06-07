@@ -53,7 +53,7 @@ The development life-cycle of a holochain app:
 1. To run all tests and multi-node integration tests
     ```bash
     # from anywhere inside your App directory structure
-    #   <scenarioName> has tab-completion for each directory in myHolochainApp/test/*
+    #   <scenarioName> has tab-completion
     $ holochain.app.testScenario <scenarioName>
     ```
     > **What do I have?**
