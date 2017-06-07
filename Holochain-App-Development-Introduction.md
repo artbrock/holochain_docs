@@ -50,14 +50,17 @@ The development life-cycle of a holochain app:
     > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
 ## Run unit tests and multi-node integration tests
-1. To run all tests and multi-node integration tests
+1. To learn how to write tests, check the examples, and look at [App-Testing](App-Testing)
+2. To run all tests and multi-node integration tests
     ```bash
     # from anywhere inside your App directory structure
     #   <scenarioName> has tab-completion
+    #   the chat example app has one, called "backnforth"
     $ holochain.app.testScenario <scenarioName>
     ```
     > **What do I have?**
-    > * logs are in myHolochainApp/logs.holochain
+    > * each run of testScenario is logged in logs.holochain/cluster.log
+    > * logs are in logs.holochain/testScenario.<scenarioName.log
 
     > **What did it do?**
     > * built your App from scratch, against the pinned version of the Holochain Core source code
