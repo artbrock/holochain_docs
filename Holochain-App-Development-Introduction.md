@@ -2,7 +2,7 @@
 
 A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
 
-> currently the tools are set up for development on a *nix environment.
+> currently the `holochain tools` are set up for development on a *nix environment.
 
 The development life-cycle of a holochain app:
 1. Install the [holochain system tools](Install-Holochain-on-nix)
