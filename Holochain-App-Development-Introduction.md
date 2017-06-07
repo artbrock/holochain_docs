@@ -43,10 +43,11 @@ The development life-cycle of a holochain app:
     HC: holochain app initialised
     ```
     > **What do I have?**
-    > * Assuming you copied the "chat" example, A new directory with files that contain the necessary configuration for a simple chat app. This is a suitable starting point for developing a new holochain app.
+    > * Assuming you copied the "chat" example, you have dna, test and ui directories containing basic setup for a simple chat Holochain App. This is a suitable starting point for developing any new Holochain App.
 
     > **What did it do?**
-    > * initialized the directory with a .hc directory, configured with the App name myHolochainApp
+    > * initialized your app directory with a `.hc` directory containing configuration details
+    > * added some directories and files to `.gitignore` coherent with developing your App on top of a git repository
 
 ## Build developer images
 
