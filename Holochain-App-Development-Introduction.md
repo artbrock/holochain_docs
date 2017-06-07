@@ -16,8 +16,10 @@ The development life-cycle of a holochain app:
 
 ## Install the holochain developer tools
 1. If you have not already:
-    1. Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
-    2. Install [holochain system tools](Install-Holochain-on-nix)
+    1. If you are on bash (nix / (maybe sygwin??)<br>
+      Install [holochain system tools](Install-Holochain-on-nix)
+    2. To do multinode testing, both *nix and bash (at the moment)<br>
+      Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
 
 ## Chose a name and initialise a new Holochain App
 1. Let's choose `myHolochainApp` as the app name.
@@ -51,7 +53,35 @@ The development life-cycle of a holochain app:
 
 ## Play with or test your app
 ### Run the app to play with
-1. Use docker to create a runtime instance of your developer image, called a `docker container`
+1. Use docker to create a test image of your App and the Core together
+## Build developer images
+
+1. Create a developer image of your app to use for testing.
+
+    ```bash
+    $ #build a docker image of the app
+    $ #  give that docker image the tag "myholochainapp"
+    $ #  use the current directory '.' as the context
+    $ docker build -t myholochainapp .
+    ```
+    > **What do I have?**<br><br>
+    > The docker image created contains:
+    > * a small distribution of linux, called "Alpine"
+    > * the Go programming language
+    > * all the Go libraries that the Holochain Core depends on
+    > * the Holochain Core
+    > * and finally, your myholochainapp
+
+    > **What did it do?**
+    > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
+    > * added the latest version of your source files from your host machine (this always happens)
+    > * ran hc test myholochainapp
+    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
+
+    > **What next?**<br><br>
+    > this is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
+
+2. Use docker to create a runtime instance of your developer image, called a `docker container`
     
     ```bash
     $ #spin up a container of myholochainapp
@@ -64,7 +94,7 @@ The development life-cycle of a holochain app:
     > **What do I have?**
     > * currently running on your computer, a type of tiny virtual machine called a container
     > * the container is running a copy of your app:exclamation:
-    > * there is a port (a random port, lets call her bertha) on the host machine which is connected to port 3141 inside the container. Your app is there! Opening your browser to point at bertha will show the UI for your app. Cool :cool:
+    > * there is a port (a random port, which we can discover in point 2. below) on the host machine which is connected to port 3141 inside the container. Your app is there! Opening your browser to point at bertha will show the UI for your app. Cool :cool:
 
     > **What don't I have?**
     > * security vulnerabilities through docker to your host machine
@@ -80,7 +110,8 @@ The development life-cycle of a holochain app:
     ```bash
     dbb55a7828b7        myholochainapp        "Scripts/chain.clo..."   6 minutes ago       Up 6 minutes        0.0.0.0:32934->3141/tcp   agitated_brahmagupta
     ```
-
+### Run the multi node integration tests on your app
+1. Multi node Integration requires Docker Installation
 
 
 ## Running, Testing and Distributing your app
@@ -158,29 +189,3 @@ Holochain Apps can be run inside Docker containers in a production environment. 
 ## The Bootstrap Server
 hc instances use our holochain of holochains to self locate onto the network. The (admitedly rather simple!) output of this can be seen at http://bootstrap.holochain.net:10000
 
-## Build developer images
-
-1. Create a developer image of your app to use for testing.
-
-    ```bash
-    $ #build a docker image of the app
-    $ #  give that docker image the tag "myholochainapp"
-    $ #  use the current directory '.' as the context
-    $ docker build -t myholochainapp .
-    ```
-    > **What do I have?**<br><br>
-    > The docker image created contains:
-    > * a small distribution of linux, called "Alpine"
-    > * the Go programming language
-    > * all the Go libraries that the Holochain Core depends on
-    > * the Holochain Core
-    > * and finally, your myholochainapp
-
-    > **What did it do?**
-    > * if you did not have them already, it downloaded the Alpine image from dockerhub along with all the Go dependencies from github.
-    > * added the latest version of your source files from your host machine (this always happens)
-    > * ran hc test myholochainapp
-    >   * all the .json files in the /test/ directory of your source code are used to run tests on the code. This means that the code inside the docker image passes its own unit tests.
-
-    > **What next?**<br><br>
-    > this is a *developer* image of your app. There are two more stages required for the image to be ready for distribution 
