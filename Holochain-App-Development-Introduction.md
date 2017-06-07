@@ -23,12 +23,12 @@ The development life-cycle of a holochain app:
 
     ```bash 
     $ mkdir myHolochainApp
+    $ cd myHolochainApp
     $ holochain.app.init
-    
 
-    HC: initialise holochain in .../myHolochainApp
+    HC: initialise holochain in ..../myHolochainApp
     HC: This directory is empty. Do you want to copy an existing example to work from? (Y/n) Y
-    # TYPE "Y"
+    #### TYPE "Y"
     HC: listing example directories
 
 
