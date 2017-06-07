@@ -55,7 +55,7 @@ The development life-cycle of a holochain app:
     # from anywhere inside your App directory structure
     #   <scenarioName> has tab-completion for each directory in myHolochainApp/test/*
     $ holochain.app.testScenario <scenarioName>
-    
+    ```
     > **What do I have?**
     > * logs are in myHolochainApp/logs.holochain
 
@@ -67,7 +67,6 @@ The development life-cycle of a holochain app:
     > * each `hc serve` behaves as defined in its .json file
     > * logs are in myHolochainApp/logs.holochain
 
-    ```
 ## Running, Testing and Distributing your app
 Holochain Apps can be run inside Docker containers in a production environment. There are always pros and cons however:
 * `Holochain Apps` cannot produce unsecure behaviour on the host machine through "root exploits".
