@@ -47,7 +47,7 @@ The development life-cycle of a holochain app:
 
     > **What did it do?**
     > * initialized your app directory with a `.hc` directory containing configuration details
-    > * added some directories and files to `.gitignore` coherent with developing your App on top of a git repository
+    > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
 ## Build developer images
 
