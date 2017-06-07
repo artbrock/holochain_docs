@@ -30,7 +30,11 @@ The development life-cycle of a holochain app:
     $ mkdir myHolochainApp
     $ cd myHolochainApp
     $ holochain.app.init
+    
     #### example output from *5*
+
+    HC: All information entered. Check details: 
+    
     HC:  copy from example: "chat"
     HC:      readable name: "myHolochainApp"
     Is this correct? (Y/n) Y
@@ -39,10 +43,10 @@ The development life-cycle of a holochain app:
     HC: holochain app initialised
     ```
     > **What do I have?**
-    > * A new directory with files that contain the necessary configuration for a simple chat app. This is a suitable starting point for developing a new holochain app.
+    > * Assuming you copied the "chat" example, A new directory with files that contain the necessary configuration for a simple chat app. This is a suitable starting point for developing a new holochain app.
 
     > **What did it do?**
-    > * initialized the directory with a .hc directory
+    > * initialized the directory with a .hc directory, configured with the App name myHolochainApp
 
 ## Build developer images
 
