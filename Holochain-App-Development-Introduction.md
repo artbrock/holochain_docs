@@ -19,32 +19,18 @@ The development life-cycle of a holochain app:
     1. Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
     2. Install [holochain system tools](Install-Holochain-on-nix)
 
-## Chose a name and initialise a new Holochain App. Let's choose `myHolochainApp`
+## Chose a name and initialise a new Holochain App
+1. Let's choose `myHolochainApp` as the app name.
+2. If you already have files in your app, then `init` will ask you to make sure you are in the correct directory
+3. If you do not have files, `init` will ask you if you want to copy skeleton files from an existing example
+4. `init` will ask you what name you want to give your Holochain App
+5. `init` will show you all the choices you have made to confirm
 
     ```bash 
     $ mkdir myHolochainApp
     $ cd myHolochainApp
     $ holochain.app.init
-
-    HC: initialise holochain in ..../myHolochainApp
-    HC: This directory is empty. Do you want to copy an existing example to work from? (Y/n) Y
-    #### TYPE "Y"
-    HC: listing example directories
-
-
-    chat
-    cludder
-    clutter
-    hctest
-    sample
-    Scripts
-
-    HC: Type the name of the example app you want to copy: chat
-    # TYPE "chat"
-    HC: Enter the name of your Holochain App: myHolochainApp
-    # TYPE "myHolochainApp"
-    HC: All information entered. Check details: 
-    
+    #### example output from *5*
     HC:  copy from example: "chat"
     HC:      readable name: "myHolochainApp"
     Is this correct? (Y/n) Y
