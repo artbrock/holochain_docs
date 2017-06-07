@@ -6,7 +6,7 @@ A `Holochain App` is a set of files that the `Holochain Core` uses to produce th
 
 The development life-cycle of a holochain app:
 1. Install the holochain developer tools
-2. Initialise a Holochain App
+2. Chose a name and initialise a new Holochain App
 3. play with or test your app<br>
   3.1. run the app to play with<br>
   3.2. run multi-node tests
@@ -19,13 +19,38 @@ The development life-cycle of a holochain app:
     1. Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
     2. Install [holochain system tools](Install-Holochain-on-nix)
 
-## Initialise the Holochain App
+## Chose a name and initialise a new Holochain App. Let's choose `myHolochainApp`
 
     ```bash 
-    $ #navigate to where you wanna be
-    $ cp -r $GOPATH/src/github.com/metacurrency/holochain/examples/chat myholochat
-    $ cd myholochat
+    $ mkdir myHolochainApp
     $ holochain.app.init
+    
+
+    HC: initialise holochain in .../myHolochainApp
+    HC: This directory is empty. Do you want to copy an existing example to work from? (Y/n) Y
+    # TYPE "Y"
+    HC: listing example directories
+
+
+    chat
+    cludder
+    clutter
+    hctest
+    sample
+    Scripts
+
+    HC: Type the name of the example app you want to copy: chat
+    # TYPE "chat"
+    HC: Enter the name of your Holochain App: myHolochainApp
+    # TYPE "myHolochainApp"
+    HC: All information entered. Check details: 
+    
+    HC:  copy from example: "chat"
+    HC:      readable name: "myHolochainApp"
+    Is this correct? (Y/n) Y
+    # TYPE "Y"
+    HC: copied example app from: chat
+    HC: holochain app initialised
     ```
     > **What do I have?**
     > * A new directory with files that contain the necessary configuration for a simple chat app. This is a suitable starting point for developing a new holochain app.
