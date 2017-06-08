@@ -13,7 +13,10 @@ We use **test driven development**. When you add a new function or feature, be s
 
 ## Code Formatting Conventions
 All Go code must be formatted with [gofmt](https://blog.golang.org/go-fmt-your-code).
-To make this easier consider using a [git-hook](https://gist.github.com/timotree3/d69b0fb90c8affbd705765abeabc489d#file-pre-commit) or configuring your editor with one of these: ([Emacs][], [vim][], [Sublime][], [Eclipse][])
+To make this easier consider using a [git-hook](https://gist.github.com/timotree3/d69b0fb90c8affbd705765abeabc489d#file-pre-commit) or configuring your editor with one of these:
+
+| [Emacs][] | [vim][] | [Sublime][] | [Eclipse][] |
+| --------- | ------- | ----------- | ----------- |
 
 [Emacs]: https://github.com/dominikh/go-mode.el
 [vim]: https://github.com/fatih/vim-go
