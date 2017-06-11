@@ -1,33 +1,36 @@
 # Test Driven App Development
 
-## Test file format
-Each test file consists of an array of json objects of the form:
+The holochain system includes a testing harness that allows you to test your application functions.  In addition we have build an integration harness that, using [docker-compose](https://docs.docker.com/compose/), simultaneously runs a set of tests in separate virtual nodes.  We strongly recommend using both these tools for application development.
+
+### Test Files
+A test file is essentially set collection of function calls into your application with specified inputs and expected outputs, or error values.  A test file consists of an array of json test objects of the form:
 
 ```go
-{
+[{
     Convey: string      // a human readable description of the tests intent
     Zome:   string      // the zome in which to find the function
-    FnName: string      // the function to call
+    FnName: string      // the application function to call
     Input:  string      // the function's input
     Output: string      // the expected output to match against (full match)
     Err:    string      // the expected error to match against
     Regexp: string      // the expected out to match again (regular expression)
-    Time:   int         // delay in millis before running this test
-}
+    Time:   int         // delay in millis before running this test (useful for multi-node testing)
+},
+{...}
+]
 ```
-    
+### Notes:
 - if `Time` is null or 0, tests are executed in the order discovered in the test file
   - in general the `Time` parameter is used to allow sufficient space for gossip operations between nodes on the DHT. 
-  - in other words, to test a sequence of messages sent and received between holochain servers, between 50 to 200 millis is required for message arrival.
+  - in other words, to test a sequence of messages sent and received between holochain nodes, between 50 to 200 millis is required for message arrival.
     - role1.json >> "send message, Time = 0"
     - role2.json >> "check for message, Time = 100"
   - the 50 to 200 millis number works well within the test harness network. Tests crossing external networks may require much more time for messages to be delivered.
 
-
 ## Integrating tests into your holochain application
-A holochain application directory (with the directory expanded) should look like this:
+A holochain application directory (with the test directory expanded) should look something like this:
 
-directory structure:
+Directory structure:
 - my_app
   - [dna](DNA-Reference)
   - [ui](UI-Reference)
@@ -43,13 +46,16 @@ directory structure:
     - scenario.myScenario.2
       - etc...
 
-- test files with a .json extension are automatically discovered
-- to run all the singleNodeTests (my_app/test/*.json), use this command:
+To run all the stand-alone tests (my_app/test/*.json), use this command:
     
     ```bash
     hc clone -force my_app my_app  && hc test my_app`
     ```
-- to run the complete suite of role's from a particular scenario, use this command:
+Note that all the test files with a .json extension in the test directory are automatically discovered and run.
+
+Multi-node tests are created creating scenario (represented by a subdirectory in the `test` directory) with a number of roles, where each role represents one node in the multi-node test, and is defined by a test file in the scenario sub-directory.
+
+To run the complete a mulit-node test of a particular scenario, use this command:
 
     ```bash
     holochain.app.testScenario <your-scenario-directory-name-here>
