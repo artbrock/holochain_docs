@@ -15,22 +15,23 @@ A test file is essentially set collection of function calls into your applicatio
     Err:    string      // the expected error to match against
     Regexp: string      // the expected out to match again (regular expression)
     Time:   int         // delay in millis before running this test (useful for multi-node testing)
-},
-{...}
+ },
+ {
+   ...
+ }
 ]
 ```
-### Notes:
+#### Notes on the `Time` parameter:
 - if `Time` is null or 0, tests are executed in the order discovered in the test file
-  - in general the `Time` parameter is used to allow sufficient space for gossip operations between nodes on the DHT. 
-  - in other words, to test a sequence of messages sent and received between holochain nodes, between 50 to 200 millis is required for message arrival.
-    - role1.json >> "send message, Time = 0"
-    - role2.json >> "check for message, Time = 100"
-  - the 50 to 200 millis number works well within the test harness network. Tests crossing external networks may require much more time for messages to be delivered.
+- all other values of the `Time` parameter are used in multi-node testing to allow sufficient space for gossip operations between nodes on the DHT. 
+- to test a sequence of messages sent and received between holochain nodes, between 50 to 200 millis is required for message arrival.
+  - role1.json >> "send message, Time = 0"
+  - role2.json >> "check for message, Time = 100"
+- the 50 to 200 millis number works well within the test harness network. Tests crossing external networks may require much more time for messages to be delivered.
 
 ## Integrating tests into your holochain application
 A holochain application directory (with the test directory expanded) should look something like this:
 
-Directory structure:
 - my_app
   - [dna](DNA-Reference)
   - [ui](UI-Reference)
@@ -46,22 +47,23 @@ Directory structure:
     - scenario.myScenario.2
       - etc...
 
-To run all the stand-alone tests (my_app/test/*.json), use this command:
+### Single-node tests
+Assuming your current working directory is `my_app` you can run all the single-node tests (test/*.json) with this command:
     
     ```bash
-    hc clone -force my_app my_app  && hc test my_app`
+    hc clone -force . my_app  && hc test my_app
     ```
-Note that all the test files with a .json extension in the test directory are automatically discovered and run.
+This command overwrites my_app in your .holochain directory with a new copy of your app, and then finds all the `.json` extension files in the top level of the `test` directory and runs them in a random order.
 
-Multi-node tests are created creating scenario (represented by a subdirectory in the `test` directory) with a number of roles, where each role represents one node in the multi-node test, and is defined by a test file in the scenario sub-directory.
+### Muilt-node tests (scenarios)
 
-To run the complete a mulit-node test of a particular scenario, use this command:
+Multi-node tests are can be though of as a scenario with a number of roles, where each role represents one node in the multi-node test, and is defined by a test file in the scenario sub-directory.
+
+To run a mulit-node scenario test, use this command:
 
     ```bash
     holochain.app.testScenario <your-scenario-directory-name-here>
     ```
-
-## Multi-node testing, how to construct a scenario
 
 [Video showing tests being run](https://youtu.be/K1GPYY4imt0) (doesn't open new tab, maybe ctrl-click or w/e)
 
