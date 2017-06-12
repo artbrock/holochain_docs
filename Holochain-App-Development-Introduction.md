@@ -1,24 +1,22 @@
 # Holochain App Development
 
-A `Holochain App` is a set of files that the `Holochain Core` uses to produce the desired behaviour. The `Core` provides all the guarantees users require from `Holochains`, whilst the `App` source code provides the specific behaviour of the `Holochain App`.
+Holochain applications are
 
-> currently the `holochain tools` are set up for development on a *nix / bash environment.
-
-The development life-cycle of a holochain app:
-1. Install the holochain developer tools
-2. Chose a name and initialise a new Holochain App
-3. Run unit tests and multi-node integration tests
-4. Alter the source
-5. rinse and repeat 3.
+The development life-cycle of a Holochain app:
+1. Install the Holochain developer tools
+2. Chose a name and initialize a new Holochain App
+3. Create and run unit tests and multi-node integration tests
+4. Write application source code to do what the test's say!
+5. rinse and repeat from 3.
 6. distribute your app
 
 ## Install the holochain developer tools
-1. If you have not already:
-    1. If you are on bash (nix / (maybe sygwin??)<br>
-       Install [holochain system tools](Install-Holochain-on-nix)
-    2. To do multinode testing, requires 1. above and:<br>
-       Install docker and docker compose: [Docker Installation](Docker-Installation-for-Developers)
+Currently the `holochain tools` are a collection of bash scripts that automate important dev tasks.  These bash scripts can be found in the `bin` directory of repo.  One of these scripts will also "install" them by automatically adding that directory to your bash path.  Here's how, first `cd` to where you cloned the holochain repo.  Then:
 
+```bash
+./bin/holochain.system.install
+source ~/.bashrc
+```
 ## Chose a name and initialise a new Holochain App
 1. Let's choose `myHolochainApp` as the app name.
 2. If you already have files in your app, then `init` will ask you to make sure you are in the correct directory
@@ -50,8 +48,14 @@ The development life-cycle of a holochain app:
     > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
 ## Run unit tests and multi-node integration tests
-1. To learn how to write tests, check the examples, and look at [App Testing ](App-Testing)
-2. To run all tests and multi-node integration tests
+1. To learn how to write tests, check the `test` directories in the [examples](../../tree/master/examples), and look at [App Testing ](App-Testing)
+2. Pre-requisites:
+  - make sure you have [installed docker and docker-compose](Docker-Installation-for-Developers).
+  - make sure to build a docker image for scenario testing with:
+   ```bash
+   $ holochain.system.buildImageForAppTests
+   ```
+3. To run all tests and multi-node integration tests
     ```bash
     # from anywhere inside your App directory structure
     #   <scenarioName> has tab-completion
@@ -71,7 +75,7 @@ The development life-cycle of a holochain app:
     > * each `hc serve` behaves as defined in its .json file
     > * logs are in myHolochainApp/logs.holochain
 
-## Alter your source
+## Write application source code
 1. Make sure to check out the [Testing Harness Documentation](App-Testing)
 
 ## Rinse repeat 3.
