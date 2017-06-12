@@ -42,4 +42,4 @@
  - [use cases for dockerfiles](Dockerfile-Design-by-Use-Case)
 
 #### Dev pages, need integrating into the wiki
-[Installing Holochain on *nix](Install-Holochain-on-nix)
+(Docker install for devs)[Docker-Installation-for-Developers]
