@@ -13,3 +13,6 @@ We have set up the docker environment such that the ~/.holochain directory in th
  - `<container-hash-id>` - just type the first few characters of one of the docker IDs and press <TAB> to auto-complete it.
  - `Ctrl-D` - exits and terminates running docker container
  - `Ctrl-P Ctrl-Q` - detaches from container leaving it running
+
+## Cheat Sheet
+ - Check out this [cheat-sheet](https://github.com/wsargent/docker-cheat-sheet) for tons more help making your way around docker
