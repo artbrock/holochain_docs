@@ -8,6 +8,7 @@ There are two kinds of values that are available to your application, system glo
 ### System Globals and Constants
  - **`HC.Version`** Returns the version of the Holochain software
  - **`HC.Status`** Object with status value constants: `Live`,`Deleted`,`Modified`,`Rejected`,`Any` for use with `StatusMask` when getting entries or links.
+ - **`HC.GetMask`** Object with get option value constants: `Default`,`Entry`,`EntryType`,`Sources`,`All`
  - **`HC.LinkAction`** Object with link action value constants: `Add`,`Del` for use when committing Links entries.
  - **`HC.PkgReq`** Object with package request constants: `Chain`, `ChainOpt`, `EntryTypes`
  - **`HC.PkgReq.ChainOpt`** Object with package request `Chain` request constants: `None`, `Headers`, `Entries`, `Full` (see validation for example uses of these package request constants)
@@ -61,7 +62,9 @@ Commits a DelEntry to the local chain with given delete message, and, if the ent
 
 Retrieves `<hash>` from the DHT.  Options is a hash map of modifiers about how/what to retrieve. Currently the options are:
 
-- `StatusMask: <int>` determines which status entries to return.  You can use defined constants `HC.Status.Default/Live/Deleted/Modified/Rejected` as the `<int>` value.  If unspecified `<StatusMask>` will be assumed to be `Default` which is returns only live values entries resolving any modified entries.  
+- `StatusMask: <int>` determines which status entries to return.  You can use defined constants `HC.Status.Default/Live/Deleted/Modified/Rejected` as the `<int>` value.  If unspecified `<StatusMask>` will be assumed to be `Default` which is returns only live values entries resolving any modified entries.
+- `GetMask: <int>` determines what to return.  You can use defined constants `HC.GetMask.Default/Entry/EntryType/Sources/All`. If unspecified `<GetMaks>` will be assumed to be `Default` which is returns just the entry type.  If more than one element in the mask is chosen the result will be an object using the mask value as the key of all the chosen return types.
+- `Local: <boolean>` if true indicates that the get should return data only from the local chain, *NOT* from the DHT. 
 
 ### `getLink <base> <tag> [<options>]`
 
