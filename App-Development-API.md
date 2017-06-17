@@ -56,6 +56,14 @@ Keep in mind that you will want to retrieve most data from the DHT (shared data 
 
 Commits a DelEntry to the local chain with given delete message, and, if the entry type of `<hash>` is not private, moves the entry to the `Deleted` status on the DHT.
 
+## Node-to-Node communication Functions
+
+### `send <to> <message>`
+Sends a message to a node.  The return value of this function will be what ever is returned by the `receive` function on the receiving node, see below.
+
+### `receive <from> <message>`
+This function will get called by the system when a message is received by a node.  The return value of the function will be sent back to the sender and will be the result of the `send` function that sent the message.
+
 ## Functions for DHT query 
 
 ### `get <hash> [<options>]`
