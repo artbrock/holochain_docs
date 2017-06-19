@@ -33,11 +33,9 @@ Each Zomes section contains some basic info about the Zome (Name, Description, N
 **NucleusType**
  : (string) Which virtual machine should be used to process the code in this Zome? Valid values are: JavaScript, Lisp, (and as we build them: Ruby, Lua, etc.)
 
-**Code**
- : (string) File name to find the code for this Zome. By convention, please use <ZomeName>.<LanguageExtension>, like chat.js, sort.zy (for zygomys Lisp). Once we complete ticket [#100](https://github.com/metacurrency/holochain/issues/100) we'll look for this filename by default if you leave this out of the DNA.
+**CodeFile**
+ : (string) File name to find the code for this Zome. By convention, please use `<ZomeName>.<LanguageExtension>`, like `chat.js`, `sort.zy` (for zygomys Lisp).
 
-**CodeHash**
- : (hash) The hash of the code automatically gets generated when you `hc gen chain`. The value of a hash looks a little strange in TOML files as it's a comma delimited array of numbers. Having this specified in the DNA is part of what locks in the version of code peers on a holochain are agreeing to run.
 
 ### Zomes.Functions   [ ]FunctionDef
 The functions that are used inside this Zome that you want to expose to be callable by some other part of the holochain system (such as a web UI, or accessible to another Zome)
@@ -57,11 +55,8 @@ Inside a Zome section A list of Zome entries, for each zome which may include th
 **DataFormat**
   : (string) What format is this data structure? Options: string, json, links (a predefined data structure used for creating semantic links between entries in the DHT)
 
-**Schema**
+**SchemaFile**
  : (string) The file name of schema or language schema directive (e.g. "blogpost.json"). You can leave this out of the DNA if there is no schema file (for DataFormats that are strings or links, for example)
-
-**SchemaHash**
- : (hash) The hash of the schema file automatically gets generated when you `hc gen chain`. Having this specified in the DNA is part of what locks in the data structures peers on a holochain are sharing. This value looks a little strange in TOML files as it's a comma delimited array of numbers. 
 
 **Sharing**
  : (string) **Public** entries are automatically shared to the DHT after being committed to your chain. **Private** entries are NOT shared to the DHT, and remain only on your source chain. **Partial** entries mean selected fields are shared to DHT and structured for Merkle Proof of validation of those fields while not exposing hidden ones.
