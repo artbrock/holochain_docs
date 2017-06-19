@@ -33,9 +33,10 @@ This section describes our practices and guidelines for using git and making cha
 * We encourage any dev to comment on pull requests and we think of the pull request not as a "please approve my code" but as a space for co-developing, i.e. asynchronous "pair-coding" of a sort.
 * We use develop features on separate branches identified by Github issues
 * We use merge to master (not rebase) so that commits related to a ticket can be retroactively explored.
+* We don't currently use a dev branch because we don't have release management at this phase of development, when we do, we probably will.
 
 ### How to make changes: Quick Version
-* Make your changes on a seperate branch which includes a ticket number e.g. `some-new-feature-1234` where 1234 is the github issue # where the feature is documented. Make sure the branch is based on master.
+* Make your changes on a seperate branch which includes a ticket number e.g. `1234-some-new-feature` where 1234 is the github issue # where the feature is documented. Make sure the branch is based on master.
 * Use commit messages descriptive of your changes.
 * Push to the upstream of your new branch.
 * Create a pull request on github.
