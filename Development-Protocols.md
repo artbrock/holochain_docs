@@ -26,16 +26,22 @@ To make this easier consider using a [git-hook](https://gist.github.com/timotree
 For Atom, you could try this [package](https://atom.io/packages/save-commands) but it requires some configuration.
 
 ## Git Hygiene
-This section describes guidelines for using git and making changes to the repo.
+This section describes our practices and guidelines for using git and making changes to the repo.
 
-### Quick Version
-* Make your changes on a seperate branch. Make sure the branch is based on master.
+### Guiding Principles & practices
+* We use Github's pull requests as our code review tool
+* We encourage any dev to comment on pull requests and we think of the pull request not as a "please approve my code" but as a space for co-developing, i.e. asynchronous "pair-coding" of a sort.
+* We use develop features on separate branches identified by Github issues
+* We use merge to master (not rebase) so that commits related to a ticket can be retroactively explored.
+
+### How to make changes: Quick Version
+* Make your changes on a seperate branch which includes a ticket number e.g. `some-new-feature-1234` where 1234 is the github issue # where the feature is documented. Make sure the branch is based on master.
 * Use commit messages descriptive of your changes.
 * Push to the upstream of your new branch.
 * Create a pull request on github.
-* When merging a pull request, make sure to use the "Rebase and merge" option.
+* When merging a pull request, make sure to use the "Merge" option.
 
-### The Verbose Version for newbies
+### How to make changes: The Verbose Version for newbies
 Start out on master. You can check this by using `git status`.  
 Before making your changes use `git pull` so that you are working on the latest version of master.
 ```
@@ -68,4 +74,4 @@ Select the branch that you have been working on by clicking on the branches butt
 On your branch, click "New Pull Request"
 
 ![Add message and confirm pull request'](https://raw.githubusercontent.com/wiki/metacurrency/holochain/_Images/confirmpr.png)
-Add message and click "confirm pull request"
+Add message, add any specific people who you would like to review your code changes and then click "Create Pull Request"
