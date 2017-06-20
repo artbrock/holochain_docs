@@ -31,3 +31,8 @@ passwd
 #install holochain in your user
 holochain/bin/holochain.system.install
 ```
+# What happens now?
+you have completed Step 1 of this document: https://github.com/metacurrency/holochain/wiki/Holochain-App-Development-Introduction
+
+# For the development of source code files, you can log into your user using sftp
+* install `filezilla` https://filezilla-project.org/
