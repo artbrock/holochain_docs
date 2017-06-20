@@ -2,9 +2,9 @@
 ```bash
 #password is administrator
 ssh administrator@162.243.136.142
-Scripts/createHolochainDevUser \<username\>
+Scripts/createHolochainDevUser *username*
 
-added user <username>
+added user *username*
 Cloning into 'holochain'...
 remote: Counting objects: 4683, done.
 remote: Compressing objects: 100% (169/169), done.
