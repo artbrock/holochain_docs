@@ -36,3 +36,8 @@ you have completed Step 1 of this document: https://github.com/metacurrency/holo
 
 # For the development of source code files, you can log into your user using sftp
 * install `filezilla` https://filezilla-project.org/
+* add the server using these instructions
+  * https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)
+  * hostname: sftp://162.243.136.142
+  * username: *username*
+  * password: *username*  || your new password
