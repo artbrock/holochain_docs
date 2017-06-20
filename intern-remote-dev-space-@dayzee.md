@@ -15,15 +15,15 @@ Checking connectivity... done.
 cloned metacurrency/holochain
 ```
 > **What do I have?**
-> * a new user called <username>
-> * with the password <username>
-> * home directory /home/<username>
+> * a new user called *username*
+> * with the password *username*
+> * home directory /home/*username*
 > * containing a directory `holochain`
 >   * which has a pull of the latest master of metacurrency/holochain
 
 # begin being able to develop
 ```bash
-# password is <username>
+# password is *username*
 ssh <username>@162.243.136.142
 #maybe change your password
 passwd
