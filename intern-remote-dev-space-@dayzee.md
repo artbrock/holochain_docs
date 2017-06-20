@@ -35,7 +35,7 @@ holochain/bin/holochain.system.install
 you have completed Step 1 of this document: https://github.com/metacurrency/holochain/wiki/Holochain-App-Development-Introduction
 
 # To develop your Holochain App files
-The above docunment
+Use the above document to create your base holochain app
 1. install `filezilla` https://filezilla-project.org/
 2. add the server using these instructions
     * https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)
