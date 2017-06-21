@@ -2,7 +2,7 @@
 ```bash
 #password is administrator
 ssh administrator@162.243.136.142
-Scripts/createHolochainDevUser *username*
+sudo Scripts/createHolochainDevUser *username*
 
 added user *username*
 Cloning into 'holochain'...
