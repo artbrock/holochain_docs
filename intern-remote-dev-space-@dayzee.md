@@ -1,9 +1,9 @@
 # Create a user
 ```bash
-ssh administrator@162.243.136.142
-
 #password is administrator
+ssh administrator@162.243.136.142
 Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-64-generic x86_64)
+
 
 $ Scripts/createHolochainDevUser *username*
 [sudo] password for administrator: 
