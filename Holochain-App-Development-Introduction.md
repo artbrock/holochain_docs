@@ -47,7 +47,12 @@ source ~/.bashrc
     > * initialized your app directory with a `.hc` directory containing configuration details
     > * added some entries into `.gitignore` coherent with developing your App on top of a git repository
 
-## Run unit tests and multi-node integration tests
+    > **What now?**
+    > * add your files to a git repository and push to some remove server (e.g. github)
+    > 
+
+## Play with your app or Run unit tests and multi-node integration tests
+TODO: play with app
 1. To learn how to write tests, check the `test` directories in the [examples](../../tree/master/examples), and look at [App Testing ](App-Testing)
 2. Pre-requisites:
   - make sure you have [installed docker and docker-compose](Docker-Installation-for-Developers).
