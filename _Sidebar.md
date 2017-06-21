@@ -21,6 +21,7 @@
  - [Building in Lisp](Building-in-Lisp)
  - [Building in JavaScript](Building-in-JavaScript)
  - [Building User Interface](UI-Reference)
+ - [Remote Developer Space](remote-dev-space)
 
 <!-- - [Building in P3](Building-in-P3) -->
 
