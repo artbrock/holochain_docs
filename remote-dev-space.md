@@ -2,7 +2,7 @@ There is a free to use developer space for Holochain Apps, which runs linux ubun
 
 This space is not secure, nor can we guarantee any files kept there. 
 
-Always keep copies of your files somewhere else (e.g. github)
+Always keep copies of your Holochain App files somewhere else (e.g. github)
 
 # Create a user
 ```bash
