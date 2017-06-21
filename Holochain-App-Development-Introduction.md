@@ -52,7 +52,7 @@ source ~/.bashrc
     > 
 
 ## Play with your app or Run unit tests and multi-node integration tests
-TODO: play with app
+> TODO: play with app
 1. To learn how to write tests, check the `test` directories in the [examples](../../tree/master/examples), and look at [App Testing ](App-Testing)
 2. Pre-requisites:
   - make sure you have [installed docker and docker-compose](Docker-Installation-for-Developers).
