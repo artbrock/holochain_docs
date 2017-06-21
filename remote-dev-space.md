@@ -1,3 +1,9 @@
+There is a free to use developer space for Holochain Apps, which runs linux ubuntu and which satisfies all the various requirements of running and developing holochain
+
+This space is not secure, nor can we guarantee any files kept there. 
+
+Always keep copies of your files somewhere else (e.g. github)
+
 # Create a user
 ```bash
 #password is administrator
